@@ -99,6 +99,12 @@ export const translations = {
       'Ћао, ја сам Никола Дашић — програмер, отац, радио аматер, тип са превише хобија, узгајивач кокошака, поносни власник Дачије, редовни купац у ИКЕИ, поборник GNU/Linux-а, електротехничар електронике, православни хришћанин, посвећеник теретани, поштовалац говеђе пршуте, обожавалац Yandex-а, бициклистички бади, и неко ко је годинама пратио своје трошкове у проклетом Excel-у... док нисам одлучио да направим нешто боље. Трошкомир ради на мом кућном сервер-лабу, не у неком великом облаку — зато основне функције остају бесплатне. Ако имате питања или предлоге, јавите се.',
     'about.linkedin': 'Повежимо се на LinkedIn-у',
 
+    'hosting.heading': 'Где апликација ради',
+    'hosting.body':
+      'Трошкомир ради на мом кућном серверу (home lab), а не у некој великој комерцијалној облак услузи. То смањује трошкове и омогућава ми да апликацију понудим бесплатно, али значи и да је доступност сервиса онолико поуздана колико и мој кућни интернет и струја.',
+    'hosting.caption1': 'Брвнара у дворишту — ту живи цео home lab (и моја радио опрема).',
+    'hosting.caption2': 'Сервери, док сам их тек монтирао.',
+
     'footer.contact': 'Питања?',
     'footer.rights': 'Сва права задржана.',
   },
@@ -187,6 +193,12 @@ export const translations = {
     'about.bio':
       'Ćao, ja sam Nikola Dašić — programer, otac, radio amater, tip sa previše hobija, uzgajivač kokošaka, ponosni vlasnik Dačije, redovni kupac u IKEI, pobornik GNU/Linux-a, elektrotehničar elektronike, pravoslavni hrišćanin, posvećenik teretani, poštovalac goveđe pršute, obožavalac Yandex-a, biciklistički badi, i neko ko je godinama pratio svoje troškove u prokletom Excel-u... dok nisam odlučio da napravim nešto bolje. Troskomir radi na mom kućnom server-labu, ne u nekom velikom oblaku — zato osnovne funkcije ostaju besplatne. Ako imate pitanja ili predloge, javite se.',
     'about.linkedin': 'Povežimo se na LinkedIn-u',
+
+    'hosting.heading': 'Gde aplikacija radi',
+    'hosting.body':
+      'Troskomir radi na mom kućnom serveru (home lab), a ne u nekoj velikoj komercijalnoj cloud usluzi. To smanjuje troškove i omogućava mi da aplikaciju ponudim besplatno, ali znači i da je dostupnost servisa onoliko pouzdana koliko i moj kućni internet i struja.',
+    'hosting.caption1': 'Brvnara u dvorištu — tu živi ceo home lab (i moja radio oprema).',
+    'hosting.caption2': 'Serveri, dok sam ih tek montirao.',
 
     'footer.contact': 'Pitanja?',
     'footer.rights': 'Sva prava zadržana.',
@@ -277,6 +289,12 @@ export const translations = {
       "Hi, I'm Nikola Dašić — a software engineer, father, HAM radio operator, a guy with way too many hobbies, chicken farmer, Dacia owner, IKEA regular, GNU/Linux supporter, electronics technician, Orthodox Christian, gym-goer, prosciutto connoisseur, Yandex admirer, cycling buddy, and someone who tracked my own expenses in cursed Excel spreadsheets for way too many years... until I decided to just build something better. Troskomir runs on my own home server lab, not some big commercial cloud — which is exactly why the core features stay free. If you have questions or suggestions, feel free to reach out.",
     'about.linkedin': 'Connect on LinkedIn',
 
+    'hosting.heading': 'Where it runs',
+    'hosting.body':
+      "Troskomir runs on my own home server lab, not a big commercial cloud. That keeps costs low and lets me offer the app for free, though it also means the service is only as reliable as my home internet and power.",
+    'hosting.caption1': 'The wooden shed in my backyard — home to the whole lab (and my HAM radio gear).',
+    'hosting.caption2': 'The servers, mid-setup.',
+
     'footer.contact': 'Questions?',
     'footer.rights': 'All rights reserved.',
   },
@@ -365,6 +383,12 @@ export const translations = {
     'about.bio':
       'Привет, я Никола Дашич — инженер-программист, отец, радиолюбитель (HAM), человек со слишком большим количеством увлечений, птицевод, владелец Dacia, завсегдатай IKEA, сторонник GNU/Linux, специалист по электронике, православный христианин, любитель спортзала, ценитель прошутто, поклонник Яндекса, велосипедный товарищ и тот, кто годами вёл учёт своих расходов в проклятом Excel’е... пока не решил сделать что-то получше. Трошкомир работает на моём домашнем сервере, а не в большом коммерческом облаке — именно поэтому основные функции остаются бесплатными. Если у вас есть вопросы или предложения, пишите.',
     'about.linkedin': 'Давайте свяжемся в LinkedIn',
+
+    'hosting.heading': 'Где это работает',
+    'hosting.body':
+      'Трошкомир работает на моём домашнем сервере (home lab), а не в большом коммерческом облаке. Это снижает расходы и позволяет мне предлагать приложение бесплатно, но также означает, что доступность сервиса зависит от моего домашнего интернета и электричества.',
+    'hosting.caption1': 'Деревянный сарай на заднем дворе — здесь живёт вся домашняя лаборатория (и моё радиооборудование).',
+    'hosting.caption2': 'Серверы, во время установки.',
 
     'footer.contact': 'Вопросы?',
     'footer.rights': 'Все права защищены.',

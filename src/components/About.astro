@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import brvnaraImg from '../assets/brvnara.jpg';
+import serveriImg from '../assets/serveri.jpg';
 
 interface Props {
   lang?: Lang;
@@ -33,5 +36,30 @@ const t = useTranslations(lang);
     >
       {t('about.linkedin')}
     </a>
+  </div>
+
+  <div class="max-w-2xl mx-auto mt-20 text-center">
+    <h2 class="text-2xl font-bold mb-4">{t('hosting.heading')}</h2>
+    <p class="text-text-muted leading-relaxed mb-8">{t('hosting.body')}</p>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <figure>
+        <Image
+          src={brvnaraImg}
+          alt={t('hosting.caption1')}
+          width={500}
+          class="rounded-xl border border-secondary w-full h-auto"
+        />
+        <figcaption class="text-text-muted text-sm mt-2">{t('hosting.caption1')}</figcaption>
+      </figure>
+      <figure>
+        <Image
+          src={serveriImg}
+          alt={t('hosting.caption2')}
+          width={500}
+          class="rounded-xl border border-secondary w-full h-auto"
+        />
+        <figcaption class="text-text-muted text-sm mt-2">{t('hosting.caption2')}</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
