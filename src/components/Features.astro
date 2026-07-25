@@ -75,13 +75,13 @@ const groups: { category: TranslationKey; items: FeatureKey[] }[] = [
       {
         groups.map((group) => (
           <div>
-            <h3 class="text-sm font-semibold uppercase tracking-wide text-accent-light mb-5">
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-accent mb-5">
               {t(group.category)}
             </h3>
             <div class="grid sm:grid-cols-2 gap-6">
               {group.items.map((key) => (
-                <div class="flex gap-4 p-5 rounded-xl bg-primary border border-secondary">
-                  <div class="shrink-0 w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-accent-light">
+                <div class="flex gap-4 p-5 rounded-xl bg-primary border border-border">
+                  <div class="shrink-0 w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-accent">
                     <Icon name={iconByFeature[key]} class="w-5 h-5" />
                   </div>
                   <div>

@@ -30,7 +30,7 @@ const navItems = [
 const currentPath = getPathWithoutLang(Astro.url.pathname.replace(base, '/'));
 ---
 
-<header class="fixed top-0 inset-x-0 z-50 bg-primary/80 backdrop-blur border-b border-secondary">
+<header class="fixed top-0 inset-x-0 z-50 bg-primary border-b border-border">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
     <a href={homePath} class="flex items-center gap-2 text-lg font-semibold tracking-tight text-text shrink-0">
       <img src={`${base}app-icon.png`} alt="" width="28" height="28" class="rounded-lg" />
@@ -81,7 +81,7 @@ const currentPath = getPathWithoutLang(Astro.url.pathname.replace(base, '/'));
               href={getLocalizedPath(currentPath, code as Lang, base)}
               class={`block px-4 py-2.5 text-sm transition-colors ${
                 lang === code
-                  ? 'text-accent-light font-medium bg-primary/40'
+                  ? 'text-accent font-medium bg-primary/40'
                   : 'text-text-muted hover:text-text hover:bg-primary/30'
               }`}
             >
