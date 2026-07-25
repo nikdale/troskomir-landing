@@ -1,6 +1,10 @@
 ---
 import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
-import { PLAY_STORE_URL, APP_STORE_URL } from '../site-config';
+import {
+  PLAY_STORE_URL,
+  APP_STORE_URL,
+  isLiveStoreUrl,
+} from '../site-config';
 
 interface Props {
   lang?: Lang;
@@ -8,6 +12,10 @@ interface Props {
 
 const { lang = defaultLang } = Astro.props;
 const t = useTranslations(lang);
+
+const playLive = isLiveStoreUrl(PLAY_STORE_URL);
+const appLive = isLiveStoreUrl(APP_STORE_URL);
+const anyStoreLive = playLive || appLive;
 ---
 
 <section class="relative pt-40 pb-28 px-6 text-center overflow-hidden">
@@ -24,23 +32,52 @@ const t = useTranslations(lang);
     <p class="text-lg sm:text-xl text-text-muted max-w-xl mx-auto">
       {t('hero.subtitle')}
     </p>
-    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-      <a
-        href={PLAY_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
-      >
-        {t('cta.playStore')}
-      </a>
-      <a
-        href={APP_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
-      >
-        {t('cta.appStore')}
-      </a>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
+      {anyStoreLive ? (
+        <>
+          {playLive ? (
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
+            >
+              {t('cta.playStore')}
+            </a>
+          ) : (
+            <span
+              class="px-5 py-3 rounded-lg bg-secondary/40 text-text-muted font-medium text-sm cursor-default"
+              title={t('cta.comingSoonHint')}
+            >
+              {t('cta.playStoreSoon')}
+            </span>
+          )}
+          {appLive ? (
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
+            >
+              {t('cta.appStore')}
+            </a>
+          ) : (
+            <span
+              class="px-5 py-3 rounded-lg bg-secondary/40 text-text-muted font-medium text-sm cursor-default"
+              title={t('cta.comingSoonHint')}
+            >
+              {t('cta.appStoreSoon')}
+            </span>
+          )}
+        </>
+      ) : (
+        <span
+          class="px-5 py-3 rounded-lg bg-secondary/40 text-text-muted font-medium text-sm cursor-default"
+          title={t('cta.comingSoonHint')}
+        >
+          {t('cta.storesComingSoon')}
+        </span>
+      )}
     </div>
   </div>
 </section>

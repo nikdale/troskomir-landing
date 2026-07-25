@@ -28,6 +28,10 @@ export const translations = {
       'Трошкомир вам показује тачно где иде ваш новац: трошкови, картице, рате, штедња и подсетници — све прегледно, на једном месту.',
     'cta.playStore': 'Преузми са Google Play-а',
     'cta.appStore': 'Преузми са App Store-а',
+    'cta.playStoreSoon': 'Google Play — ускоро',
+    'cta.appStoreSoon': 'App Store — ускоро',
+    'cta.storesComingSoon': 'Ускоро на Google Play и App Store',
+    'cta.comingSoonHint': 'Линкови ће се појавити чим апликација буде објављена у продавницама.',
 
     'features.heading': 'Шта Трошкомир уме',
     'features.subheading': 'Кратак преглед свих функција, да знате шта добијате.',
@@ -123,6 +127,10 @@ export const translations = {
       'Troskomir vam pokazuje tačno gde ide vaš novac: troškovi, kartice, rate, štednja i podsetnici — sve pregledno, na jednom mestu.',
     'cta.playStore': 'Preuzmi sa Google Play-a',
     'cta.appStore': 'Preuzmi sa App Store-a',
+    'cta.playStoreSoon': 'Google Play — uskoro',
+    'cta.appStoreSoon': 'App Store — uskoro',
+    'cta.storesComingSoon': 'Uskoro na Google Play i App Store',
+    'cta.comingSoonHint': 'Linkovi će se pojaviti čim aplikacija bude objavljena u prodavnicama.',
 
     'features.heading': 'Šta Troskomir ume',
     'features.subheading': 'Kratak pregled svih funkcija, da znate šta dobijate.',
@@ -218,6 +226,10 @@ export const translations = {
       'Troskomir shows you exactly where your money goes: expenses, cards, installments, savings and reminders — all in one place.',
     'cta.playStore': 'Get it on Google Play',
     'cta.appStore': 'Download on the App Store',
+    'cta.playStoreSoon': 'Google Play — coming soon',
+    'cta.appStoreSoon': 'App Store — coming soon',
+    'cta.storesComingSoon': 'Coming soon on Google Play and the App Store',
+    'cta.comingSoonHint': 'Links will appear once the app is published on the stores.',
 
     'features.heading': 'What Troskomir does',
     'features.subheading': "A quick rundown of every feature, so you know what you're getting.",
@@ -313,6 +325,10 @@ export const translations = {
       'Трошкомир точно показывает, куда уходят ваши деньги: расходы, карты, рассрочка, накопления и напоминания — всё в одном месте.',
     'cta.playStore': 'Загрузите в Google Play',
     'cta.appStore': 'Загрузите в App Store',
+    'cta.playStoreSoon': 'Google Play — скоро',
+    'cta.appStoreSoon': 'App Store — скоро',
+    'cta.storesComingSoon': 'Скоро в Google Play и App Store',
+    'cta.comingSoonHint': 'Ссылки появятся, когда приложение будет опубликовано в магазинах.',
 
     'features.heading': 'Что умеет Трошкомир',
     'features.subheading': 'Короткий обзор всех функций, чтобы вы знали, что получаете.',
