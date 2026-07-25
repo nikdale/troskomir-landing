@@ -1,14 +1,18 @@
 ---
+import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="privatnost" class="py-24 px-6">
   <div class="max-w-2xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4">Privatnost</h2>
+    <h2 class="text-3xl font-bold mb-4">{t('privacy.title')}</h2>
     <div class="section-divider mb-8"></div>
-    <p class="text-text-muted leading-relaxed">
-      Osetljivi podaci — opisi troškova, računi i slično — enkriptovani su
-      od uređaja do uređaja (end-to-end). Server čuva samo šifrovani
-      sadržaj i nikada ne vidi šta je unutra.
-    </p>
+    <p class="text-text-muted leading-relaxed">{t('privacy.body')}</p>
   </div>
 </section>

@@ -1,20 +1,27 @@
 ---
+import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
-<section class="pt-40 pb-24 px-6 text-center">
+<section class="relative pt-40 pb-28 px-6 text-center overflow-hidden">
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"></div>
+  </div>
   <div class="max-w-3xl mx-auto">
-    <span
-      class="inline-block mb-6 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-secondary text-accent-light"
-    >
-      Uskoro
+    <span class="inline-block mb-6 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-secondary text-accent-light">
+      {t('hero.badge')}
     </span>
     <h1 class="text-5xl sm:text-6xl font-bold tracking-tight mb-6">
-      Troš<span class="accent-gradient">komir</span>
+      {t('hero.title1')}<span class="accent-gradient">{t('hero.title2')}</span>
     </h1>
     <p class="text-lg sm:text-xl text-text-muted max-w-xl mx-auto">
-      Aplikacija za praćenje ličnih troškova, budžeta i ušteda — sa
-      podrškom za više valuta i računima koji su enkriptovani od uređaja
-      do uređaja.
+      {t('hero.subtitle')}
     </p>
   </div>
 </section>

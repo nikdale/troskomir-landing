@@ -1,10 +1,18 @@
 ---
+import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
 const year = new Date().getFullYear();
 ---
 
 <footer id="kontakt" class="py-12 px-6 border-t border-secondary text-center">
   <p class="text-text-muted text-sm">
-    Pitanja? <a href="mailto:dasic.nikola@yandex.com" class="text-accent-light hover:underline">dasic.nikola@yandex.com</a>
+    {t('footer.contact')} <a href="mailto:dasic.nikola@yandex.com" class="text-accent-light hover:underline">dasic.nikola@yandex.com</a>
   </p>
-  <p class="text-text-muted text-xs mt-4">&copy; {year} Troškomir</p>
+  <p class="text-text-muted text-xs mt-4">&copy; {year} {t('site.title')} — {t('footer.rights')}</p>
 </footer>

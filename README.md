@@ -17,15 +17,37 @@ hostovan na GitHub Pages pod `troskomir.stryna.com`.
 │   │   ├── Hero.astro
 │   │   ├── Features.astro
 │   │   ├── Privacy.astro
-│   │   └── Footer.astro
+│   │   ├── Footer.astro
+│   │   └── Icon.astro
+│   ├── i18n/
+│   │   ├── translations.ts   # svi tekstovi, sva 4 jezika
+│   │   └── utils.ts
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
-│   │   └── index.astro
+│   │   ├── index.astro       # sr (ćirilica, podrazumevano)
+│   │   ├── sr-Latn/index.astro
+│   │   ├── en/index.astro
+│   │   └── ru/index.astro
 │   └── styles/
 │       └── global.css
 └── .github/workflows/deploy.yml
 ```
+
+## Jezici
+
+Četiri verzije, ista struktura stranice za svaku:
+
+| Jezik              | Putanja      |
+| :----------------- | :----------- |
+| Srpski (ćirilica)  | `/`          |
+| Srpski (latinica)  | `/sr-Latn/`  |
+| English            | `/en/`       |
+| Русский            | `/ru/`       |
+
+Dodavanje/izmena teksta ide isključivo kroz `src/i18n/translations.ts` —
+komponente same povlače prevod preko `t('ključ')`, nema teksta zakucanog
+u `.astro` fajlovima.
 
 ## Komande
 
@@ -57,8 +79,7 @@ granu (`.github/workflows/deploy.yml`).
 
 ## Sadržaj
 
-- Naslov / hero tekst: `src/components/Hero.astro`
-- Funkcije: `src/components/Features.astro`
-- Privatnost: `src/components/Privacy.astro`
-- Kontakt: `src/components/Footer.astro`
+- Svi tekstovi (hero, funkcije, privatnost, kontakt) — `src/i18n/translations.ts`,
+  po jeziku (`sr`, `sr-Latn`, `en`, `ru`)
+- Lista funkcija i ikonice — `src/components/Features.astro` (`groups` niz)
 - Boje: `src/styles/global.css` (`@theme` blok)

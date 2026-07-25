@@ -1,19 +1,26 @@
 ---
 import '../styles/global.css';
+import { type Lang, defaultLang, getAlternateUrls, useTranslations } from '../i18n/utils';
 
 interface Props {
-  title: string;
-  description?: string;
+  lang?: Lang;
 }
 
-const {
-  title,
-  description = 'Troškomir — praćenje troškova, budžeta i ušteda, sa E2E enkriptovanim računima.',
-} = Astro.props;
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
+
+const title = t('site.title');
+const description = t('site.description');
+
+const htmlLang = lang === 'sr' ? 'sr-Cyrl' : lang;
+const ogLocale = lang === 'sr' || lang === 'sr-Latn' ? 'sr_RS' : lang === 'ru' ? 'ru_RU' : 'en_US';
+
+const base = import.meta.env.BASE_URL;
+const alternateUrls = getAlternateUrls(Astro.url.pathname, Astro.site?.toString() || '', base);
 ---
 
 <!doctype html>
-<html lang="sr-Latn">
+<html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +30,13 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="sr_RS" />
+    <meta property="og:locale" content={ogLocale} />
+
+    <!-- Alternate language links -->
+    {alternateUrls.map(({ lang: altLang, url }) => (
+      <link rel="alternate" hreflang={altLang === 'sr' ? 'sr-Cyrl' : altLang} href={url} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={alternateUrls.find((a) => a.lang === defaultLang)?.url} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,7 +45,7 @@ const {
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <title>{title}</title>
   </head>
   <body class="min-h-screen bg-primary text-text antialiased">

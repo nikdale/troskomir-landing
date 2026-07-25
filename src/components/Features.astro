@@ -1,44 +1,95 @@
 ---
-const features = [
-  {
-    title: 'Valutni budžetski bazeni',
-    body: 'Grupišite troškove u budžete koji mogu da mešaju više valuta, i uključite ih ili isključite po potrebi.',
-  },
-  {
-    title: 'Redovni troškovi',
-    body: 'Podsetnici i automatsko beleženje za kiriju, pretplate i druge troškove koji se ponavljaju.',
-  },
-  {
-    title: 'Ciljevi štednje',
-    body: 'Pratite uplate i isplate ka svakom cilju štednje ili investicije posebno.',
-  },
-  {
-    title: 'Lojalti i poklon kartice',
-    body: 'Sve kartice na jednom mestu, uz stanje i istoriju korišćenja.',
-  },
-  {
-    title: 'Deljeni troškovi domaćinstva',
-    body: 'Zajedničke kartice i troškovi vidljivi svim članovima domaćinstva.',
-  },
-  {
-    title: 'Skeniranje računa',
-    body: 'Fotografišite ili skenirajte fiskalni račun i podaci se automatski upisuju.',
-  },
+import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import Icon from './Icon.astro';
+import type { TranslationKey } from '../i18n/translations';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
+
+type FeatureKey =
+  | 'scan'
+  | 'expenses'
+  | 'pools'
+  | 'debit'
+  | 'credit'
+  | 'installments'
+  | 'household'
+  | 'warranty'
+  | 'notifications'
+  | 'reminders'
+  | 'savings'
+  | 'loyalty';
+
+type IconName =
+  | 'scan'
+  | 'receipt'
+  | 'layers'
+  | 'card'
+  | 'repeat'
+  | 'users'
+  | 'shield'
+  | 'bell'
+  | 'clock'
+  | 'piggybank'
+  | 'tag';
+
+const iconByFeature: Record<FeatureKey, IconName> = {
+  scan: 'scan',
+  expenses: 'receipt',
+  pools: 'layers',
+  debit: 'card',
+  credit: 'card',
+  installments: 'repeat',
+  household: 'users',
+  warranty: 'shield',
+  notifications: 'bell',
+  reminders: 'clock',
+  savings: 'piggybank',
+  loyalty: 'tag',
+};
+
+const groups: { category: TranslationKey; items: FeatureKey[] }[] = [
+  { category: 'cat.tracking', items: ['scan', 'expenses', 'pools'] },
+  { category: 'cat.cards', items: ['debit', 'credit', 'installments', 'household'] },
+  { category: 'cat.reminders', items: ['warranty', 'notifications', 'reminders'] },
+  { category: 'cat.savings', items: ['savings', 'loyalty'] },
 ];
 ---
 
 <section id="funkcije" class="py-24 px-6 bg-secondary/40">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold mb-4">Funkcije</h2>
-      <div class="section-divider"></div>
+      <h2 class="text-3xl font-bold mb-3">{t('features.heading')}</h2>
+      <p class="text-text-muted">{t('features.subheading')}</p>
+      <div class="section-divider mt-6"></div>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <div class="space-y-14">
       {
-        features.map((feature) => (
-          <div class="p-6 rounded-xl bg-primary border border-secondary">
-            <h3 class="font-semibold text-lg mb-2">{feature.title}</h3>
-            <p class="text-text-muted text-sm leading-relaxed">{feature.body}</p>
+        groups.map((group) => (
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-accent-light mb-5">
+              {t(group.category)}
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-6">
+              {group.items.map((key) => (
+                <div class="flex gap-4 p-5 rounded-xl bg-primary border border-secondary">
+                  <div class="shrink-0 w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-accent-light">
+                    <Icon name={iconByFeature[key]} class="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold mb-1">{t(`feat.${key}.title` as TranslationKey)}</h4>
+                    <p class="text-text-muted text-sm leading-relaxed">
+                      {t(`feat.${key}.body` as TranslationKey)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         ))
       }
