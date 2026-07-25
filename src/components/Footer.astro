@@ -1,5 +1,6 @@
 ---
 import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import { TELEGRAM_URL } from '../site-config';
 
 interface Props {
   lang?: Lang;
@@ -12,7 +13,10 @@ const year = new Date().getFullYear();
 
 <footer id="kontakt" class="py-12 px-6 border-t border-secondary text-center">
   <p class="text-text-muted text-sm">
-    {t('footer.contact')} <a href="mailto:dasic.nikola@yandex.com" class="text-accent-light hover:underline">dasic.nikola@yandex.com</a>
+    {t('footer.contact')}{' '}
+    <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" class="text-accent-light hover:underline">
+      Telegram
+    </a>
   </p>
   <p class="text-text-muted text-xs mt-4">&copy; {year} {t('site.title')} — {t('footer.rights')}</p>
 </footer>

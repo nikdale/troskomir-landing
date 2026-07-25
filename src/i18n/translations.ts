@@ -17,6 +17,7 @@ export const translations = {
 
     'nav.features': 'Функције',
     'nav.privacy': 'Приватност',
+    'nav.about': 'О аутору',
     'nav.contact': 'Контакт',
 
     'hero.badge': 'Ускоро',
@@ -24,6 +25,8 @@ export const translations = {
     'hero.title2': 'комир',
     'hero.subtitle':
       'Трошкомир вам показује тачно где иде ваш новац: трошкови, картице, рате, штедња и подсетници — све прегледно, на једном месту.',
+    'cta.playStore': 'Преузми са Google Play-а',
+    'cta.appStore': 'Преузми са App Store-а',
 
     'features.heading': 'Шта Трошкомир уме',
     'features.subheading': 'Кратак преглед свих функција, да знате шта добијате.',
@@ -33,17 +36,21 @@ export const translations = {
     'cat.reminders': 'Подсетници и обавештења',
     'cat.savings': 'Штедња и лојалти',
 
-    'feat.scan.title': 'Скенирање рачуна',
+    'feat.scan.title': 'Скенирање фискалног рачуна',
     'feat.scan.body':
-      'Усликајте или скенирајте фискални рачун — апликација сама препознаје износ, продавницу и артикле, а ви само потврдите пре чувања.',
+      'Скенирајте QR код са фискалног рачуна камером телефона — апликација учитава податке директно са званичне странице Пореске управе (suf.purs.gov.rs) и сама уписује продавницу, износ и артикле.',
 
     'feat.expenses.title': 'Једнократни и редовни трошкови',
     'feat.expenses.body':
-      'Обичну куповину унесете за секунд. За кирију, претплате и рачуне који се понављају, поставите их једном — Трошкомир их сам уноси или вас подсећа да их потврдите.',
+      'Обичну куповину унесете за секунд. За трошкове који се понављају — кирију, претплате — изаберете једном да ли Трошкомир сам уписује трошак на дан доспећа, или само вас подсети да га потврдите.',
 
-    'feat.pools.title': 'Валутни буџетски базени',
+    'feat.pools.title': 'Валутни базени за путовања',
     'feat.pools.body':
-      'Групишите трошкове у буџете који могу да мешају динаре, евре и друге валуте у исти базен, и укључујете их или искључујете по потреби.',
+      'Купите девизе унапред — рецимо 700 евра за пут у Немачку — и Трошкомир закључа курс по којем сте их купили. Сваки трошак на путу се одбија по том закљученом курсу, а не по дневном, тако тачно знате колико вам је остало.',
+
+    'feat.budgets.title': 'Месечни буџети по категоријама',
+    'feat.budgets.body':
+      'Поставите месечни лимит за сваку категорију трошкова и добијете упозорење када га премашите — да знате где стварно прекорачујете.',
 
     'feat.debit.title': 'Дебитне картице',
     'feat.debit.body':
@@ -55,23 +62,23 @@ export const translations = {
 
     'feat.installments.title': 'Куповина на рате',
     'feat.installments.body':
-      'И дебитне и кредитне картице подржавају куповину на рате. Трошкомир прати колико рата је остало и сам уписује сваку доспелу рату.',
+      'Рате се прате као засебан кредит — важи и за дебитне и за кредитне картице. Трошкомир зна колико рата је остало и, ако желите, сам уписује сваку доспелу рату.',
 
-    'feat.household.title': 'Дељене картице домаћинства',
+    'feat.household.title': 'Дељено домаћинство',
     'feat.household.body':
-      'Заједничка картица домаћинства видљива је свим члановима — свако зна на шта је новац отишао.',
+      'Картице, трошкови, буџети, рате, штедња и валутни базени могу бити дељени са домаћинством — сваки члан види исте податке.',
 
     'feat.warranty.title': 'Гаранција на рачуну',
     'feat.warranty.body':
-      'Означите рачун као „под гаранцијом" и поставите датум истека — Трошкомир вас подсети пре него што гаранција прође.',
+      'При чувању рачуна изаберете трајање гаранције — 12, 24 (подразумевано) или 36 месеци. Месец дана пре истека, Трошкомир вас сам подсети да гаранција ускоро истиче.',
 
-    'feat.notifications.title': 'Обавештења о аутоматским ратама',
+    'feat.notifications.title': 'Дневни и недељни преглед',
     'feat.notifications.body':
-      'Свака аутоматски уписана рата или редован трошак стиже уз обавештење — дневно, недељно или месечно, путем и-мејла, push нотификације или директно у апликацији, како вам одговара.',
+      'Сваког јутра у 8 добијате преглед свега што је аутоматски уписано тог дана — редовни трошкови, приходи и рате. Сваког понедељка стиже и недељни преглед укупне потрошње за протеклу недељу.',
 
-    'feat.reminders.title': 'Подсетници за редовне трошкове',
+    'feat.reminders.title': 'Подсетници на дан доспећа',
     'feat.reminders.body':
-      'Пре него што доспе рачун за кирију или претплату, добијате подсетник да га прегледате и потврдите.',
+      'Ако не желите аутоматски упис, Трошкомир вам пошаље подсетник тачно на дан када редован трошак доспева, унапред заказан за наредних неколико доспећа.',
 
     'feat.savings.title': 'Циљеви штедње',
     'feat.savings.body':
@@ -83,7 +90,13 @@ export const translations = {
 
     'privacy.title': 'Приватност',
     'privacy.body':
-      'Осетљиви подаци — описи трошкова, рачуни и слично — енкриптовани су од уређаја до уређаја (end-to-end). Сервер чува само шифровани садржај и никада не види шта је унутра.',
+      'Осетљиви подаци — описи трошкова, рачуни и слично — енкриптовани су од уређаја до уређаја (end-to-end), тако да их ни ја не могу прочитати из базе. Искрено, не треба ми нити желим да знам шта купујете и од кога... мада признајем, праве цене кирија у Београду би биле забавне за знати.',
+
+    'about.heading': 'О аутору',
+    'about.name': 'Никола Дашић',
+    'about.bio':
+      'Ћао, ја сам Никола Дашић — софтверски инжењер. Трошкомир сам направио јер сам предуго водио своје трошкове у проклетим Excel табелама, па сам одлучио да направим нешто боље. Ради на мом кућном сервер-лабу, не у неком великом облаку — зато основне функције остају бесплатне. Ако имате питања или предлоге, јавите се.',
+    'about.linkedin': 'Повежимо се на LinkedIn-у',
 
     'footer.contact': 'Питања?',
     'footer.rights': 'Сва права задржана.',
@@ -95,6 +108,7 @@ export const translations = {
 
     'nav.features': 'Funkcije',
     'nav.privacy': 'Privatnost',
+    'nav.about': 'O autoru',
     'nav.contact': 'Kontakt',
 
     'hero.badge': 'Uskoro',
@@ -102,6 +116,8 @@ export const translations = {
     'hero.title2': 'komir',
     'hero.subtitle':
       'Troskomir vam pokazuje tačno gde ide vaš novac: troškovi, kartice, rate, štednja i podsetnici — sve pregledno, na jednom mestu.',
+    'cta.playStore': 'Preuzmi sa Google Play-a',
+    'cta.appStore': 'Preuzmi sa App Store-a',
 
     'features.heading': 'Šta Troskomir ume',
     'features.subheading': 'Kratak pregled svih funkcija, da znate šta dobijate.',
@@ -111,17 +127,21 @@ export const translations = {
     'cat.reminders': 'Podsetnici i obaveštenja',
     'cat.savings': 'Štednja i lojalti',
 
-    'feat.scan.title': 'Skeniranje računa',
+    'feat.scan.title': 'Skeniranje fiskalnog računa',
     'feat.scan.body':
-      'Uslikajte ili skenirajte fiskalni račun — aplikacija sama prepoznaje iznos, prodavnicu i artikle, a vi samo potvrdite pre čuvanja.',
+      'Skenirajte QR kod sa fiskalnog računa kamerom telefona — aplikacija učitava podatke direktno sa zvanične stranice Poreske uprave (suf.purs.gov.rs) i sama upisuje prodavnicu, iznos i artikle.',
 
     'feat.expenses.title': 'Jednokratni i redovni troškovi',
     'feat.expenses.body':
-      'Običnu kupovinu unesete za sekund. Za kiriju, pretplate i račune koji se ponavljaju, postavite ih jednom — Troskomir ih sam unosi ili vas podseća da ih potvrdite.',
+      'Običnu kupovinu unesete za sekund. Za troškove koji se ponavljaju — kiriju, pretplate — izaberete jednom da li Troskomir sam upisuje trošak na dan dospeća, ili samo vas podseti da ga potvrdite.',
 
-    'feat.pools.title': 'Valutni budžetski bazeni',
+    'feat.pools.title': 'Valutni bazeni za putovanja',
     'feat.pools.body':
-      'Grupišite troškove u budžete koji mogu da mešaju dinare, evre i druge valute u isti bazen, i uključujete ih ili isključujete po potrebi.',
+      'Kupite devize unapred — recimo 700 evra za put u Nemačku — i Troskomir zaključa kurs po kome ste ih kupili. Svaki trošak na putu se odbija po tom zaključanom kursu, a ne po dnevnom, tako tačno znate koliko vam je ostalo.',
+
+    'feat.budgets.title': 'Mesečni budžeti po kategorijama',
+    'feat.budgets.body':
+      'Postavite mesečni limit za svaku kategoriju troškova i dobijete upozorenje kada ga premašite — da znate gde stvarno prekoračujete.',
 
     'feat.debit.title': 'Debitne kartice',
     'feat.debit.body':
@@ -133,23 +153,23 @@ export const translations = {
 
     'feat.installments.title': 'Kupovina na rate',
     'feat.installments.body':
-      'I debitne i kreditne kartice podržavaju kupovinu na rate. Troskomir prati koliko rata je ostalo i sam upisuje svaku dospelu ratu.',
+      'Rate se prate kao zaseban kredit — važi i za debitne i za kreditne kartice. Troskomir zna koliko rata je ostalo i, ako želite, sam upisuje svaku dospelu ratu.',
 
-    'feat.household.title': 'Deljene kartice domaćinstva',
+    'feat.household.title': 'Deljeno domaćinstvo',
     'feat.household.body':
-      'Zajednička kartica domaćinstva vidljiva je svim članovima — svako zna na šta je novac otišao.',
+      'Kartice, troškovi, budžeti, rate, štednja i valutni bazeni mogu biti deljeni sa domaćinstvom — svaki član vidi iste podatke.',
 
     'feat.warranty.title': 'Garancija na računu',
     'feat.warranty.body':
-      'Označite račun kao „pod garancijom" i postavite datum isteka — Troskomir vas podseti pre nego što garancija prođe.',
+      'Pri čuvanju računa izaberete trajanje garancije — 12, 24 (podrazumevano) ili 36 meseci. Mesec dana pre isteka, Troskomir vas sam podseti da garancija uskoro ističe.',
 
-    'feat.notifications.title': 'Obaveštenja o automatskim ratama',
+    'feat.notifications.title': 'Dnevni i nedeljni pregled',
     'feat.notifications.body':
-      'Svaka automatski upisana rata ili redovan trošak stiže uz obaveštenje — dnevno, nedeljno ili mesečno, putem imejla, push notifikacije ili direktno u aplikaciji, kako vam odgovara.',
+      'Svakog jutra u 8 dobijate pregled svega što je automatski upisano tog dana — redovni troškovi, prihodi i rate. Svakog ponedeljka stiže i nedeljni pregled ukupne potrošnje za proteklu nedelju.',
 
-    'feat.reminders.title': 'Podsetnici za redovne troškove',
+    'feat.reminders.title': 'Podsetnici na dan dospeća',
     'feat.reminders.body':
-      'Pre nego što dospe račun za kiriju ili pretplatu, dobijate podsetnik da ga pregledate i potvrdite.',
+      'Ako ne želite automatski upis, Troskomir vam pošalje podsetnik tačno na dan kada redovan trošak dospeva, unapred zakazan za narednih nekoliko dospeća.',
 
     'feat.savings.title': 'Ciljevi štednje',
     'feat.savings.body':
@@ -161,7 +181,13 @@ export const translations = {
 
     'privacy.title': 'Privatnost',
     'privacy.body':
-      'Osetljivi podaci — opisi troškova, računi i slično — enkriptovani su od uređaja do uređaja (end-to-end). Server čuva samo šifrovani sadržaj i nikada ne vidi šta je unutra.',
+      'Osetljivi podaci — opisi troškova, računi i slično — enkriptovani su od uređaja do uređaja (end-to-end), tako da ih ni ja ne mogu pročitati iz baze. Iskreno, ne treba mi niti želim da znam šta kupujete i od koga... mada priznajem, prave cene kirija u Beogradu bi bile zabavne za znati.',
+
+    'about.heading': 'O autoru',
+    'about.name': 'Nikola Dašić',
+    'about.bio':
+      'Ćao, ja sam Nikola Dašić — softverski inženjer. Troskomir sam napravio jer sam predugo vodio svoje troškove u prokletim Excel tabelama, pa sam odlučio da napravim nešto bolje. Radi na mom kućnom server-labu, ne u nekom velikom oblaku — zato osnovne funkcije ostaju besplatne. Ako imate pitanja ili predloge, javite se.',
+    'about.linkedin': 'Povežimo se na LinkedIn-u',
 
     'footer.contact': 'Pitanja?',
     'footer.rights': 'Sva prava zadržana.',
@@ -173,6 +199,7 @@ export const translations = {
 
     'nav.features': 'Features',
     'nav.privacy': 'Privacy',
+    'nav.about': 'About',
     'nav.contact': 'Contact',
 
     'hero.badge': 'Coming soon',
@@ -180,6 +207,8 @@ export const translations = {
     'hero.title2': 'komir',
     'hero.subtitle':
       'Troskomir shows you exactly where your money goes: expenses, cards, installments, savings and reminders — all in one place.',
+    'cta.playStore': 'Get it on Google Play',
+    'cta.appStore': 'Download on the App Store',
 
     'features.heading': 'What Troskomir does',
     'features.subheading': "A quick rundown of every feature, so you know what you're getting.",
@@ -189,17 +218,21 @@ export const translations = {
     'cat.reminders': 'Reminders & notifications',
     'cat.savings': 'Savings & loyalty',
 
-    'feat.scan.title': 'Receipt scanning',
+    'feat.scan.title': 'Fiscal receipt scanning',
     'feat.scan.body':
-      'Snap a photo or scan a fiscal receipt — the app reads the amount, store and items automatically, and you just confirm before saving.',
+      "Scan the QR code on a Serbian fiscal receipt with your phone's camera — the app pulls the data straight from the Tax Administration's official page (suf.purs.gov.rs) and fills in the store, amount and items.",
 
     'feat.expenses.title': 'One-time & recurring expenses',
     'feat.expenses.body':
-      'Log a regular purchase in seconds. For rent, subscriptions and bills that repeat, set them up once — Troskomir logs them automatically or reminds you to confirm.',
+      'Log a regular purchase in seconds. For expenses that repeat — rent, subscriptions — choose once whether Troskomir logs the expense automatically on the due date, or just reminds you to confirm it.',
 
-    'feat.pools.title': 'Multi-currency budget pools',
+    'feat.pools.title': 'Currency pools for trips',
     'feat.pools.body':
-      'Group expenses into budgets that can mix dinars, euros and other currencies in the same pool, and turn them on or off whenever you need.',
+      "Buy foreign currency upfront — say €700 for a trip to Germany — and Troskomir locks in the exchange rate you paid. Every expense on the trip is deducted at that locked rate, not the daily rate, so you always know exactly how much is left.",
+
+    'feat.budgets.title': 'Monthly category budgets',
+    'feat.budgets.body':
+      "Set a monthly limit for each expense category and get an alert when you go over it — so you know exactly where you're overspending.",
 
     'feat.debit.title': 'Debit cards',
     'feat.debit.body':
@@ -211,23 +244,23 @@ export const translations = {
 
     'feat.installments.title': 'Installment purchases',
     'feat.installments.body':
-      "Both debit and credit cards support installment purchases. Troskomir tracks how many installments are left and logs each one automatically as it's due.",
+      'Installments are tracked as a separate loan — on either a debit or a credit card. Troskomir knows how many installments are left and, if you want, logs each due one automatically.',
 
-    'feat.household.title': 'Shared household cards',
+    'feat.household.title': 'Shared household',
     'feat.household.body':
-      'A shared household card is visible to every member — everyone can see where the money went.',
+      'Cards, expenses, budgets, installments, savings and currency pools can all be shared with your household — every member sees the same data.',
 
     'feat.warranty.title': 'Receipt warranty tracking',
     'feat.warranty.body':
-      'Mark a receipt as "under warranty" and set an expiry date — Troskomir reminds you before the warranty runs out.',
+      'When you save a receipt, pick a warranty length — 12, 24 (default) or 36 months. A month before it expires, Troskomir reminds you on its own.',
 
-    'feat.notifications.title': 'Automatic installment notifications',
+    'feat.notifications.title': 'Daily & weekly summaries',
     'feat.notifications.body':
-      'Every automatically logged installment or recurring expense comes with a notification — daily, weekly or monthly, by email, push, or right inside the app, whichever you prefer.',
+      'Every morning at 8, you get a summary of everything auto-logged that day — recurring expenses, income and installments. Every Monday, a weekly digest of your total spending for the past week arrives too.',
 
-    'feat.reminders.title': 'Recurring expense reminders',
+    'feat.reminders.title': 'Due-date reminders',
     'feat.reminders.body':
-      'Before a rent payment or subscription is due, you get a reminder to review and confirm it.',
+      "If you'd rather not auto-log it, Troskomir sends a reminder on the exact day a recurring expense is due, scheduled ahead for the next several occurrences.",
 
     'feat.savings.title': 'Savings goals',
     'feat.savings.body':
@@ -239,7 +272,13 @@ export const translations = {
 
     'privacy.title': 'Privacy',
     'privacy.body':
-      "Sensitive data — expense descriptions, receipts and the like — is encrypted end-to-end. The server only ever stores ciphertext and never sees what's inside.",
+      "Sensitive data — expense descriptions, receipts and the like — is encrypted end-to-end, so not even I can read it from the database. Honestly, I don't need or want to know what you're buying and from whom... though I'll admit real Belgrade rent prices would be fun to know.",
+
+    'about.heading': 'About the author',
+    'about.name': 'Nikola Dašić',
+    'about.bio':
+      "Hi, I'm Nikola Dašić — a software engineer. I built Troskomir because I spent way too many years tracking my own expenses in cursed Excel spreadsheets and finally decided to build something better. It runs on my own home server lab, not some big commercial cloud — which is exactly why the core features stay free. If you have questions or suggestions, feel free to reach out.",
+    'about.linkedin': 'Connect on LinkedIn',
 
     'footer.contact': 'Questions?',
     'footer.rights': 'All rights reserved.',
@@ -251,6 +290,7 @@ export const translations = {
 
     'nav.features': 'Функции',
     'nav.privacy': 'Конфиденциальность',
+    'nav.about': 'Об авторе',
     'nav.contact': 'Контакты',
 
     'hero.badge': 'Скоро',
@@ -258,6 +298,8 @@ export const translations = {
     'hero.title2': 'комир',
     'hero.subtitle':
       'Трошкомир точно показывает, куда уходят ваши деньги: расходы, карты, рассрочка, накопления и напоминания — всё в одном месте.',
+    'cta.playStore': 'Загрузите в Google Play',
+    'cta.appStore': 'Загрузите в App Store',
 
     'features.heading': 'Что умеет Трошкомир',
     'features.subheading': 'Короткий обзор всех функций, чтобы вы знали, что получаете.',
@@ -267,17 +309,21 @@ export const translations = {
     'cat.reminders': 'Напоминания и уведомления',
     'cat.savings': 'Накопления и лояльность',
 
-    'feat.scan.title': 'Сканирование чеков',
+    'feat.scan.title': 'Сканирование фискального чека',
     'feat.scan.body':
-      'Сфотографируйте или отсканируйте фискальный чек — приложение само распознаёт сумму, магазин и товары, вам остаётся только подтвердить перед сохранением.',
+      'Отсканируйте QR-код на фискальном чеке камерой телефона — приложение получает данные напрямую со страницы Налоговой администрации (suf.purs.gov.rs) и само заполняет магазин, сумму и товары.',
 
     'feat.expenses.title': 'Разовые и регулярные расходы',
     'feat.expenses.body':
-      'Обычную покупку вносите за секунду. Для аренды, подписок и повторяющихся счетов настройте их один раз — Трошкомир сам их вносит или напоминает подтвердить.',
+      'Обычную покупку вносите за секунду. Для повторяющихся расходов — аренда, подписки — один раз выбираете: пусть Трошкомир сам вносит расход в день платежа, либо просто напоминает подтвердить его.',
 
-    'feat.pools.title': 'Валютные бюджетные пулы',
+    'feat.pools.title': 'Валютные пулы для поездок',
     'feat.pools.body':
-      'Группируйте расходы в бюджеты, которые могут объединять динары, евро и другие валюты в одном пуле, и включайте или отключайте их по мере необходимости.',
+      'Купите валюту заранее — например, 700 евро для поездки в Германию — и Трошкомир зафиксирует курс покупки. Каждый расход в поездке списывается по этому зафиксированному курсу, а не по текущему, так что вы всегда точно знаете, сколько осталось.',
+
+    'feat.budgets.title': 'Месячные бюджеты по категориям',
+    'feat.budgets.body':
+      'Установите месячный лимит для каждой категории расходов и получайте уведомление при его превышении — чтобы точно знать, где вы перерасходуете.',
 
     'feat.debit.title': 'Дебетовые карты',
     'feat.debit.body':
@@ -289,23 +335,23 @@ export const translations = {
 
     'feat.installments.title': 'Покупки в рассрочку',
     'feat.installments.body':
-      'И дебетовые, и кредитные карты поддерживают покупки в рассрочку. Трошкомир отслеживает, сколько платежей осталось, и сам вносит каждый очередной платёж.',
+      'Рассрочка отслеживается как отдельный кредит — неважно, дебетовая карта или кредитная. Трошкомир знает, сколько платежей осталось, и, если хотите, сам вносит каждый очередной платёж.',
 
-    'feat.household.title': 'Общие карты домохозяйства',
+    'feat.household.title': 'Общее домохозяйство',
     'feat.household.body':
-      'Общая карта домохозяйства видна всем членам семьи — каждый видит, куда ушли деньги.',
+      'Карты, расходы, бюджеты, рассрочки, накопления и валютные пулы можно сделать общими для домохозяйства — каждый участник видит одни и те же данные.',
 
     'feat.warranty.title': 'Гарантия по чеку',
     'feat.warranty.body':
-      'Отметьте чек как «на гарантии» и укажите дату окончания — Трошкомир напомнит вам до истечения гарантии.',
+      'При сохранении чека вы выбираете срок гарантии — 12, 24 (по умолчанию) или 36 месяцев. За месяц до истечения Трошкомир сам напомнит вам об этом.',
 
-    'feat.notifications.title': 'Уведомления об автоматических платежах',
+    'feat.notifications.title': 'Ежедневные и еженедельные сводки',
     'feat.notifications.body':
-      'Каждый автоматически внесённый платёж по рассрочке или регулярный расход сопровождается уведомлением — ежедневно, еженедельно или ежемесячно, по email, push-уведомлением или прямо в приложении — как вам удобно.',
+      'Каждое утро в 8 вы получаете сводку всего, что было автоматически внесено за день — регулярные расходы, доходы и платежи по рассрочке. Каждый понедельник приходит ещё и недельная сводка общих расходов за прошедшую неделю.',
 
-    'feat.reminders.title': 'Напоминания о регулярных расходах',
+    'feat.reminders.title': 'Напоминания в день платежа',
     'feat.reminders.body':
-      'Перед тем как наступит срок оплаты аренды или подписки, вы получаете напоминание проверить и подтвердить его.',
+      'Если не хотите автоматический учёт, Трошкомир пришлёт напоминание точно в день, когда наступает регулярный расход — заранее запланировано на несколько ближайших платежей.',
 
     'feat.savings.title': 'Цели накоплений',
     'feat.savings.body':
@@ -317,7 +363,13 @@ export const translations = {
 
     'privacy.title': 'Конфиденциальность',
     'privacy.body':
-      'Чувствительные данные — описания расходов, чеки и подобное — зашифрованы end-to-end. Сервер хранит только зашифрованное содержимое и никогда не видит, что внутри.',
+      'Чувствительные данные — описания расходов, чеки и подобное — зашифрованы end-to-end, так что даже я не могу прочитать их из базы. Честно говоря, мне не нужно и не хочется знать, что вы покупаете и у кого... хотя было бы забавно узнать реальные цены на аренду в Белграде.',
+
+    'about.heading': 'Об авторе',
+    'about.name': 'Никола Дашич',
+    'about.bio':
+      'Привет, я Никола Дашич — инженер-программист. Я сделал Трошкомир, потому что слишком долго вёл учёт своих расходов в проклятых Excel-таблицах и наконец решил сделать что-то лучше. Он работает на моём домашнем сервере, а не в большом коммерческом облаке — именно поэтому основные функции остаются бесплатными. Если у вас есть вопросы или предложения, пишите.',
+    'about.linkedin': 'Давайте свяжемся в LinkedIn',
 
     'footer.contact': 'Вопросы?',
     'footer.rights': 'Все права защищены.',

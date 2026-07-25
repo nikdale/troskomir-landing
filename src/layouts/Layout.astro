@@ -31,6 +31,7 @@ const alternateUrls = getAlternateUrls(Astro.url.pathname, Astro.site?.toString(
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={ogLocale} />
+    <meta property="og:image" content={`${Astro.site?.toString() || ''}app-icon.png`} />
 
     <!-- Alternate language links -->
     {alternateUrls.map(({ lang: altLang, url }) => (
@@ -45,7 +46,7 @@ const alternateUrls = getAlternateUrls(Astro.url.pathname, Astro.site?.toString(
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" type="image/png" href={`${base}app-icon.png`} />
     <title>{title}</title>
   </head>
   <body class="min-h-screen bg-primary text-text antialiased">

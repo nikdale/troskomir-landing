@@ -1,5 +1,6 @@
 ---
 import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import { PLAY_STORE_URL, APP_STORE_URL } from '../site-config';
 
 interface Props {
   lang?: Lang;
@@ -23,5 +24,23 @@ const t = useTranslations(lang);
     <p class="text-lg sm:text-xl text-text-muted max-w-xl mx-auto">
       {t('hero.subtitle')}
     </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+      <a
+        href={PLAY_STORE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
+      >
+        {t('cta.playStore')}
+      </a>
+      <a
+        href={APP_STORE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
+      >
+        {t('cta.appStore')}
+      </a>
+    </div>
   </div>
 </section>

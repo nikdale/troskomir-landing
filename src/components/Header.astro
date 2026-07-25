@@ -1,5 +1,12 @@
 ---
-import { useTranslations, type Lang, defaultLang, getLocalizedPath, languages } from '../i18n/utils';
+import {
+  useTranslations,
+  type Lang,
+  defaultLang,
+  getLocalizedPath,
+  getPathWithoutLang,
+  languages,
+} from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
@@ -8,17 +15,25 @@ interface Props {
 const { lang = defaultLang } = Astro.props;
 const t = useTranslations(lang);
 const base = import.meta.env.BASE_URL;
+const homePath = getLocalizedPath('', lang, base);
 
+// Anchors only exist on the homepage — link back there with the anchor so
+// they still work from other pages (e.g. About).
 const navItems = [
-  { href: '#funkcije', label: t('nav.features') },
-  { href: '#privatnost', label: t('nav.privacy') },
-  { href: '#kontakt', label: t('nav.contact') },
+  { href: `${homePath}#funkcije`, label: t('nav.features') },
+  { href: `${homePath}#privatnost`, label: t('nav.privacy') },
+  { href: getLocalizedPath('about', lang, base), label: t('nav.about') },
+  { href: `${homePath}#kontakt`, label: t('nav.contact') },
 ];
+
+// Preserve the current page (home vs about) when switching language.
+const currentPath = getPathWithoutLang(Astro.url.pathname.replace(base, '/'));
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 bg-primary/80 backdrop-blur border-b border-secondary">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-    <a href={getLocalizedPath('', lang, base)} class="text-lg font-semibold tracking-tight text-text shrink-0">
+    <a href={homePath} class="flex items-center gap-2 text-lg font-semibold tracking-tight text-text shrink-0">
+      <img src={`${base}app-icon.png`} alt="" width="28" height="28" class="rounded-lg" />
       {t('hero.title1')}<span class="accent-gradient">{t('hero.title2')}</span>
     </a>
     <nav class="hidden sm:flex gap-6 text-sm text-text-muted">
@@ -29,7 +44,7 @@ const navItems = [
     <div class="flex gap-1 text-xs">
       {Object.keys(languages).map((code) => (
         <a
-          href={getLocalizedPath('', code as Lang, base)}
+          href={getLocalizedPath(currentPath, code as Lang, base)}
           class={`px-2 py-1 rounded transition-colors font-medium ${
             lang === code ? 'bg-secondary text-accent-light' : 'text-text-muted hover:text-text'
           }`}

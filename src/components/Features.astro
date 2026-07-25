@@ -14,6 +14,7 @@ type FeatureKey =
   | 'scan'
   | 'expenses'
   | 'pools'
+  | 'budgets'
   | 'debit'
   | 'credit'
   | 'installments'
@@ -35,12 +36,14 @@ type IconName =
   | 'bell'
   | 'clock'
   | 'piggybank'
-  | 'tag';
+  | 'tag'
+  | 'chart';
 
 const iconByFeature: Record<FeatureKey, IconName> = {
   scan: 'scan',
   expenses: 'receipt',
   pools: 'layers',
+  budgets: 'chart',
   debit: 'card',
   credit: 'card',
   installments: 'repeat',
@@ -53,7 +56,7 @@ const iconByFeature: Record<FeatureKey, IconName> = {
 };
 
 const groups: { category: TranslationKey; items: FeatureKey[] }[] = [
-  { category: 'cat.tracking', items: ['scan', 'expenses', 'pools'] },
+  { category: 'cat.tracking', items: ['scan', 'expenses', 'pools', 'budgets'] },
   { category: 'cat.cards', items: ['debit', 'credit', 'installments', 'household'] },
   { category: 'cat.reminders', items: ['warranty', 'notifications', 'reminders'] },
   { category: 'cat.savings', items: ['savings', 'loyalty'] },
