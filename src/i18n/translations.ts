@@ -96,7 +96,7 @@ export const translations = {
     'about.heading': 'О аутору',
     'about.name': 'Никола Дашић',
     'about.bio':
-      'Ћао, ја сам Никола Дашић — софтверски инжењер. Трошкомир сам направио јер сам предуго водио своје трошкове у проклетим Excel табелама, па сам одлучио да направим нешто боље. Ради на мом кућном сервер-лабу, не у неком великом облаку — зато основне функције остају бесплатне. Ако имате питања или предлоге, јавите се.',
+      'Ћао, ја сам Никола Дашић — програмер, отац, радио аматер, тип са превише хобија, узгајивач кокошака, поносни власник Дачије, редовни купац у ИКЕИ, поборник GNU/Linux-а, електротехничар електронике, православни хришћанин, посвећеник теретани, поштовалац говеђе пршуте, обожавалац Yandex-а, бициклистички бади, и неко ко је годинама пратио своје трошкове у проклетом Excel-у... док нисам одлучио да направим нешто боље. Трошкомир ради на мом кућном сервер-лабу, не у неком великом облаку — зато основне функције остају бесплатне. Ако имате питања или предлоге, јавите се.',
     'about.linkedin': 'Повежимо се на LinkedIn-у',
 
     'footer.contact': 'Питања?',
@@ -185,7 +185,7 @@ export const translations = {
     'about.heading': 'O autoru',
     'about.name': 'Nikola Dašić',
     'about.bio':
-      'Ćao, ja sam Nikola Dašić — softverski inženjer. Troskomir sam napravio jer sam predugo vodio svoje troškove u prokletim Excel tabelama, pa sam odlučio da napravim nešto bolje. Radi na mom kućnom server-labu, ne u nekom velikom oblaku — zato osnovne funkcije ostaju besplatne. Ako imate pitanja ili predloge, javite se.',
+      'Ćao, ja sam Nikola Dašić — programer, otac, radio amater, tip sa previše hobija, uzgajivač kokošaka, ponosni vlasnik Dačije, redovni kupac u IKEI, pobornik GNU/Linux-a, elektrotehničar elektronike, pravoslavni hrišćanin, posvećenik teretani, poštovalac goveđe pršute, obožavalac Yandex-a, biciklistički badi, i neko ko je godinama pratio svoje troškove u prokletom Excel-u... dok nisam odlučio da napravim nešto bolje. Troskomir radi na mom kućnom server-labu, ne u nekom velikom oblaku — zato osnovne funkcije ostaju besplatne. Ako imate pitanja ili predloge, javite se.',
     'about.linkedin': 'Povežimo se na LinkedIn-u',
 
     'footer.contact': 'Pitanja?',
@@ -274,7 +274,7 @@ export const translations = {
     'about.heading': 'About the author',
     'about.name': 'Nikola Dašić',
     'about.bio':
-      "Hi, I'm Nikola Dašić — a software engineer. I built Troskomir because I spent way too many years tracking my own expenses in cursed Excel spreadsheets and finally decided to build something better. It runs on my own home server lab, not some big commercial cloud — which is exactly why the core features stay free. If you have questions or suggestions, feel free to reach out.",
+      "Hi, I'm Nikola Dašić — a software engineer, father, HAM radio operator, a guy with way too many hobbies, chicken farmer, Dacia owner, IKEA regular, GNU/Linux supporter, electronics technician, Orthodox Christian, gym-goer, prosciutto connoisseur, Yandex admirer, cycling buddy, and someone who tracked my own expenses in cursed Excel spreadsheets for way too many years... until I decided to just build something better. Troskomir runs on my own home server lab, not some big commercial cloud — which is exactly why the core features stay free. If you have questions or suggestions, feel free to reach out.",
     'about.linkedin': 'Connect on LinkedIn',
 
     'footer.contact': 'Questions?',
@@ -363,7 +363,7 @@ export const translations = {
     'about.heading': 'Об авторе',
     'about.name': 'Никола Дашич',
     'about.bio':
-      'Привет, я Никола Дашич — инженер-программист. Я сделал Трошкомир, потому что слишком долго вёл учёт своих расходов в проклятых Excel-таблицах и наконец решил сделать что-то лучше. Он работает на моём домашнем сервере, а не в большом коммерческом облаке — именно поэтому основные функции остаются бесплатными. Если у вас есть вопросы или предложения, пишите.',
+      'Привет, я Никола Дашич — инженер-программист, отец, радиолюбитель (HAM), человек со слишком большим количеством увлечений, птицевод, владелец Dacia, завсегдатай IKEA, сторонник GNU/Linux, специалист по электронике, православный христианин, любитель спортзала, ценитель прошутто, поклонник Яндекса, велосипедный товарищ и тот, кто годами вёл учёт своих расходов в проклятом Excel’е... пока не решил сделать что-то получше. Трошкомир работает на моём домашнем сервере, а не в большом коммерческом облаке — именно поэтому основные функции остаются бесплатными. Если у вас есть вопросы или предложения, пишите.',
     'about.linkedin': 'Давайте свяжемся в LinkedIn',
 
     'footer.contact': 'Вопросы?',
