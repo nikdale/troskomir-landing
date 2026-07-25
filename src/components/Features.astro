@@ -1,0 +1,47 @@
+---
+const features = [
+  {
+    title: 'Valutni budžetski bazeni',
+    body: 'Grupišite troškove u budžete koji mogu da mešaju više valuta, i uključite ih ili isključite po potrebi.',
+  },
+  {
+    title: 'Redovni troškovi',
+    body: 'Podsetnici i automatsko beleženje za kiriju, pretplate i druge troškove koji se ponavljaju.',
+  },
+  {
+    title: 'Ciljevi štednje',
+    body: 'Pratite uplate i isplate ka svakom cilju štednje ili investicije posebno.',
+  },
+  {
+    title: 'Lojalti i poklon kartice',
+    body: 'Sve kartice na jednom mestu, uz stanje i istoriju korišćenja.',
+  },
+  {
+    title: 'Deljeni troškovi domaćinstva',
+    body: 'Zajedničke kartice i troškovi vidljivi svim članovima domaćinstva.',
+  },
+  {
+    title: 'Skeniranje računa',
+    body: 'Fotografišite ili skenirajte fiskalni račun i podaci se automatski upisuju.',
+  },
+];
+---
+
+<section id="funkcije" class="py-24 px-6 bg-secondary/40">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4">Funkcije</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        features.map((feature) => (
+          <div class="p-6 rounded-xl bg-primary border border-secondary">
+            <h3 class="font-semibold text-lg mb-2">{feature.title}</h3>
+            <p class="text-text-muted text-sm leading-relaxed">{feature.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
