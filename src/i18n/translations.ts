@@ -1,6 +1,9 @@
+// Matches the exact wording of the mobile app's own language picker
+// (AppLanguage.nativeName in language_provider.dart) — always the
+// endonym, regardless of the current page's language.
 export const languages = {
-  sr: 'Српски',
-  'sr-Latn': 'Srpski',
+  sr: 'Српски (ћирилица)',
+  'sr-Latn': 'Srpski (latinica)',
   en: 'English',
   ru: 'Русский',
 } as const;
@@ -21,8 +24,6 @@ export const translations = {
     'nav.contact': 'Контакт',
 
     'hero.badge': 'Ускоро',
-    'hero.title1': 'Трош',
-    'hero.title2': 'комир',
     'hero.subtitle':
       'Трошкомир вам показује тачно где иде ваш новац: трошкови, картице, рате, штедња и подсетници — све прегледно, на једном месту.',
     'cta.playStore': 'Преузми са Google Play-а',
@@ -112,8 +113,6 @@ export const translations = {
     'nav.contact': 'Kontakt',
 
     'hero.badge': 'Uskoro',
-    'hero.title1': 'Troš',
-    'hero.title2': 'komir',
     'hero.subtitle':
       'Troskomir vam pokazuje tačno gde ide vaš novac: troškovi, kartice, rate, štednja i podsetnici — sve pregledno, na jednom mestu.',
     'cta.playStore': 'Preuzmi sa Google Play-a',
@@ -203,8 +202,6 @@ export const translations = {
     'nav.contact': 'Contact',
 
     'hero.badge': 'Coming soon',
-    'hero.title1': 'Tros',
-    'hero.title2': 'komir',
     'hero.subtitle':
       'Troskomir shows you exactly where your money goes: expenses, cards, installments, savings and reminders — all in one place.',
     'cta.playStore': 'Get it on Google Play',
@@ -294,8 +291,6 @@ export const translations = {
     'nav.contact': 'Контакты',
 
     'hero.badge': 'Скоро',
-    'hero.title1': 'Трош',
-    'hero.title2': 'комир',
     'hero.subtitle':
       'Трошкомир точно показывает, куда уходят ваши деньги: расходы, карты, рассрочка, накопления и напоминания — всё в одном месте.',
     'cta.playStore': 'Загрузите в Google Play',

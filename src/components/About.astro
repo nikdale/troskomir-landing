@@ -14,14 +14,13 @@ const t = useTranslations(lang);
   <div class="max-w-xl mx-auto text-center">
     <h1 class="text-3xl font-bold mb-10">{t('about.heading')}</h1>
 
-    <!--
-      TODO: replace with a real photo once available — drop the file in
-      public/ (e.g. public/nikola.jpg) and swap this placeholder for
-      <img src={`${import.meta.env.BASE_URL}nikola.jpg`} alt={t('about.name')} class="..." />
-    -->
-    <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-secondary border border-accent/30 flex items-center justify-center text-4xl font-bold text-accent-light">
-      {t('about.name').charAt(0)}
-    </div>
+    <img
+      src={`${import.meta.env.BASE_URL}nikola.jpg`}
+      alt={t('about.name')}
+      width="128"
+      height="128"
+      class="w-32 h-32 mx-auto mb-6 rounded-full object-cover border border-accent/30"
+    />
 
     <p class="font-semibold text-lg mb-4">{t('about.name')}</p>
     <p class="text-text-muted leading-relaxed mb-8">{t('about.bio')}</p>
