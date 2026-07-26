@@ -1,5 +1,5 @@
 ---
-import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import { useTranslations, type Lang, defaultLang, getLocalizedPath } from '../i18n/utils';
 import { TELEGRAM_URL } from '../site-config';
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
 
 const { lang = defaultLang } = Astro.props;
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
 const year = new Date().getFullYear();
 ---
 
@@ -19,4 +20,9 @@ const year = new Date().getFullYear();
     </a>
   </p>
   <p class="text-text-muted text-xs mt-4">&copy; {year} {t('site.title')} — {t('footer.rights')}</p>
+  <p class="text-text-muted text-xs mt-2">
+    <a href={getLocalizedPath('delete-account', lang, base)} class="hover:text-text hover:underline transition-colors">
+      {t('nav.deleteAccount')}
+    </a>
+  </p>
 </footer>

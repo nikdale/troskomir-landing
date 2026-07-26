@@ -19,6 +19,7 @@ export const translations = {
     'nav.privacy': 'Приватност',
     'nav.about': 'О аутору',
     'nav.contact': 'Контакт',
+    'nav.deleteAccount': 'Брисање налога',
 
     'hero.badge': 'Ускоро',
     'hero.title1': 'Трош',
@@ -100,6 +101,32 @@ export const translations = {
 
     'footer.contact': 'Питања?',
     'footer.rights': 'Сва права задржана.',
+
+    'deleteAccount.title': 'Брисање налога',
+    'deleteAccount.intro':
+      'Овде можете затражити трајно брисање свог Трошкомир налога и свих података везаних за њега. Унесите имејл адресу коју користите за пријаву — послаћемо вам шестоцифрени код за потврду.',
+    'deleteAccount.emailLabel': 'Имејл адреса',
+    'deleteAccount.emailPlaceholder': 'vasa@adresa.com',
+    'deleteAccount.sendCodeButton': 'Пошаљи код за потврду',
+    'deleteAccount.sending': 'Слање...',
+    'deleteAccount.codeSentIntro': 'Послали смо шестоцифрени код на:',
+    'deleteAccount.codeLabel': 'Код за потврду',
+    'deleteAccount.warning':
+      'Пажња: ова радња је трајна и не може се опозвати. Сви ваши подаци — трошкови, картице, штедња, рачуни и остало — биће неповратно обрисани.',
+    'deleteAccount.confirmButton': 'Трајно обриши налог',
+    'deleteAccount.deleting': 'Брисање...',
+    'deleteAccount.confirmPrompt':
+      'Да ли сте потпуно сигурни? Ова радња се не може опозвати.',
+    'deleteAccount.backButton': 'Промени имејл адресу',
+    'deleteAccount.successTitle': 'Налог је обрисан',
+    'deleteAccount.successBody':
+      'Ваш налог и сви подаци су трајно обрисани. Хвала што сте користили Трошкомир.',
+    'deleteAccount.errorGeneric':
+      'Дошло је до грешке. Покушајте поново за неколико тренутака.',
+    'deleteAccount.errorRateLimited':
+      'Превише покушаја. Сачекајте минут па покушајте поново.',
+    'deleteAccount.errorInvalidCode':
+      'Нетачан или истекао код. Проверите код или затражите нови.',
   },
   'sr-Latn': {
     'site.title': 'Troskomir',
@@ -110,6 +137,7 @@ export const translations = {
     'nav.privacy': 'Privatnost',
     'nav.about': 'O autoru',
     'nav.contact': 'Kontakt',
+    'nav.deleteAccount': 'Brisanje naloga',
 
     'hero.badge': 'Uskoro',
     'hero.title1': 'Troš',
@@ -191,6 +219,32 @@ export const translations = {
 
     'footer.contact': 'Pitanja?',
     'footer.rights': 'Sva prava zadržana.',
+
+    'deleteAccount.title': 'Brisanje naloga',
+    'deleteAccount.intro':
+      'Ovde možete zatražiti trajno brisanje svog Troskomir naloga i svih podataka vezanih za njega. Unesite imejl adresu koju koristite za prijavu — poslaćemo vam šestocifreni kod za potvrdu.',
+    'deleteAccount.emailLabel': 'Imejl adresa',
+    'deleteAccount.emailPlaceholder': 'vasa@adresa.com',
+    'deleteAccount.sendCodeButton': 'Pošalji kod za potvrdu',
+    'deleteAccount.sending': 'Slanje...',
+    'deleteAccount.codeSentIntro': 'Poslali smo šestocifreni kod na:',
+    'deleteAccount.codeLabel': 'Kod za potvrdu',
+    'deleteAccount.warning':
+      'Pažnja: ova radnja je trajna i ne može se opozvati. Svi vaši podaci — troškovi, kartice, štednja, računi i ostalo — biće nepovratno obrisani.',
+    'deleteAccount.confirmButton': 'Trajno obriši nalog',
+    'deleteAccount.deleting': 'Brisanje...',
+    'deleteAccount.confirmPrompt':
+      'Da li ste potpuno sigurni? Ova radnja se ne može opozvati.',
+    'deleteAccount.backButton': 'Promeni imejl adresu',
+    'deleteAccount.successTitle': 'Nalog je obrisan',
+    'deleteAccount.successBody':
+      'Vaš nalog i svi podaci su trajno obrisani. Hvala što ste koristili Troskomir.',
+    'deleteAccount.errorGeneric':
+      'Došlo je do greške. Pokušajte ponovo za nekoliko trenutaka.',
+    'deleteAccount.errorRateLimited':
+      'Previše pokušaja. Sačekajte minut pa pokušajte ponovo.',
+    'deleteAccount.errorInvalidCode':
+      'Netačan ili istekao kod. Proverite kod ili zatražite novi.',
   },
   en: {
     'site.title': 'Troskomir',
@@ -201,6 +255,7 @@ export const translations = {
     'nav.privacy': 'Privacy',
     'nav.about': 'About',
     'nav.contact': 'Contact',
+    'nav.deleteAccount': 'Delete account',
 
     'hero.badge': 'Coming soon',
     'hero.title1': 'Tros',
@@ -282,6 +337,32 @@ export const translations = {
 
     'footer.contact': 'Questions?',
     'footer.rights': 'All rights reserved.',
+
+    'deleteAccount.title': 'Delete account',
+    'deleteAccount.intro':
+      "Request permanent deletion of your Troskomir account and all data linked to it. Enter the e-mail address you use to sign in — we'll send you a six-digit confirmation code.",
+    'deleteAccount.emailLabel': 'E-mail address',
+    'deleteAccount.emailPlaceholder': 'you@example.com',
+    'deleteAccount.sendCodeButton': 'Send confirmation code',
+    'deleteAccount.sending': 'Sending...',
+    'deleteAccount.codeSentIntro': 'We sent a six-digit code to:',
+    'deleteAccount.codeLabel': 'Confirmation code',
+    'deleteAccount.warning':
+      'Warning: this action is permanent and cannot be undone. All your data — expenses, cards, savings, receipts and everything else — will be erased for good.',
+    'deleteAccount.confirmButton': 'Permanently delete my account',
+    'deleteAccount.deleting': 'Deleting...',
+    'deleteAccount.confirmPrompt':
+      'Are you absolutely sure? This cannot be undone.',
+    'deleteAccount.backButton': 'Change e-mail address',
+    'deleteAccount.successTitle': 'Account deleted',
+    'deleteAccount.successBody':
+      "Your account and all its data have been permanently deleted. Thanks for having used Troskomir.",
+    'deleteAccount.errorGeneric':
+      'Something went wrong. Please try again in a moment.',
+    'deleteAccount.errorRateLimited':
+      'Too many attempts. Please wait a minute and try again.',
+    'deleteAccount.errorInvalidCode':
+      'Incorrect or expired code. Check the code or request a new one.',
   },
   ru: {
     'site.title': 'Трошкомир',
@@ -292,6 +373,7 @@ export const translations = {
     'nav.privacy': 'Конфиденциальность',
     'nav.about': 'Об авторе',
     'nav.contact': 'Контакты',
+    'nav.deleteAccount': 'Удаление аккаунта',
 
     'hero.badge': 'Скоро',
     'hero.title1': 'Трош',
@@ -373,6 +455,32 @@ export const translations = {
 
     'footer.contact': 'Вопросы?',
     'footer.rights': 'Все права защищены.',
+
+    'deleteAccount.title': 'Удаление аккаунта',
+    'deleteAccount.intro':
+      'Здесь вы можете запросить полное удаление своего аккаунта Трошкомир и всех связанных с ним данных. Введите адрес электронной почты, который используете для входа, — мы вышлем шестизначный код подтверждения.',
+    'deleteAccount.emailLabel': 'Адрес электронной почты',
+    'deleteAccount.emailPlaceholder': 'you@example.com',
+    'deleteAccount.sendCodeButton': 'Отправить код подтверждения',
+    'deleteAccount.sending': 'Отправка...',
+    'deleteAccount.codeSentIntro': 'Мы отправили шестизначный код на:',
+    'deleteAccount.codeLabel': 'Код подтверждения',
+    'deleteAccount.warning':
+      'Внимание: это действие необратимо. Все ваши данные — расходы, карты, накопления, чеки и остальное — будут удалены безвозвратно.',
+    'deleteAccount.confirmButton': 'Удалить аккаунт навсегда',
+    'deleteAccount.deleting': 'Удаление...',
+    'deleteAccount.confirmPrompt':
+      'Вы абсолютно уверены? Это действие нельзя отменить.',
+    'deleteAccount.backButton': 'Изменить адрес почты',
+    'deleteAccount.successTitle': 'Аккаунт удалён',
+    'deleteAccount.successBody':
+      'Ваш аккаунт и все данные удалены безвозвратно. Спасибо, что пользовались Трошкомир.',
+    'deleteAccount.errorGeneric':
+      'Что-то пошло не так. Попробуйте ещё раз через минуту.',
+    'deleteAccount.errorRateLimited':
+      'Слишком много попыток. Подождите минуту и попробуйте снова.',
+    'deleteAccount.errorInvalidCode':
+      'Неверный или истёкший код. Проверьте код или запросите новый.',
   },
 } as const;
 

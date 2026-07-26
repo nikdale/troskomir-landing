@@ -1,0 +1,202 @@
+---
+import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import { API_BASE_URL } from '../site-config';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
+
+// Passed into the client script below via define:vars — everything the
+// script needs to render text has to come from here, since the backend's
+// own error messages are English-only and this page is multilingual.
+const i18n = {
+  sending: t('deleteAccount.sending'),
+  deleting: t('deleteAccount.deleting'),
+  confirmPrompt: t('deleteAccount.confirmPrompt'),
+  errorGeneric: t('deleteAccount.errorGeneric'),
+  errorRateLimited: t('deleteAccount.errorRateLimited'),
+  errorInvalidCode: t('deleteAccount.errorInvalidCode'),
+};
+---
+
+<section class="pt-32 pb-24 px-6">
+  <div class="max-w-md mx-auto">
+    <h1 class="text-3xl font-bold mb-4 text-center">{t('deleteAccount.title')}</h1>
+    <div class="section-divider mb-8"></div>
+    <p class="text-text-muted text-sm leading-relaxed mb-8">{t('deleteAccount.intro')}</p>
+
+    <div id="da-alert" class="hidden mb-4 rounded-lg px-4 py-3 text-sm"></div>
+
+    <form id="da-email-form" class="space-y-4">
+      <div>
+        <label for="da-email" class="block text-sm font-medium mb-2">{t('deleteAccount.emailLabel')}</label>
+        <input
+          id="da-email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder={t('deleteAccount.emailPlaceholder')}
+          class="w-full rounded-lg bg-secondary border border-secondary px-4 py-3 text-sm text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+        />
+      </div>
+      <button
+        type="submit"
+        id="da-send-btn"
+        class="w-full px-5 py-3 rounded-lg bg-accent hover:bg-accent/80 transition-colors font-medium text-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {t('deleteAccount.sendCodeButton')}
+      </button>
+    </form>
+
+    <form id="da-code-form" class="hidden space-y-4">
+      <p class="text-sm text-text-muted">
+        {t('deleteAccount.codeSentIntro')} <strong id="da-target-email" class="text-text"></strong>
+      </p>
+      <div>
+        <label for="da-code" class="block text-sm font-medium mb-2">{t('deleteAccount.codeLabel')}</label>
+        <input
+          id="da-code"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength="6"
+          required
+          autocomplete="one-time-code"
+          placeholder="••••••"
+          class="w-full rounded-lg bg-secondary border border-secondary px-4 py-3 text-center text-lg tracking-[0.5em] text-text focus:outline-none focus:ring-2 focus:ring-accent"
+        />
+      </div>
+      <p class="text-xs text-amber-400 leading-relaxed">{t('deleteAccount.warning')}</p>
+      <button
+        type="submit"
+        id="da-confirm-btn"
+        class="w-full px-5 py-3 rounded-lg bg-red-600 hover:bg-red-500 transition-colors font-medium text-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {t('deleteAccount.confirmButton')}
+      </button>
+      <button
+        type="button"
+        id="da-back-btn"
+        class="w-full text-xs text-text-muted hover:text-text transition-colors"
+      >
+        {t('deleteAccount.backButton')}
+      </button>
+    </form>
+
+    <div id="da-success" class="hidden text-center">
+      <p class="text-lg font-medium mb-2">{t('deleteAccount.successTitle')}</p>
+      <p class="text-sm text-text-muted">{t('deleteAccount.successBody')}</p>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ apiBase: API_BASE_URL, i18n }}>
+  const emailForm = document.getElementById('da-email-form');
+  const codeForm = document.getElementById('da-code-form');
+  const successBox = document.getElementById('da-success');
+  const alertBox = document.getElementById('da-alert');
+  const targetEmailEl = document.getElementById('da-target-email');
+  const emailInput = document.getElementById('da-email');
+  const codeInput = document.getElementById('da-code');
+  const sendBtn = document.getElementById('da-send-btn');
+  const confirmBtn = document.getElementById('da-confirm-btn');
+  const backBtn = document.getElementById('da-back-btn');
+
+  let currentEmail = '';
+
+  function showAlert(message) {
+    alertBox.textContent = message;
+    alertBox.className =
+      'mb-4 rounded-lg px-4 py-3 text-sm bg-red-500/10 text-red-300 border border-red-500/30';
+  }
+
+  function hideAlert() {
+    alertBox.classList.add('hidden');
+  }
+
+  async function postJson(path, body) {
+    try {
+      const res = await fetch(apiBase + path, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      return { ok: res.ok, status: res.status };
+    } catch {
+      return { ok: false, status: 0 };
+    }
+  }
+
+  emailForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideAlert();
+    const email = emailInput.value.trim();
+    if (!email) return;
+
+    const originalLabel = sendBtn.textContent;
+    sendBtn.disabled = true;
+    sendBtn.textContent = i18n.sending;
+
+    const { ok, status } = await postJson('/account-deletion/request', { email });
+
+    sendBtn.disabled = false;
+    sendBtn.textContent = originalLabel;
+
+    if (status === 429) {
+      showAlert(i18n.errorRateLimited);
+      return;
+    }
+    if (!ok) {
+      showAlert(i18n.errorGeneric);
+      return;
+    }
+
+    currentEmail = email;
+    targetEmailEl.textContent = email;
+    emailForm.classList.add('hidden');
+    codeForm.classList.remove('hidden');
+    codeInput.focus();
+  });
+
+  backBtn.addEventListener('click', () => {
+    hideAlert();
+    codeForm.classList.add('hidden');
+    emailForm.classList.remove('hidden');
+    codeInput.value = '';
+  });
+
+  codeForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideAlert();
+    const code = codeInput.value.trim();
+    if (!code) return;
+    if (!window.confirm(i18n.confirmPrompt)) return;
+
+    const originalLabel = confirmBtn.textContent;
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = i18n.deleting;
+
+    const { ok, status } = await postJson('/account-deletion/confirm', {
+      email: currentEmail,
+      code,
+    });
+
+    confirmBtn.disabled = false;
+    confirmBtn.textContent = originalLabel;
+
+    if (status === 429) {
+      showAlert(i18n.errorRateLimited);
+      return;
+    }
+    if (!ok) {
+      showAlert(i18n.errorInvalidCode);
+      return;
+    }
+
+    codeForm.classList.add('hidden');
+    successBox.classList.remove('hidden');
+  });
+</script>

@@ -1,0 +1,16 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import DeleteAccount from '../../../components/DeleteAccount.astro';
+import Footer from '../../../components/Footer.astro';
+
+const lang = 'sr-Latn' as const;
+---
+
+<Layout lang={lang}>
+  <Header lang={lang} />
+  <main>
+    <DeleteAccount lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Layout>
