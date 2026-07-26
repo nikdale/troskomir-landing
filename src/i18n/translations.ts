@@ -1,6 +1,9 @@
+// Matches the exact wording of the mobile app's own language picker
+// (AppLanguage.nativeName in language_provider.dart) — always the
+// endonym, regardless of the current page's language.
 export const languages = {
-  sr: 'Српски',
-  'sr-Latn': 'Srpski',
+  sr: 'Српски (ћирилица)',
+  'sr-Latn': 'Srpski (latinica)',
   en: 'English',
   ru: 'Русский',
 } as const;
@@ -22,12 +25,14 @@ export const translations = {
     'nav.deleteAccount': 'Брисање налога',
 
     'hero.badge': 'Ускоро',
-    'hero.title1': 'Трош',
-    'hero.title2': 'комир',
     'hero.subtitle':
       'Трошкомир вам показује тачно где иде ваш новац: трошкови, картице, рате, штедња и подсетници — све прегледно, на једном месту.',
     'cta.playStore': 'Преузми са Google Play-а',
     'cta.appStore': 'Преузми са App Store-а',
+    'cta.playStoreSoon': 'Google Play — ускоро',
+    'cta.appStoreSoon': 'App Store — ускоро',
+    'cta.storesComingSoon': 'Ускоро на Google Play и App Store',
+    'cta.comingSoonHint': 'Линкови ће се појавити чим апликација буде објављена у продавницама.',
 
     'features.heading': 'Шта Трошкомир уме',
     'features.subheading': 'Кратак преглед свих функција, да знате шта добијате.',
@@ -96,8 +101,14 @@ export const translations = {
     'about.heading': 'О аутору',
     'about.name': 'Никола Дашић',
     'about.bio':
-      'Ћао, ја сам Никола Дашић — софтверски инжењер. Трошкомир сам направио јер сам предуго водио своје трошкове у проклетим Excel табелама, па сам одлучио да направим нешто боље. Ради на мом кућном сервер-лабу, не у неком великом облаку — зато основне функције остају бесплатне. Ако имате питања или предлоге, јавите се.',
+      'Ћао, ја сам Никола Дашић — програмер, отац, радио аматер, тип са превише хобија, узгајивач кокошака, поносни власник Дачије, редовни купац у ИКЕИ, поборник GNU/Linux-а, електротехничар електронике, православни хришћанин, посвећеник теретани, поштовалац говеђе пршуте, обожавалац Yandex-а, бициклистички бади, и неко ко је годинама пратио своје трошкове у проклетом Excel-у... док нисам одлучио да направим нешто боље. Трошкомир ради на мом кућном сервер-лабу, не у неком великом облаку — зато основне функције остају бесплатне. Ако имате питања или предлоге, јавите се.',
     'about.linkedin': 'Повежимо се на LinkedIn-у',
+
+    'hosting.heading': 'Где апликација ради',
+    'hosting.body':
+      'Трошкомир ради на мом кућном серверу (home lab), а не у некој великој комерцијалној облак услузи. То смањује трошкове и омогућава ми да апликацију понудим бесплатно, али значи и да је доступност сервиса онолико поуздана колико и мој кућни интернет и струја.',
+    'hosting.caption1': 'Брвнара у дворишту — ту живи цео home lab (и моја радио опрема).',
+    'hosting.caption2': 'Сервери, док сам их тек монтирао.',
 
     'footer.contact': 'Питања?',
     'footer.rights': 'Сва права задржана.',
@@ -140,12 +151,14 @@ export const translations = {
     'nav.deleteAccount': 'Brisanje naloga',
 
     'hero.badge': 'Uskoro',
-    'hero.title1': 'Troš',
-    'hero.title2': 'komir',
     'hero.subtitle':
       'Troskomir vam pokazuje tačno gde ide vaš novac: troškovi, kartice, rate, štednja i podsetnici — sve pregledno, na jednom mestu.',
     'cta.playStore': 'Preuzmi sa Google Play-a',
     'cta.appStore': 'Preuzmi sa App Store-a',
+    'cta.playStoreSoon': 'Google Play — uskoro',
+    'cta.appStoreSoon': 'App Store — uskoro',
+    'cta.storesComingSoon': 'Uskoro na Google Play i App Store',
+    'cta.comingSoonHint': 'Linkovi će se pojaviti čim aplikacija bude objavljena u prodavnicama.',
 
     'features.heading': 'Šta Troskomir ume',
     'features.subheading': 'Kratak pregled svih funkcija, da znate šta dobijate.',
@@ -214,8 +227,14 @@ export const translations = {
     'about.heading': 'O autoru',
     'about.name': 'Nikola Dašić',
     'about.bio':
-      'Ćao, ja sam Nikola Dašić — softverski inženjer. Troskomir sam napravio jer sam predugo vodio svoje troškove u prokletim Excel tabelama, pa sam odlučio da napravim nešto bolje. Radi na mom kućnom server-labu, ne u nekom velikom oblaku — zato osnovne funkcije ostaju besplatne. Ako imate pitanja ili predloge, javite se.',
+      'Ćao, ja sam Nikola Dašić — programer, otac, radio amater, tip sa previše hobija, uzgajivač kokošaka, ponosni vlasnik Dačije, redovni kupac u IKEI, pobornik GNU/Linux-a, elektrotehničar elektronike, pravoslavni hrišćanin, posvećenik teretani, poštovalac goveđe pršute, obožavalac Yandex-a, biciklistički badi, i neko ko je godinama pratio svoje troškove u prokletom Excel-u... dok nisam odlučio da napravim nešto bolje. Troskomir radi na mom kućnom server-labu, ne u nekom velikom oblaku — zato osnovne funkcije ostaju besplatne. Ako imate pitanja ili predloge, javite se.',
     'about.linkedin': 'Povežimo se na LinkedIn-u',
+
+    'hosting.heading': 'Gde aplikacija radi',
+    'hosting.body':
+      'Troskomir radi na mom kućnom serveru (home lab), a ne u nekoj velikoj komercijalnoj cloud usluzi. To smanjuje troškove i omogućava mi da aplikaciju ponudim besplatno, ali znači i da je dostupnost servisa onoliko pouzdana koliko i moj kućni internet i struja.',
+    'hosting.caption1': 'Brvnara u dvorištu — tu živi ceo home lab (i moja radio oprema).',
+    'hosting.caption2': 'Serveri, dok sam ih tek montirao.',
 
     'footer.contact': 'Pitanja?',
     'footer.rights': 'Sva prava zadržana.',
@@ -258,12 +277,14 @@ export const translations = {
     'nav.deleteAccount': 'Delete account',
 
     'hero.badge': 'Coming soon',
-    'hero.title1': 'Tros',
-    'hero.title2': 'komir',
     'hero.subtitle':
       'Troskomir shows you exactly where your money goes: expenses, cards, installments, savings and reminders — all in one place.',
     'cta.playStore': 'Get it on Google Play',
     'cta.appStore': 'Download on the App Store',
+    'cta.playStoreSoon': 'Google Play — coming soon',
+    'cta.appStoreSoon': 'App Store — coming soon',
+    'cta.storesComingSoon': 'Coming soon on Google Play and the App Store',
+    'cta.comingSoonHint': 'Links will appear once the app is published on the stores.',
 
     'features.heading': 'What Troskomir does',
     'features.subheading': "A quick rundown of every feature, so you know what you're getting.",
@@ -332,8 +353,14 @@ export const translations = {
     'about.heading': 'About the author',
     'about.name': 'Nikola Dašić',
     'about.bio':
-      "Hi, I'm Nikola Dašić — a software engineer. I built Troskomir because I spent way too many years tracking my own expenses in cursed Excel spreadsheets and finally decided to build something better. It runs on my own home server lab, not some big commercial cloud — which is exactly why the core features stay free. If you have questions or suggestions, feel free to reach out.",
+      "Hi, I'm Nikola Dašić — a software engineer, father, HAM radio operator, a guy with way too many hobbies, chicken farmer, Dacia owner, IKEA regular, GNU/Linux supporter, electronics technician, Orthodox Christian, gym-goer, prosciutto connoisseur, Yandex admirer, cycling buddy, and someone who tracked my own expenses in cursed Excel spreadsheets for way too many years... until I decided to just build something better. Troskomir runs on my own home server lab, not some big commercial cloud — which is exactly why the core features stay free. If you have questions or suggestions, feel free to reach out.",
     'about.linkedin': 'Connect on LinkedIn',
+
+    'hosting.heading': 'Where it runs',
+    'hosting.body':
+      "Troskomir runs on my own home server lab, not a big commercial cloud. That keeps costs low and lets me offer the app for free, though it also means the service is only as reliable as my home internet and power.",
+    'hosting.caption1': 'The wooden shed in my backyard — home to the whole lab (and my HAM radio gear).',
+    'hosting.caption2': 'The servers, mid-setup.',
 
     'footer.contact': 'Questions?',
     'footer.rights': 'All rights reserved.',
@@ -376,12 +403,14 @@ export const translations = {
     'nav.deleteAccount': 'Удаление аккаунта',
 
     'hero.badge': 'Скоро',
-    'hero.title1': 'Трош',
-    'hero.title2': 'комир',
     'hero.subtitle':
       'Трошкомир точно показывает, куда уходят ваши деньги: расходы, карты, рассрочка, накопления и напоминания — всё в одном месте.',
     'cta.playStore': 'Загрузите в Google Play',
     'cta.appStore': 'Загрузите в App Store',
+    'cta.playStoreSoon': 'Google Play — скоро',
+    'cta.appStoreSoon': 'App Store — скоро',
+    'cta.storesComingSoon': 'Скоро в Google Play и App Store',
+    'cta.comingSoonHint': 'Ссылки появятся, когда приложение будет опубликовано в магазинах.',
 
     'features.heading': 'Что умеет Трошкомир',
     'features.subheading': 'Короткий обзор всех функций, чтобы вы знали, что получаете.',
@@ -450,8 +479,14 @@ export const translations = {
     'about.heading': 'Об авторе',
     'about.name': 'Никола Дашич',
     'about.bio':
-      'Привет, я Никола Дашич — инженер-программист. Я сделал Трошкомир, потому что слишком долго вёл учёт своих расходов в проклятых Excel-таблицах и наконец решил сделать что-то лучше. Он работает на моём домашнем сервере, а не в большом коммерческом облаке — именно поэтому основные функции остаются бесплатными. Если у вас есть вопросы или предложения, пишите.',
+      'Привет, я Никола Дашич — инженер-программист, отец, радиолюбитель (HAM), человек со слишком большим количеством увлечений, птицевод, владелец Dacia, завсегдатай IKEA, сторонник GNU/Linux, специалист по электронике, православный христианин, любитель спортзала, ценитель прошутто, поклонник Яндекса, велосипедный товарищ и тот, кто годами вёл учёт своих расходов в проклятом Excel’е... пока не решил сделать что-то получше. Трошкомир работает на моём домашнем сервере, а не в большом коммерческом облаке — именно поэтому основные функции остаются бесплатными. Если у вас есть вопросы или предложения, пишите.',
     'about.linkedin': 'Давайте свяжемся в LinkedIn',
+
+    'hosting.heading': 'Где это работает',
+    'hosting.body':
+      'Трошкомир работает на моём домашнем сервере (home lab), а не в большом коммерческом облаке. Это снижает расходы и позволяет мне предлагать приложение бесплатно, но также означает, что доступность сервиса зависит от моего домашнего интернета и электричества.',
+    'hosting.caption1': 'Деревянный сарай на заднем дворе — здесь живёт вся домашняя лаборатория (и моё радиооборудование).',
+    'hosting.caption2': 'Серверы, во время установки.',
 
     'footer.contact': 'Вопросы?',
     'footer.rights': 'Все права защищены.',

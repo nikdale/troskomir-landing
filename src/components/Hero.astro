@@ -1,6 +1,10 @@
 ---
 import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
-import { PLAY_STORE_URL, APP_STORE_URL } from '../site-config';
+import {
+  PLAY_STORE_URL,
+  APP_STORE_URL,
+  isLiveStoreUrl,
+} from '../site-config';
 
 interface Props {
   lang?: Lang;
@@ -8,39 +12,72 @@ interface Props {
 
 const { lang = defaultLang } = Astro.props;
 const t = useTranslations(lang);
+
+const playLive = isLiveStoreUrl(PLAY_STORE_URL);
+const appLive = isLiveStoreUrl(APP_STORE_URL);
+const anyStoreLive = playLive || appLive;
 ---
 
-<section class="relative pt-40 pb-28 px-6 text-center overflow-hidden">
-  <div class="pointer-events-none absolute inset-0 -z-10">
-    <div class="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"></div>
-  </div>
+<!-- The blurred accent glow that used to sit behind this heading is gone, for
+     the same reason the app's ambient background blobs are: it is decoration
+     competing with the one line the page exists to deliver. Flat ground. -->
+<section class="relative pt-40 pb-28 px-6 text-center">
   <div class="max-w-3xl mx-auto">
-    <span class="inline-block mb-6 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-secondary text-accent-light">
+    <span class="inline-block mb-6 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-secondary text-accent">
       {t('hero.badge')}
     </span>
-    <h1 class="text-5xl sm:text-6xl font-bold tracking-tight mb-6">
-      {t('hero.title1')}<span class="accent-gradient">{t('hero.title2')}</span>
+    <h1 class="text-5xl sm:text-6xl font-bold tracking-tight mb-6 text-text">
+      {t('site.title')}
     </h1>
     <p class="text-lg sm:text-xl text-text-muted max-w-xl mx-auto">
       {t('hero.subtitle')}
     </p>
-    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-      <a
-        href={PLAY_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
-      >
-        {t('cta.playStore')}
-      </a>
-      <a
-        href={APP_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
-      >
-        {t('cta.appStore')}
-      </a>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
+      {anyStoreLive ? (
+        <>
+          {playLive ? (
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
+            >
+              {t('cta.playStore')}
+            </a>
+          ) : (
+            <span
+              class="px-5 py-3 rounded-lg bg-secondary/40 text-text-muted font-medium text-sm cursor-default"
+              title={t('cta.comingSoonHint')}
+            >
+              {t('cta.playStoreSoon')}
+            </span>
+          )}
+          {appLive ? (
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors font-medium text-sm"
+            >
+              {t('cta.appStore')}
+            </a>
+          ) : (
+            <span
+              class="px-5 py-3 rounded-lg bg-secondary/40 text-text-muted font-medium text-sm cursor-default"
+              title={t('cta.comingSoonHint')}
+            >
+              {t('cta.appStoreSoon')}
+            </span>
+          )}
+        </>
+      ) : (
+        <span
+          class="px-5 py-3 rounded-lg bg-secondary/40 text-text-muted font-medium text-sm cursor-default"
+          title={t('cta.comingSoonHint')}
+        >
+          {t('cta.storesComingSoon')}
+        </span>
+      )}
     </div>
   </div>
 </section>
