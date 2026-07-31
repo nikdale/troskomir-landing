@@ -47,7 +47,7 @@ export const translations = {
 
     "feat.scan.title": "Скенирање фискалног рачуна",
     "feat.scan.body":
-      "Скенирајте QR код са фискалног рачуна камером телефона. Апликација учитава податке директно са званичне странице Пореске управе (suf.purs.gov.rs) и сама уписује продавницу, износ и артикле.",
+      "Скенирајте QR код са фискалног рачуна камером телефона. Тренутно подржани: 🇷🇸 Србија (suf.purs.gov.rs) и 🇧🇦 Република Српска (suf.poreskaupravars.org). Апликација учитава податке директно са званичне пореске странице и уписује продавницу, износ и артикле. Ускоро и Македонија и Црна Гора.",
 
     "feat.expenses.title": "Једнократни и редовни трошкови",
     "feat.expenses.body":
@@ -206,7 +206,7 @@ export const translations = {
 
     "feat.scan.title": "Skeniranje fiskalnog računa",
     "feat.scan.body":
-      "Skenirajte QR kod sa fiskalnog računa kamerom telefona. Aplikacija učitava podatke direktno sa zvanične stranice Poreske uprave (suf.purs.gov.rs) i sama upisuje prodavnicu, iznos i artikle.",
+      "Skenirajte QR kod sa fiskalnog računa kamerom telefona. Trenutno podržano: 🇷🇸 Srbija (suf.purs.gov.rs) i 🇧🇦 Republika Srpska (suf.poreskaupravars.org). Aplikacija učitava podatke direktno sa zvanične poreske stranice i upisuje prodavnicu, iznos i artikle. Uskoro i Makedonija i Crna Gora.",
 
     "feat.expenses.title": "Jednokratni i redovni troškovi",
     "feat.expenses.body":
@@ -365,7 +365,7 @@ export const translations = {
 
     "feat.scan.title": "Fiscal receipt scanning",
     "feat.scan.body":
-      "Scan the QR code on a Serbian fiscal receipt with your phone's camera. The app pulls the data straight from the Tax Administration's official page (suf.purs.gov.rs) and fills in the store, amount and items.",
+      "Scan the QR code on a fiscal receipt with your phone's camera. Currently supported: 🇷🇸 Serbia (suf.purs.gov.rs) and 🇧🇦 Republic of Srpska (suf.poreskaupravars.org). The app pulls the data straight from the official tax portal and fills in the store, amount and items. North Macedonia and Montenegro coming soon.",
 
     "feat.expenses.title": "One-time & recurring expenses",
     "feat.expenses.body":
@@ -524,7 +524,7 @@ export const translations = {
 
     "feat.scan.title": "Сканирование фискального чека",
     "feat.scan.body":
-      "Отсканируйте QR-код на фискальном чеке камерой телефона. Приложение получает данные напрямую со страницы Налоговой администрации (suf.purs.gov.rs) и само заполняет магазин, сумму и товары.",
+      "Отсканируйте QR-код на фискальном чеке камерой телефона. Сейчас поддерживаются: 🇷🇸 Сербия (suf.purs.gov.rs) и 🇧🇦 Республика Сербская (suf.poreskaupravars.org). Приложение получает данные напрямую с официального налогового портала и само заполняет магазин, сумму и товары. Скоро: Северная Македония и Черногория.",
 
     "feat.expenses.title": "Разовые и регулярные расходы",
     "feat.expenses.body":
