@@ -41,9 +41,10 @@ export function getAlternateUrls(
 ): { lang: Lang; url: string }[] {
   const langs: Lang[] = ['sr', 'sr-Latn', 'en', 'ru'];
   const cleanSiteUrl = siteUrl.endsWith('/') ? siteUrl.slice(0, -1) : siteUrl;
+  const pathWithoutLang = getPathWithoutLang(pathname);
 
   return langs.map((lang) => ({
     lang,
-    url: `${cleanSiteUrl}${getLocalizedPath('', lang, base)}`,
+    url: `${cleanSiteUrl}${getLocalizedPath(pathWithoutLang, lang, base)}`,
   }));
 }

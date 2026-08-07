@@ -56,12 +56,17 @@ u `.astro` fajlovima.
 | `npm install`      | Instalira zavisnosti                        |
 | `npm run dev`      | Pokreće lokalni server na `localhost:4321`  |
 | `npm run build`    | Gradi produkcionu verziju u `./dist/`       |
+| `npm run validate` | Pokreće `astro check` i produkcioni build    |
 | `npm run preview`  | Pregled produkcione verzije lokalno         |
 
 ## Deploy
 
 Sajt se automatski deployuje na GitHub Pages pri svakom push-u na `main`
 granu (`.github/workflows/deploy.yml`).
+
+The deploy workflow requires the `PUBLIC_PLAY_STORE_URL` and
+`PUBLIC_APP_STORE_URL` Actions variables to contain the final HTTPS listing
+URLs. Local builds may leave them unset and show the coming-soon state.
 
 ### Jednokratno podešavanje (posle prvog push-a)
 

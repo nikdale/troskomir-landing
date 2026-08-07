@@ -12,6 +12,7 @@ const t = useTranslations(lang);
 
 type FeatureKey =
   | 'scan'
+  | 'localAi'
   | 'expenses'
   | 'pools'
   | 'budgets'
@@ -50,6 +51,7 @@ type IconName =
 
 const iconByFeature: Record<FeatureKey, IconName> = {
   scan: 'scan',
+  localAi: 'receipt',
   expenses: 'receipt',
   pools: 'layers',
   budgets: 'chart',
@@ -71,7 +73,7 @@ const iconByFeature: Record<FeatureKey, IconName> = {
 };
 
 const groups: { category: TranslationKey; items: FeatureKey[] }[] = [
-  { category: 'cat.tracking', items: ['scan', 'expenses', 'pools', 'budgets'] },
+  { category: 'cat.tracking', items: ['scan', 'localAi', 'expenses', 'pools', 'budgets'] },
   { category: 'cat.cards', items: ['debit', 'credit', 'installments', 'household'] },
   { category: 'cat.reminders', items: ['warranty', 'notifications', 'reminders'] },
   { category: 'cat.savings', items: ['savings', 'loyalty'] },

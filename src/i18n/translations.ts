@@ -48,6 +48,9 @@ export const translations = {
     "feat.scan.title": "Скенирање фискалног рачуна",
     "feat.scan.body":
       "Скенирајте QR код са фискалног рачуна камером телефона. Тренутно подржани: 🇷🇸 Србија (suf.purs.gov.rs) и 🇧🇦 Република Српска (suf.poreskaupravars.org). Апликација учитава податке директно са званичне пореске странице и уписује продавницу, износ и артикле. Ускоро и Македонија и Црна Гора.",
+    "feat.localAi.title": "Локална AI обрада рачуна",
+    "feat.localAi.body":
+      "Снимите или изаберите слику рачуна. ML Kit OCR и мали Qwen2.5 језички модел раде на вашем уређају. Модел се једном преузима са Hugging Face-а (око 547 MB), а OCR текст се не шаље cloud AI сервису. Све предложене податке прегледате пре чувања.",
 
     "feat.expenses.title": "Једнократни и редовни трошкови",
     "feat.expenses.body":
@@ -127,6 +130,9 @@ export const translations = {
     "privacy.title": "Приватност",
     "privacy.body":
       "Ваши подаци се чувају на серверу у мом кућном лабу. Подразумевано нису шифровани, што је сасвим у реду за већину корисника. Ако желите end-to-end шифровање (тј. да ни ја не могу да прочитам ваше описе трошкова или рачуне), укључите га у подешавањима апликације. Искрено: не занима ме шта купујете нити од кога... мада ценовник кирија у Београду би био забаван за знати.",
+    "privacy.localAi.title": "Рачуни и локални AI",
+    "privacy.localAi.body":
+      "Обрада слике рачуна остаје на вашем телефону: ML Kit издваја текст, а Qwen2.5 локално предлаже продавницу, износ, датум, валуту, начин плаћања, категорију и ознаке. Први пут се преузима само датотека модела са Hugging Face-а; рачун и OCR текст се не шаљу cloud AI сервису. Трошак се шаље Трошкомиру тек када га прегледате и сачувате.",
 
     "about.heading": "О аутору",
     "about.name": "Никола Дашић",
@@ -207,6 +213,9 @@ export const translations = {
     "feat.scan.title": "Skeniranje fiskalnog računa",
     "feat.scan.body":
       "Skenirajte QR kod sa fiskalnog računa kamerom telefona. Trenutno podržano: 🇷🇸 Srbija (suf.purs.gov.rs) i 🇧🇦 Republika Srpska (suf.poreskaupravars.org). Aplikacija učitava podatke direktno sa zvanične poreske stranice i upisuje prodavnicu, iznos i artikle. Uskoro i Makedonija i Crna Gora.",
+    "feat.localAi.title": "Lokalna AI obrada računa",
+    "feat.localAi.body":
+      "Snimite ili izaberite sliku računa. ML Kit OCR i mali Qwen2.5 jezički model rade na vašem uređaju. Model se jednom preuzima sa Hugging Face-a (oko 547 MB), a OCR tekst se ne šalje cloud AI servisu. Sve predložene podatke pregledate pre čuvanja.",
 
     "feat.expenses.title": "Jednokratni i redovni troškovi",
     "feat.expenses.body":
@@ -286,6 +295,9 @@ export const translations = {
     "privacy.title": "Privatnost",
     "privacy.body":
       "Vaši podaci se čuvaju na serveru u mom kućnom labu. Podrazumevano nisu šifrovani, što je sasvim u redu za većinu korisnika. Ako želite end-to-end šifrovanje (tj. da ni ja ne mogu da pročitam vaše opise troškova ili račune), uključite ga u podešavanjima aplikacije. Iskreno: ne zanima me šta kupujete ni od koga... mada cenovnik kirija u Beogradu ne bi ni malo zaškodio.",
+    "privacy.localAi.title": "Računi i lokalni AI",
+    "privacy.localAi.body":
+      "Obrada slike računa ostaje na vašem telefonu: ML Kit izdvaja tekst, a Qwen2.5 lokalno predlaže prodavnicu, iznos, datum, valutu, način plaćanja, kategoriju i oznake. Prvi put se preuzima samo datoteka modela sa Hugging Face-a; račun i OCR tekst se ne šalju cloud AI servisu. Trošak se šalje Troskomiru tek kada ga pregledate i sačuvate.",
 
     "about.heading": "O autoru",
     "about.name": "Nikola Dašić",
@@ -366,6 +378,9 @@ export const translations = {
     "feat.scan.title": "Fiscal receipt scanning",
     "feat.scan.body":
       "Scan the QR code on a fiscal receipt with your phone's camera. Currently supported: 🇷🇸 Serbia (suf.purs.gov.rs) and 🇧🇦 Republic of Srpska (suf.poreskaupravars.org). The app pulls the data straight from the official tax portal and fills in the store, amount and items. North Macedonia and Montenegro coming soon.",
+    "feat.localAi.title": "On-device receipt AI",
+    "feat.localAi.body":
+      "Take or choose a receipt photo. ML Kit OCR and a small Qwen2.5 language model run on your device. The model is downloaded once from Hugging Face (about 547 MB), while OCR text is not sent to a cloud AI service. You review every suggested field before saving.",
 
     "feat.expenses.title": "One-time & recurring expenses",
     "feat.expenses.body":
@@ -445,6 +460,9 @@ export const translations = {
     "privacy.title": "Privacy",
     "privacy.body":
       "Your data lives on a server I run myself at home. By default it's stored as-is, which is fine for most people. If you want end-to-end encryption (meaning not even I can read your expense descriptions or receipts), switch it on in the app settings. Honest disclaimer: I don't care what you buy or from whom... though real Belgrade rent prices would be fun to know.",
+    "privacy.localAi.title": "Receipts and local AI",
+    "privacy.localAi.body":
+      "Receipt image processing stays on your phone: ML Kit extracts the text, and Qwen2.5 locally suggests the seller, amount, date, currency, payment method, category, and tags. Only the model file is downloaded from Hugging Face on first use; the receipt and OCR text are not sent to a cloud AI service. The expense reaches Troskomir only after you review and save it.",
 
     "about.heading": "About the author",
     "about.name": "Nikola Dašić",
@@ -525,6 +543,9 @@ export const translations = {
     "feat.scan.title": "Сканирование фискального чека",
     "feat.scan.body":
       "Отсканируйте QR-код на фискальном чеке камерой телефона. Сейчас поддерживаются: 🇷🇸 Сербия (suf.purs.gov.rs) и 🇧🇦 Республика Сербская (suf.poreskaupravars.org). Приложение получает данные напрямую с официального налогового портала и само заполняет магазин, сумму и товары. Скоро: Северная Македония и Черногория.",
+    "feat.localAi.title": "Локальный ИИ для чеков",
+    "feat.localAi.body":
+      "Сфотографируйте чек или выберите изображение. ML Kit OCR и небольшая языковая модель Qwen2.5 работают на вашем устройстве. Модель один раз загружается с Hugging Face (около 547 МБ), а OCR-текст не отправляется в облачный ИИ-сервис. Перед сохранением вы проверяете все предложенные поля.",
 
     "feat.expenses.title": "Разовые и регулярные расходы",
     "feat.expenses.body":
@@ -604,6 +625,9 @@ export const translations = {
     "privacy.title": "Конфиденциальность",
     "privacy.body":
       "Ваши данные хранятся на сервере, который я держу дома (home lab). По умолчанию они хранятся как есть, и для большинства этого достаточно. Если хотите end-to-end шифрование (то есть чтобы даже я не мог читать описания расходов и чеки), включите его в настройках приложения. Честно: мне не интересно, что вы покупаете и где... хотя реальные цены на аренду в Белграде было бы забавно узнать.",
+    "privacy.localAi.title": "Чеки и локальный ИИ",
+    "privacy.localAi.body":
+      "Обработка изображения чека остаётся на телефоне: ML Kit извлекает текст, а Qwen2.5 локально предлагает продавца, сумму, дату, валюту, способ оплаты, категорию и теги. При первом использовании с Hugging Face загружается только файл модели; чек и OCR-текст не отправляются в облачный ИИ-сервис. Расход попадает в Трошкомир только после вашей проверки и сохранения.",
 
     "about.heading": "Об авторе",
     "about.name": "Никола Дашич",

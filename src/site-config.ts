@@ -2,10 +2,13 @@
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/nikdale/'; // from troskomir-mobile settings_tab.dart
 export const TELEGRAM_URL = 'https://t.me/troskomir'; // from troskomir-mobile settings_tab.dart
 
-// Paste real listing URLs once published. Until then leave empty (or '#') so the
-// hero shows a "coming soon" state instead of dead links that scroll nowhere.
-export const PLAY_STORE_URL = ''; // e.g. https://play.google.com/store/apps/details?id=com.troskomir.troskomir_mobile
-export const APP_STORE_URL = ''; // e.g. https://apps.apple.com/app/idXXXXXXXX
+// Store URLs are supplied at release time so a source change is not required
+// when listings move from "coming soon" to live.
+export const PLAY_STORE_URL =
+  import.meta.env.PUBLIC_PLAY_STORE_URL ??
+  ''; // e.g. https://play.google.com/store/apps/details?id=com.troskomir.troskomir_mobile
+export const APP_STORE_URL =
+  import.meta.env.PUBLIC_APP_STORE_URL ?? ''; // e.g. https://apps.apple.com/app/idXXXXXXXX
 
 /** True when the URL is a real https listing (not empty / '#' / relative junk). */
 export function isLiveStoreUrl(url: string | undefined | null): boolean {

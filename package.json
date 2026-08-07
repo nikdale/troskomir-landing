@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "check": "astro check",
+    "validate": "npm run check && npm run build",
+    "validate:release": "node scripts/validate-release-config.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

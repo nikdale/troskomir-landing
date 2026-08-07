@@ -26,8 +26,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate release configuration
+        run: npm run validate:release
+        env:
+          PUBLIC_PLAY_STORE_URL: ${{ vars.PUBLIC_PLAY_STORE_URL }}
+          PUBLIC_APP_STORE_URL: ${{ vars.PUBLIC_APP_STORE_URL }}
+
       - name: Type check
-        run: npx astro check
+        run: npm run check
 
       - name: Build with Astro
         run: npm run build
