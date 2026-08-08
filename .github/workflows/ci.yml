@@ -1,0 +1,56 @@
+name: ci
+
+# Validates a pull request before it reaches main.
+#
+# Until this existed, nothing here ran `npm ci` or a build on a PR — only
+# `filesystem-scan`. The Pages deploy runs on push to main, so a broken
+# lockfile or a dependency conflict was only discovered *after* merging, with
+# the live site's deploy red. That has now happened twice: once from an
+# `npm audit fix` that pruned optional platform packages, and once from a
+# TypeScript 7 bump that `@astrojs/check` cannot resolve against.
+#
+# `npm ci` is the specific check that catches both. It is stricter than
+# `npm install`: it refuses to proceed when package.json and the lockfile
+# disagree, which is exactly the class of breakage that was getting through.
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: troskomir-landing-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: install + check + build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install dependencies
+        # Not `npm install`: this must fail when the lockfile and package.json
+        # disagree, rather than quietly rewriting the lockfile to make them
+        # agree. The deploy runs `npm ci`, so this is the same gate.
+        run: npm ci
+
+      - name: Type-check
+        # `astro check` — already a script and already passing, just never run
+        # by CI. It is what would have caught a TypeScript major bump breaking
+        # the four-language routing.
+        run: npm run check
+
+      - name: Build
+        run: npm run build
