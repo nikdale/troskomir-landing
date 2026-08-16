@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { type Lang, defaultLang, getAlternateUrls, useTranslations } from '../i18n/utils';
+import { API_BASE_URL } from '../site-config';
 
 interface Props {
   lang?: Lang;
@@ -16,6 +17,9 @@ const htmlLang = lang === 'sr' ? 'sr-Cyrl' : lang;
 const ogLocale = lang === 'sr' || lang === 'sr-Latn' ? 'sr_RS' : lang === 'ru' ? 'ru_RU' : 'en_US';
 
 const base = import.meta.env.BASE_URL;
+// Only the delete-account form talks to the API; the CSP allows exactly that
+// origin and nothing else.
+const API_ORIGIN = new URL(API_BASE_URL).origin;
 const alternateUrls = getAlternateUrls(Astro.url.pathname, Astro.site?.toString() || '', base);
 ---
 
@@ -39,11 +43,36 @@ const alternateUrls = getAlternateUrls(Astro.url.pathname, Astro.site?.toString(
     ))}
     <link rel="alternate" hreflang="x-default" href={alternateUrls.find((a) => a.lang === defaultLang)?.url} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      GitHub Pages can't set response headers, so the CSP has to be a meta tag.
+      Everything the site needs is same-origin: Inter is self-hosted under
+      /fonts (see src/styles/fonts.css), there are no third-party scripts, and
+      the only network call any page makes is the delete-account form posting
+      to the API. `frame-ancestors` and `report-uri` are ignored in meta form —
+      that's a documented limitation, not an omission.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content={[
+        "default-src 'self'",
+        "script-src 'self' 'unsafe-inline'",
+        "style-src 'self' 'unsafe-inline'",
+        "img-src 'self' data:",
+        "font-src 'self'",
+        `connect-src 'self' ${API_ORIGIN}`,
+        "form-action 'self'",
+        "base-uri 'self'",
+        "object-src 'none'",
+      ].join('; ')}
+    />
+
+    <!-- Inter is self-hosted; preload the weight above the fold. -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={`${base}fonts/inter-latin-400.woff2`}
+      crossorigin
     />
 
     <link rel="icon" type="image/png" href={`${base}app-icon.png`} />

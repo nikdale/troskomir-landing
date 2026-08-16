@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./fonts.css";
 
 /* The same six roles the mobile app is built from — see
    troskomir-mobile/lib/theme/app_tokens.dart, which is the source of truth.

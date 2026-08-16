@@ -1,0 +1,40 @@
+---
+import type { LegalDocument } from '../i18n/legal';
+
+interface Props {
+  document: LegalDocument;
+}
+
+const { document } = Astro.props;
+---
+
+<!--
+  Renders a document from src/i18n/legal.ts. Prose only, no marketing framing:
+  this is the URL submitted to Google Play and App Store Connect, and the one
+  a supervisory authority would read. Body strings may contain <a> tags (mail
+  and delete-account links) and nothing else.
+-->
+<article class="max-w-3xl mx-auto px-6 pt-28 pb-20">
+  <h1 class="text-3xl font-semibold tracking-tight mb-2">{document.title}</h1>
+  <p class="text-sm text-text-muted mb-10">{document.effective}</p>
+
+  {document.intro.map((paragraph) => (
+    <p class="text-text-muted leading-relaxed mb-4" set:html={paragraph} />
+  ))}
+
+  {document.sections.map((section) => (
+    <section class="mt-10">
+      <h2 class="text-lg font-semibold mb-3">{section.heading}</h2>
+      {section.body?.map((paragraph) => (
+        <p class="text-text-muted leading-relaxed mb-3" set:html={paragraph} />
+      ))}
+      {section.bullets && (
+        <ul class="list-disc pl-5 space-y-2 text-text-muted leading-relaxed">
+          {section.bullets.map((bullet) => (
+            <li set:html={bullet} />
+          ))}
+        </ul>
+      )}
+    </section>
+  ))}
+</article>

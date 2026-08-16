@@ -1,5 +1,6 @@
 ---
-import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import { useTranslations, type Lang, defaultLang, getLocalizedPath } from '../i18n/utils';
+import { PRIVACY_CONTACT_EMAIL } from '../i18n/legal';
 import { TELEGRAM_URL } from '../site-config';
 
 interface Props {
@@ -8,17 +9,41 @@ interface Props {
 
 const { lang = defaultLang } = Astro.props;
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
 const year = new Date().getFullYear();
+
+// Both stores require a reachable support contact and a linked privacy policy,
+// and Play checks that the deletion route it was given actually exists. This
+// footer used to offer a Telegram link and nothing else.
+const legalLinks = [
+  { href: getLocalizedPath('privacy', lang, base), label: t('nav.privacyPolicy') },
+  { href: getLocalizedPath('terms', lang, base), label: t('nav.terms') },
+  { href: getLocalizedPath('delete-account', lang, base), label: t('nav.deleteAccount') },
+];
 ---
 
 <footer id="kontakt" class="py-16 px-6 border-t border-border text-center">
   <h3 class="text-base font-semibold mb-2">{t('footer.contact')}</h3>
   <p class="text-text-muted text-sm max-w-md mx-auto mb-4">{t('footer.contactBody')}</p>
-  <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-sm text-accent hover:bg-secondary/80 transition-colors">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.67l-2.95-.924c-.64-.203-.654-.64.136-.954l11.57-4.461c.537-.194 1.006.131.968.89z"/>
-    </svg>
-    Telegram
-  </a>
-  <p class="text-text-muted text-xs mt-8">&copy; {year} {t('site.title')} — {t('footer.rights')}</p>
+
+  <div class="flex flex-wrap items-center justify-center gap-3">
+    <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-sm text-accent hover:bg-secondary/80 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4" aria-hidden="true">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.67l-2.95-.924c-.64-.203-.654-.64.136-.954l11.57-4.461c.537-.194 1.006.131.968.89z"/>
+      </svg>
+      Telegram
+    </a>
+    <a href={`mailto:${PRIVACY_CONTACT_EMAIL}`} class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-sm text-accent hover:bg-secondary/80 transition-colors">
+      {t('footer.email')}
+      <span class="text-text-muted">{PRIVACY_CONTACT_EMAIL}</span>
+    </a>
+  </div>
+
+  <nav aria-label={t('footer.legal')} class="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-text-muted">
+    {legalLinks.map(({ href, label }) => (
+      <a href={href} class="hover:text-accent transition-colors underline underline-offset-4">{label}</a>
+    ))}
+  </nav>
+
+  <p class="text-text-muted text-xs mt-6">&copy; {year} {t('site.title')} — {t('footer.rights')}</p>
 </footer>

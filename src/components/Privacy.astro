@@ -1,5 +1,5 @@
 ---
-import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import { useTranslations, type Lang, defaultLang, getLocalizedPath } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
@@ -7,6 +7,8 @@ interface Props {
 
 const { lang = defaultLang } = Astro.props;
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+const policyHref = getLocalizedPath('privacy', lang, base);
 ---
 
 <section id="privatnost" class="py-24 px-6">
@@ -16,5 +18,19 @@ const t = useTranslations(lang);
     <p class="text-text-muted leading-relaxed">{t('privacy.body')}</p>
     <h3 class="text-xl font-semibold mt-10 mb-3">{t('privacy.localAi.title')}</h3>
     <p class="text-text-muted leading-relaxed">{t('privacy.localAi.body')}</p>
+
+    <!--
+      This section is marketing copy and stays marketing copy. It used to be
+      the only privacy text on the site, which meant a friendly summary was
+      standing in for a policy. The binding document is linked, and said to be
+      binding, so the two can't be confused again.
+    -->
+    <p class="text-text-muted text-sm mt-10">{t('privacy.marketingNote')}</p>
+    <a
+      href={policyHref}
+      class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-lg bg-secondary text-sm text-accent hover:bg-secondary/80 transition-colors"
+    >
+      {t('privacy.readFullPolicy')}
+    </a>
   </div>
 </section>

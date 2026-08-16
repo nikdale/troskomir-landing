@@ -1,0 +1,7 @@
+# Everything here is public marketing and legal content — nothing to hide from
+# a crawler, and the privacy policy in particular must stay crawlable: Google
+# Play re-checks the policy URL it was given and flags one it cannot reach.
+User-agent: *
+Allow: /
+
+Sitemap: https://troskomir.stryna.com/sitemap-index.xml

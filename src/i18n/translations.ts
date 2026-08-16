@@ -151,6 +151,12 @@ export const translations = {
     "footer.contactBody":
       "Придружите се Telegram групи: питајте шта год желите, предложите нову функцију, пријавите грешку или само ћаскајте са другим корисницима. Или зовите на домаће сарме.",
     "footer.rights": "Сва права задржана.",
+    "nav.privacyPolicy": "Политика приватности",
+    "nav.terms": "Услови коришћења",
+    "footer.email": "Е-пошта",
+    "footer.legal": "Правни документи",
+    "privacy.readFullPolicy": "Прочитајте целу политику приватности",
+    "privacy.marketingNote": "Текст изнад је сажетак. Обавезујућа верзија је политика приватности.",
 
     "deleteAccount.title": "Брисање налога",
     "deleteAccount.intro":
@@ -316,6 +322,12 @@ export const translations = {
     "footer.contactBody":
       "Pridružite se Telegram grupi: pitajte šta god želite, predložite novu funkciju, prijavite grešku ili samo ćaskajte sa drugim korisnicima. Ili zovite na domaće sarme.",
     "footer.rights": "Sva prava zadržana.",
+    "nav.privacyPolicy": "Politika privatnosti",
+    "nav.terms": "Uslovi korišćenja",
+    "footer.email": "E-pošta",
+    "footer.legal": "Pravni dokumenti",
+    "privacy.readFullPolicy": "Pročitajte celu politiku privatnosti",
+    "privacy.marketingNote": "Tekst iznad je sažetak. Obavezujuća verzija je politika privatnosti.",
 
     "deleteAccount.title": "Brisanje naloga",
     "deleteAccount.intro":
@@ -481,6 +493,12 @@ export const translations = {
     "footer.contactBody":
       "Join the Telegram community and ask anything, pitch a feature, report a bug, or just chat with other users.",
     "footer.rights": "All rights reserved.",
+    "nav.privacyPolicy": "Privacy policy",
+    "nav.terms": "Terms of use",
+    "footer.email": "E-mail",
+    "footer.legal": "Legal",
+    "privacy.readFullPolicy": "Read the full privacy policy",
+    "privacy.marketingNote": "The text above is a summary. The privacy policy is the binding version.",
 
     "deleteAccount.title": "Delete account",
     "deleteAccount.intro":
@@ -646,6 +664,12 @@ export const translations = {
     "footer.contactBody":
       "Присоединяйтесь к Telegram-группе: задавайте вопросы, предлагайте новые функции, сообщайте об ошибках или просто общайтесь с другими пользователями.",
     "footer.rights": "Все права защищены.",
+    "nav.privacyPolicy": "Политика конфиденциальности",
+    "nav.terms": "Условия использования",
+    "footer.email": "Эл. почта",
+    "footer.legal": "Правовые документы",
+    "privacy.readFullPolicy": "Читать полную политику конфиденциальности",
+    "privacy.marketingNote": "Текст выше — краткое изложение. Обязательной версией является политика конфиденциальности.",
 
     "deleteAccount.title": "Удаление аккаунта",
     "deleteAccount.intro":
