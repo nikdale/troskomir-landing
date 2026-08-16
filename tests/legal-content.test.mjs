@@ -81,6 +81,26 @@ test('the policy describes the encryption the app actually has', () => {
   }
 });
 
+test('the policy admits the offline cache is not behind the vault lock', () => {
+  // The app lock protects the encryption vault, not the offline cache — those
+  // are separate keys, so cached amounts and descriptions stay readable while
+  // the app is "locked". A user reading "lock private data" will assume
+  // otherwise, and a privacy policy that lets them is the problem.
+  const separateKey = {
+    '': /засебним кључем уређаја/,
+    'en/': /separate device key/i,
+    'ru/': /отдельным ключом устройства/,
+    'sr-Latn/': /zasebnim ključem uređaja/,
+  };
+  for (const prefix of LOCALE_PREFIXES) {
+    const body = text(page(`${prefix}privacy`));
+    assert.ok(
+      separateKey[prefix].test(body),
+      `${prefix}privacy does not disclose that the offline cache uses a key of its own`,
+    );
+  }
+});
+
 test('the policy states data-subject rights and the supervisory authority', () => {
   for (const prefix of LOCALE_PREFIXES) {
     const body = text(page(`${prefix}privacy`));

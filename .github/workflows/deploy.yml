@@ -43,6 +43,17 @@ jobs:
         with:
           path: ./dist
 
+  verify-delete-account:
+    # After the deploy, not before: this checks the live API from the live
+    # origin, and Play verifies the deletion flow by visiting that page.
+    # Side-effect free — a CORS preflight plus a POST with a deliberately
+    # invalid body, so no account is touched and no mail is sent.
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: node scripts/check-delete-account-path.mjs
+
   deploy:
     environment:
       name: github-pages

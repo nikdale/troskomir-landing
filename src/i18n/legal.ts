@@ -198,6 +198,7 @@ const privacyPolicySr: LegalDocument = {
         "Трошкомир нуди опциону заштиту података. Када је укључите, осетљива текстуална поља — описи, белешке и детаљи рачуна — шифрују се на вашем уређају пре него што стигну до сервера, алгоритмом AES-256-GCM. Кључ се изводи из ваше лозинке за заштиту података помоћу Argon2id и никада не напушта уређај. Дељење унутар домаћинства користи размену кључева X25519/HKDF.",
         "То значи да сервер те садржаје не може прочитати. Значи и да их нико, укључујући нас, не може повратити ако изгубите и лозинку и једнократни код за опоравак.",
         "Износи, датуми и веза са налогом нису шифровани на овај начин — потребни су серверу за обрачун. Заштита података је подразумевано искључена; док је искључена, сервер види све ваше уносе.",
+        "Апликација чува и офлајн копију ваших података на самом телефону, како бисте их видели без интернета. Та копија је шифрована засебним кључем уређаја, а не вашом лозинком за заштиту података — што значи да остаје читљива и док је апликација закључана. Брише се при одјави и при брисању налога.",
       ],
     },
     {
@@ -298,6 +299,7 @@ const privacyPolicyEn: LegalDocument = {
         "Troškomir offers optional Data Protection. With it on, sensitive text fields — descriptions, notes and receipt details — are encrypted on your device with AES-256-GCM before they reach the server. The key is derived from your Data Protection password using Argon2id and never leaves the device. Household sharing uses X25519/HKDF key exchange.",
         "This means the server cannot read that content. It also means nobody, including us, can recover it if you lose both your password and your one-time recovery code.",
         "Amounts, dates and the link to your account are not encrypted this way — the server needs them to calculate. Data Protection is off by default; while it is off, the server can see everything you enter.",
+        "The app also keeps an offline copy of your data on the phone itself, so you can read it with no connection. That copy is encrypted under a separate device key rather than your Data Protection password — which means it stays readable while the app is locked. It is erased on logout and on account deletion.",
       ],
     },
     {
@@ -398,6 +400,7 @@ const privacyPolicyRu: LegalDocument = {
         "В Трошкомире есть необязательная защита данных. Когда она включена, чувствительные текстовые поля — описания, заметки и детали чеков — шифруются на вашем устройстве алгоритмом AES-256-GCM до отправки на сервер. Ключ выводится из вашего пароля защиты данных с помощью Argon2id и никогда не покидает устройство. Совместный доступ в рамках домохозяйства использует обмен ключами X25519/HKDF.",
         "Это значит, что сервер не может прочитать это содержимое. Это также значит, что никто, включая нас, не сможет его восстановить, если вы потеряете и пароль, и одноразовый код восстановления.",
         "Суммы, даты и привязка к учётной записи так не шифруются — они нужны серверу для расчётов. Защита данных выключена по умолчанию; пока она выключена, сервер видит всё, что вы вводите.",
+        "Приложение также хранит офлайн-копию ваших данных на самом телефоне, чтобы вы могли читать их без интернета. Эта копия зашифрована отдельным ключом устройства, а не паролем защиты данных — то есть остаётся читаемой, пока приложение заблокировано. Она удаляется при выходе из аккаунта и при удалении аккаунта.",
       ],
     },
     {
