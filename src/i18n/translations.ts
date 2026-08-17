@@ -23,6 +23,10 @@ export const translations = {
     "nav.about": "О аутору",
     "nav.contact": "Контакт",
     "nav.deleteAccount": "Брисање налога",
+    "open.title": "Отварање Трошкомира",
+    "open.body": "Ако се апликација не отвори сама, додирните дугме испод.",
+    "open.button": "Отвори апликацију",
+    "open.fallback": "Немате апликацију? Инсталирајте је и покушајте поново.",
 
     "hero.badge": "Ускоро",
     "hero.subtitle":
@@ -194,6 +198,10 @@ export const translations = {
     "nav.about": "O autoru",
     "nav.contact": "Kontakt",
     "nav.deleteAccount": "Brisanje naloga",
+    "open.title": "Otvaranje Troskomira",
+    "open.body": "Ako se aplikacija ne otvori sama, dodirnite dugme ispod.",
+    "open.button": "Otvori aplikaciju",
+    "open.fallback": "Nemate aplikaciju? Instalirajte je i pokušajte ponovo.",
 
     "hero.badge": "Uskoro",
     "hero.subtitle":
@@ -365,6 +373,10 @@ export const translations = {
     "nav.about": "About",
     "nav.contact": "Contact",
     "nav.deleteAccount": "Delete account",
+    "open.title": "Opening Troškomir",
+    "open.body": "If the app doesn't open on its own, tap the button below.",
+    "open.button": "Open the app",
+    "open.fallback": "Don't have the app? Install it and try again.",
 
     "hero.badge": "Coming soon",
     "hero.subtitle":
@@ -536,6 +548,10 @@ export const translations = {
     "nav.about": "Об авторе",
     "nav.contact": "Контакты",
     "nav.deleteAccount": "Удаление аккаунта",
+    "open.title": "Открываем Трошкомир",
+    "open.body": "Если приложение не открылось само, нажмите кнопку ниже.",
+    "open.button": "Открыть приложение",
+    "open.fallback": "Нет приложения? Установите его и попробуйте снова.",
 
     "hero.badge": "Скоро",
     "hero.subtitle":

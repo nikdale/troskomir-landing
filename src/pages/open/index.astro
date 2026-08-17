@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { translations, defaultLang, type Lang } from '../../i18n/translations';
+import { PLAY_STORE_URL, APP_STORE_URL, isLiveStoreUrl } from '../../site-config';
+
+/**
+ * Bridge between an e-mail button and the app.
+ *
+ * An e-mail client will not follow a `troskomir://` link — several rewrite or
+ * strip anything that isn't http(s) — so every button in every e-mail used to
+ * point at the marketing home page instead, however specific the message was.
+ * They now point here with `?to=<destination>`, and this page hands the
+ * browser the custom scheme.
+ *
+ * Static by necessity (GitHub Pages), so the language comes from `?lang=` and
+ * is applied client-side; the server-rendered copy is the site default.
+ */
+const lang = defaultLang;
+const strings = Object.fromEntries(
+  (Object.keys(translations) as Lang[]).map((code) => [
+    code,
+    {
+      title: translations[code]['open.title'],
+      body: translations[code]['open.body'],
+      button: translations[code]['open.button'],
+      fallback: translations[code]['open.fallback'],
+    },
+  ]),
+);
+const stores = [
+  isLiveStoreUrl(PLAY_STORE_URL) ? PLAY_STORE_URL : null,
+  isLiveStoreUrl(APP_STORE_URL) ? APP_STORE_URL : null,
+].filter((url): url is string => url !== null);
+---
+
+<Layout lang={lang}>
+  <main class="mx-auto flex min-h-[70vh] max-w-md flex-col items-center justify-center gap-6 px-6 text-center">
+    <h1 id="open-title" class="text-2xl font-semibold">{strings[lang].title}</h1>
+    <p id="open-body" class="text-base opacity-80">{strings[lang].body}</p>
+    <a
+      id="open-button"
+      href="troskomir://"
+      class="rounded-lg bg-indigo-600 px-7 py-3 text-base font-bold text-white no-underline"
+    >{strings[lang].button}</a>
+    <p id="open-fallback" class="text-sm opacity-70">{strings[lang].fallback}</p>
+    {stores.length > 0 && (
+      <p class="flex gap-4 text-sm">
+        {stores.map((url) => <a href={url}>{new URL(url).hostname}</a>)}
+      </p>
+    )}
+  </main>
+</Layout>
+
+<script is:inline define:vars={{ strings, defaultLang }}>
+  // Only these destinations exist. An unknown `to` opens the app's home
+  // screen rather than being passed through — the app allowlists its own
+  // routes too (deep_link_router.dart), and neither side trusts the other.
+  const ALLOWED = [
+    'overview',
+    'expenses',
+    'expenses/needs-review',
+    'incomes',
+    'loans',
+    'savings',
+    'statistics',
+    'budgets',
+    'trips',
+    'household',
+    'inbox',
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  const requested = (params.get('to') || '').toLowerCase().replace(/^\/+|\/+$/g, '');
+  const target = ALLOWED.includes(requested) ? requested : '';
+  const deepLink = 'troskomir://' + target;
+
+  const lang = params.get('lang');
+  const copy = strings[lang] || strings[defaultLang];
+  document.getElementById('open-title').textContent = copy.title;
+  document.getElementById('open-body').textContent = copy.body;
+  document.getElementById('open-fallback').textContent = copy.fallback;
+
+  const button = document.getElementById('open-button');
+  button.textContent = copy.button;
+  button.setAttribute('href', deepLink);
+
+  // Auto-attempt once. If the app is installed the OS takes over and this
+  // page is never seen; if it isn't, nothing happens and the button and the
+  // store links are there. Deliberately no timed redirect to a store: on iOS
+  // that races the "Open in app?" prompt and dismisses it.
+  window.location.href = deepLink;
+</script>
