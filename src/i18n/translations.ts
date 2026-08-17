@@ -51,7 +51,7 @@ export const translations = {
 
     "feat.scan.title": "Скенирање фискалног рачуна",
     "feat.scan.body":
-      "Скенирајте QR код са фискалног рачуна камером телефона. Тренутно подржано: 🇷🇸 Србија (suf.purs.gov.rs) и 🇧🇦 Република Српска (suf.poreskaupravars.org). Апликација учитава податке директно са званичне пореске странице и уписује продавницу, износ и артикле. Ускоро и Македонија и Црна Гора.",
+      "Скенирајте QR код са фискалног рачуна камером телефона. Тренутно подржано: 🇷🇸 Србија (suf.purs.gov.rs), 🇧🇦 Република Српска (suf.poreskaupravars.org), 🇲🇪 Црна Гора (mapr.tax.gov.me) и 🇬🇷 Грчка (mydatapi.aade.gr). Апликација учитава податке директно са званичне пореске странице и уписује продавницу, износ и артикле. Грчки називи се, где је могуће, преводе или транслитерују. Ускоро и Македонија.",
     "feat.localAi.title": "Локална AI обрада рачуна",
     "feat.localAi.body":
       "Снимите или изаберите слику рачуна. ML Kit OCR и мали Qwen2.5 језички модел раде на вашем уређају. Модел се једном преузима са Hugging Face-а (око 547 MB), а OCR текст се не шаље cloud AI сервису. Све предложене податке прегледате пре чувања.",
@@ -226,7 +226,7 @@ export const translations = {
 
     "feat.scan.title": "Skeniranje fiskalnog računa",
     "feat.scan.body":
-      "Skenirajte QR kod sa fiskalnog računa kamerom telefona. Trenutno podržano: 🇷🇸 Srbija (suf.purs.gov.rs) i 🇧🇦 Republika Srpska (suf.poreskaupravars.org). Aplikacija učitava podatke direktno sa zvanične poreske stranice i upisuje prodavnicu, iznos i artikle. Uskoro i Makedonija i Crna Gora.",
+      "Skenirajte QR kod sa fiskalnog računa kamerom telefona. Trenutno podržano: 🇷🇸 Srbija (suf.purs.gov.rs), 🇧🇦 Republika Srpska (suf.poreskaupravars.org), 🇲🇪 Crna Gora (mapr.tax.gov.me) i 🇬🇷 Grčka (mydatapi.aade.gr). Aplikacija učitava podatke direktno sa zvanične poreske stranice i upisuje prodavnicu, iznos i artikle. Grčki nazivi se, gde je moguće, prevode ili transliteruju. Uskoro i Makedonija.",
     "feat.localAi.title": "Lokalna AI obrada računa",
     "feat.localAi.body":
       "Snimite ili izaberite sliku računa. ML Kit OCR i mali Qwen2.5 jezički model rade na vašem uređaju. Model se jednom preuzima sa Hugging Face-a (oko 547 MB), a OCR tekst se ne šalje cloud AI servisu. Sve predložene podatke pregledate pre čuvanja.",
@@ -401,7 +401,7 @@ export const translations = {
 
     "feat.scan.title": "Fiscal receipt scanning",
     "feat.scan.body":
-      "Scan the QR code on a fiscal receipt with your phone's camera. Currently supported: 🇷🇸 Serbia (suf.purs.gov.rs) and 🇧🇦 Republic of Srpska (suf.poreskaupravars.org). The app pulls the data straight from the official tax portal and fills in the store, amount and items. North Macedonia and Montenegro coming soon.",
+      "Scan the QR code on a fiscal receipt with your phone's camera. Currently supported: 🇷🇸 Serbia (suf.purs.gov.rs), 🇧🇦 Republic of Srpska (suf.poreskaupravars.org), 🇲🇪 Montenegro (mapr.tax.gov.me) and 🇬🇷 Greece (mydatapi.aade.gr). The app pulls the data straight from the official tax portal and fills in the store, amount and items. Greek merchant names are translated or transliterated where possible. North Macedonia coming soon.",
     "feat.localAi.title": "On-device receipt AI",
     "feat.localAi.body":
       "Take or choose a receipt photo. ML Kit OCR and a small Qwen2.5 language model run on your device. The model is downloaded once from Hugging Face (about 547 MB), while OCR text is not sent to a cloud AI service. You review every suggested field before saving.",
@@ -576,7 +576,7 @@ export const translations = {
 
     "feat.scan.title": "Сканирование фискального чека",
     "feat.scan.body":
-      "Отсканируйте QR-код на фискальном чеке камерой телефона. Сейчас поддерживаются: 🇷🇸 Сербия (suf.purs.gov.rs) и 🇧🇦 Республика Сербская (suf.poreskaupravars.org). Приложение получает данные напрямую с официального налогового портала и само заполняет магазин, сумму и товары. Скоро: Северная Македония и Черногория.",
+      "Отсканируйте QR-код на фискальном чеке камерой телефона. Сейчас поддерживаются: 🇷🇸 Сербия (suf.purs.gov.rs), 🇧🇦 Республика Сербская (suf.poreskaupravars.org), 🇲🇪 Черногория (mapr.tax.gov.me) и 🇬🇷 Греция (mydatapi.aade.gr). Приложение получает данные напрямую с официального налогового портала и само заполняет магазин, сумму и товары. Греческие названия по возможности переводятся или транслитерируются. Скоро: Северная Македония.",
     "feat.localAi.title": "Локальный ИИ для чеков",
     "feat.localAi.body":
       "Сфотографируйте чек или выберите изображение. ML Kit OCR и небольшая языковая модель Qwen2.5 работают на вашем устройстве. Модель один раз загружается с Hugging Face (около 547 МБ), а OCR-текст не отправляется в облачный ИИ-сервис. Перед сохранением вы проверяете все предложенные поля.",

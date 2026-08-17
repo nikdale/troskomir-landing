@@ -53,6 +53,8 @@ test('the policy discloses every third party and data flow', () => {
     'suf.purs.gov.rs',
     'suf.poreskaupravars.org',
     'mapr.tax.gov.me',
+    'mydatapi.aade.gr',
+    'ec.europa.eu',
     'IP',
     'user-agent',
     'nikdale@duck.com',

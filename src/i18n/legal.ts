@@ -62,7 +62,7 @@ export const DELETE_ACCOUNT_URL =
   "https://troskomir.stryna.com/delete-account/";
 
 const FISCAL_PORTALS =
-  "suf.purs.gov.rs, suf.poreskaupravars.org, mapr.tax.gov.me";
+  "suf.purs.gov.rs, suf.poreskaupravars.org, mapr.tax.gov.me, mydatapi.aade.gr";
 
 /**
  * Serbian Cyrillic → Latin, applied to the `sr` documents to produce `sr-Latn`.
@@ -216,6 +216,7 @@ const privacyPolicySr: LegalDocument = {
         "Google Firebase Crashlytics — извештаји о падовима и дијагностички подаци, како би се грешке исправиле. Извештаји се шаљу компанији Google.",
         "Google Firebase Cloud Messaging — токен вашег уређаја, како бисте примали обавештења која сте укључили. Токен се шаље компанији Google.",
         `Државни фискални портали (${FISCAL_PORTALS}) — када скенирате QR код са фискалног рачуна, наш сервер у ваше име преузима садржај рачуна са портала надлежне пореске управе.`,
+        "EU VIES (ec.europa.eu) — када грчки рачун нема назив продавца, тражимо порески број (ΑΦΜ) на европском VIES сервису да бисмо добили званичан назив предузећа.",
         "Hugging Face — једнократно преузимање датотеке модела ако укључите обраду рачуна на уређају. Сам модел затим ради локално; слике рачуна се не шаљу никоме.",
       ],
     },
@@ -317,6 +318,7 @@ const privacyPolicyEn: LegalDocument = {
         "Google Firebase Crashlytics — crash reports and diagnostic data, so faults can be fixed. Reports go to Google.",
         "Google Firebase Cloud Messaging — your device push token, so you can receive the notifications you enable. The token goes to Google.",
         `Government fiscal portals (${FISCAL_PORTALS}) — when you scan a receipt QR code, our server fetches the receipt contents from the relevant tax authority's portal on your behalf.`,
+        "EU VIES (ec.europa.eu) — when a Greek receipt has no seller name, we look up the tax number (ΑΦΜ) on the European VIES service to get the official company name.",
         "Hugging Face — a one-time model file download if you enable on-device receipt processing. The model then runs locally; receipt images are not sent anywhere.",
       ],
     },
@@ -418,6 +420,7 @@ const privacyPolicyRu: LegalDocument = {
         "Google Firebase Crashlytics — отчёты о сбоях и диагностические данные для исправления ошибок. Отчёты отправляются в Google.",
         "Google Firebase Cloud Messaging — push-токен вашего устройства, чтобы вы получали включённые вами уведомления. Токен отправляется в Google.",
         `Государственные фискальные порталы (${FISCAL_PORTALS}) — при сканировании QR-кода чека наш сервер по вашему поручению получает содержимое чека с портала соответствующей налоговой службы.`,
+        "EU VIES (ec.europa.eu) — если на греческом чеке нет названия продавца, мы запрашиваем налоговый номер (ΑΦΜ) в европейском сервисе VIES, чтобы получить официальное название компании.",
         "Hugging Face — однократная загрузка файла модели, если вы включите обработку чеков на устройстве. Далее модель работает локально; изображения чеков никуда не отправляются.",
       ],
     },
