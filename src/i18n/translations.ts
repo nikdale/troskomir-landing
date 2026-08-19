@@ -161,7 +161,7 @@ export const translations = {
     "about.heading": "О аутору",
     "about.name": "Никола Дашић",
     "about.bio":
-      "Ћао, ја сам Никола Дашић, програмер, отац, радио аматер, тип са превише хобија, узгајивач кокошака, поносни власник Дачије, редовни купац у ИКЕИ, поборник GNU/Linux-а, електротехничар електронике, православни хришћанин, посвећеник теретани, поштовалац говеђе пршуте, обожавалац Yandex-а, бициклистички бади, и неко ко је годинама пратио своје трошкове у проклетом Excel-у... док нисам одлучио да направим нешто боље. Трошкомир ради на мом кућном сервер-лабу, не у неком великом облаку, зато основне функције остају бесплатне. Ако имате питања или предлоге, јавите се.",
+      "Помаже Бог, ја сам Никола Дашић, отац, {age}-годишњи програмер, радио аматер, тип са превише хобија, нередовни испијач креатина, заљубљеник у Пролом воду, узгајивач кокошака, поносни власник Дачије, редовни купац у ИКЕИ, поборник GNU/Linux-а, електротехничар електронике, православни хришћанин, посвећеник теретани који је 17. августа 2026. први пут истрчао круг око Аде Циганлије, поштовалац говеђе пршуте, обожавалац Yandex-а, бициклистички бади, и неко ко је годинама пратио своје трошкове у проклетом Excel-у... док нисам одлучио да направим нешто боље. Трошкомир ради на мом кућном сервер-лабу, не у неком великом облаку, зато основне функције остају бесплатне. Ако имате питања или предлоге, јавите се.",
     "about.linkedin": "Повежимо се на LinkedIn-у",
 
     "hosting.heading": "Где апликација ради",
@@ -356,7 +356,7 @@ export const translations = {
     "about.heading": "O autoru",
     "about.name": "Nikola Dašić",
     "about.bio":
-      "Ćao, ja sam Nikola Dašić, programer, otac, radio amater, tip sa previše hobija, uzgajivač kokošaka, ponosni vlasnik Dačije, redovni kupac u IKEI, pobornik GNU/Linux-a, elektrotehničar elektronike, pravoslavni hrišćanin, posvećenik teretani, poštovalac goveđe pršute, obožavalac Yandex-a, biciklistički badi, i neko ko je godinama pratio svoje troškove u prokletom Excel-u... dok nisam odlučio da napravim nešto bolje. Troskomir radi na mom kućnom server-labu, ne u nekom velikom oblaku, zato osnovne funkcije ostaju besplatne. Ako imate pitanja ili predloge, javite se.",
+      "Pomaže Bog, ja sam Nikola Dašić, otac, {age}-godišnji programer, radio amater, tip sa previše hobija, neredovni ispijač kreatina, zaljubljenik u Prolom vodu, uzgajivač kokošaka, ponosni vlasnik Dačije, redovni kupac u IKEI, pobornik GNU/Linux-a, elektrotehničar elektronike, pravoslavni hrišćanin, posvećenik teretani koji je 17. avgusta 2026. prvi put istrčao krug oko Ade Ciganlije, poštovalac goveđe pršute, obožavalac Yandex-a, biciklistički badi, i neko ko je godinama pratio svoje troškove u prokletom Excel-u... dok nisam odlučio da napravim nešto bolje. Troskomir radi na mom kućnom server-labu, ne u nekom velikom oblaku, zato osnovne funkcije ostaju besplatne. Ako imate pitanja ili predloge, javite se.",
     "about.linkedin": "Povežimo se na LinkedIn-u",
 
     "hosting.heading": "Gde aplikacija radi",
@@ -551,7 +551,7 @@ export const translations = {
     "about.heading": "About the author",
     "about.name": "Nikola Dašić",
     "about.bio":
-      "Hi, I'm Nikola Da\u0161i\u0107, a software engineer, father, HAM radio operator, a guy with way too many hobbies, chicken farmer, Dacia owner, IKEA regular, GNU/Linux supporter, electronics technician, Orthodox Christian, gym-goer, prosciutto connoisseur, Yandex admirer, cycling buddy, and someone who tracked expenses in cursed Excel spreadsheets for way too many years... until I decided to just build something better. Troskomir runs on my own home server lab, not some big commercial cloud, which is exactly why the core features stay free. Questions or suggestions? Just reach out.",
+      "God helps — I'm Nikola Da\u0161i\u0107, a father, a {age}-year-old programmer, HAM radio operator, a guy with way too many hobbies, an irregular creatine drinker, a Prolom water devotee, chicken farmer, proud Dacia owner, IKEA regular, GNU/Linux supporter, electronics technician, Orthodox Christian, gym devotee who on 17 August 2026 ran a lap around Ada Ciganlija for the first time, prosciutto connoisseur, Yandex admirer, cycling buddy, and someone who tracked expenses in cursed Excel spreadsheets for way too many years... until I decided to just build something better. Troskomir runs on my own home server lab, not some big commercial cloud, which is exactly why the core features stay free. Questions or suggestions? Just reach out.",
     "about.linkedin": "Connect on LinkedIn",
 
     "hosting.heading": "Where it runs",
@@ -746,7 +746,7 @@ export const translations = {
     "about.heading": "Об авторе",
     "about.name": "Никола Дашич",
     "about.bio":
-      "Привет, я Никола Дашич, инженер-программист, отец, радиолюбитель (HAM), человек со слишком большим количеством увлечений, птицевод, владелец Dacia, завсегдатай IKEA, сторонник GNU/Linux, специалист по электронике, православный христианин, любитель спортзала, ценитель прошутто, поклонник Яндекса, велосипедный товарищ и тот, кто годами вёл учёт расходов в проклятом Excel'е... пока не решил сделать что-то получше. Трошкомир работает на моём домашнем сервере, а не в большом коммерческом облаке, именно поэтому основные функции остаются бесплатными. Есть вопросы или предложения? Пишите.",
+      "Помогай Бог, я Никола Дашич, отец, {age}-летний программист, радиолюбитель (HAM), человек со слишком большим количеством увлечений, нерегулярный любитель креатина, поклонник воды Prolom, птицевод, гордый владелец Dacia, завсегдатай IKEA, сторонник GNU/Linux, специалист по электронике, православный христианин, преданный спортзалу, который 17 августа 2026 года впервые пробежал круг вокруг Ады Циганлии, ценитель прошутто, поклонник Яндекса, велосипедный товарищ и тот, кто годами вёл учёт расходов в проклятом Excel'е... пока не решил сделать что-то получше. Трошкомир работает на моём домашнем сервере, а не в большом коммерческом облаке, именно поэтому основные функции остаются бесплатными. Есть вопросы или предложения? Пишите.",
     "about.linkedin": "Давайте свяжемся в LinkedIn",
 
     "hosting.heading": "Где это работает",

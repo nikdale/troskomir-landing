@@ -32,3 +32,19 @@ export function isLiveStoreUrl(url: string | undefined | null): boolean {
 // Same backend the mobile app talks to (see troskomir-mobile/lib/config/api_config.dart).
 // Used by the account-deletion form, which is the one page here that calls the API.
 export const API_BASE_URL = 'https://api.troskomir.stryna.com/api';
+
+// About-page age. Increments on 18 December, not on 1 January.
+export const AUTHOR_BIRTHDAY = { year: 1997, month: 12, day: 18 } as const;
+
+export function ageOn(
+  now: Date,
+  birth: { year: number; month: number; day: number } = AUTHOR_BIRTHDAY,
+): number {
+  let age = now.getFullYear() - birth.year;
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  if (month < birth.month || (month === birth.month && day < birth.day)) {
+    age -= 1;
+  }
+  return age;
+}

@@ -141,6 +141,20 @@ test('a support contact is reachable from the footer', () => {
   assert.ok(html.includes('mailto:nikdale@duck.com'));
 });
 
+test('the about bio greets in character and fills in a live age', () => {
+  const sr = text(page('about'));
+  assert.match(sr, /Помаже Бог/);
+  assert.match(sr, /\d{2}-годишњи/);
+  assert.doesNotMatch(sr, /\{age\}/);
+  assert.match(sr, /креатина/);
+  assert.match(sr, /Пролом/);
+  assert.match(sr, /Аде Циганлије/);
+
+  const en = text(page('en/about'));
+  assert.match(en, /God helps/);
+  assert.match(en, /\d{2}-year-old/);
+});
+
 test('no page loads a resource from another origin', () => {
   // Catches a regression back to Google Fonts, which sent every visitor's IP
   // to Google — on the privacy pages of a privacy-branded app.

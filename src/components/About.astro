@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import { AUTHOR_BIRTHDAY, ageOn } from '../site-config';
 import brvnaraImg from '../assets/brvnara.jpg';
 import serveriImg from '../assets/serveri.jpg';
 
@@ -11,6 +12,8 @@ interface Props {
 
 const { lang = defaultLang, linkedinUrl = '#' } = Astro.props;
 const t = useTranslations(lang);
+const bioTemplate = t('about.bio');
+const bio = bioTemplate.replaceAll('{age}', String(ageOn(new Date())));
 ---
 
 <section class="pt-40 pb-24 px-6">
@@ -26,7 +29,24 @@ const t = useTranslations(lang);
     />
 
     <p class="font-semibold text-lg mb-4">{t('about.name')}</p>
-    <p class="text-text-muted leading-relaxed mb-8">{t('about.bio')}</p>
+    <p id="about-bio" class="text-text-muted leading-relaxed mb-8">{bio}</p>
+    <!--
+      Build-time age is right on deploy day. This reruns in the browser so
+      18 December still ticks the number if the site was not rebuilt that week.
+    -->
+    <script is:inline define:vars={{ bioTemplate, birth: AUTHOR_BIRTHDAY }}>
+      (function () {
+        var now = new Date();
+        var age = now.getFullYear() - birth.year;
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        if (month < birth.month || (month === birth.month && day < birth.day)) {
+          age -= 1;
+        }
+        var el = document.getElementById('about-bio');
+        if (el) el.textContent = bioTemplate.split('{age}').join(String(age));
+      })();
+    </script>
 
     <a
       href={linkedinUrl}
