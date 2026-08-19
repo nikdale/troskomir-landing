@@ -17,7 +17,13 @@ interface Props {
     | 'chart'
     | 'dollar'
     | 'map'
-    | 'trending';
+    | 'trending'
+    | 'offline'
+    | 'devices'
+    | 'backup'
+    | 'upload'
+    | 'widget'
+    | 'sliders';
   class?: string;
 }
 
@@ -42,6 +48,13 @@ const paths: Record<Props['name'], string> = {
   dollar: 'M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6',
   map: 'M3 7l6-4 6 4 6-4v13l-6 4-6-4-6 4V7zM9 3v13M15 7v13',
   trending: 'M22 7L13.5 15.5 8.5 10.5 2 17M16 7H22V13',
+  offline:
+    'M2 8.8A13 13 0 0 1 22 8.8 M5 12.6A8.5 8.5 0 0 1 19 12.6 M8.5 16.4a5 5 0 0 1 7 0 M12 20h.01 M3 3l18 18',
+  devices: 'M5 5h11v11H5z M8 19h6 M16 11h5v9h-5z',
+  backup: 'M12 3v10 M8 9l4 4 4-4 M5 19h14',
+  upload: 'M12 16V5 M8 9l4-4 4 4 M5 19h14',
+  widget: 'M4 4h7v7H4z M13 4h7v7h-7z M4 13h7v7H4z M13 13h7v7h-7z',
+  sliders: 'M4 8h4 M12 8h8 M8 6v4 M4 16h8 M16 16h4 M12 14v4',
 };
 ---
 

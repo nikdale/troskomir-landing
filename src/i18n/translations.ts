@@ -26,9 +26,9 @@ export const translations = {
     "open.title": "Отварање Трошкомира",
     "open.body": "Ако се апликација не отвори сама, додирните дугме испод.",
     "open.button": "Отвори апликацију",
-    "open.fallback": "Немате апликацију? Инсталирајте је и покушајте поново.",
+    "open.fallback": "Немате апликацију? Преузмите је са Google Play-а и покушајте поново.",
 
-    "hero.badge": "Ускоро",
+    "hero.badge": "Доступно на Google Play",
     "hero.subtitle":
       "Трошкомир вам показује тачно где иде ваш новац: трошкови, картице, рате, штедња и подсетници, све прегледно, на једном месту.",
     "cta.playStore": "Преузми са Google Play-а",
@@ -37,12 +37,32 @@ export const translations = {
     "cta.appStoreSoon": "App Store, ускоро",
     "cta.storesComingSoon": "Ускоро на Google Play и App Store",
     "cta.comingSoonHint":
-      "Линкови ће се појавити чим апликација буде објављена у продавницама.",
+      "Линк за App Store ће се појавити чим Apple одобри апликацију.",
 
     "features.heading": "Шта Трошкомир уме",
     "features.subheading":
       "Кратак преглед свих функција, да знате шта добијате.",
     "features.joke": "свашта Трошко умије, у све се разумије..",
+
+    "cat.works": "Како ради",
+    "feat.offline.title": "Ради без интернета",
+    "feat.offline.body":
+      "Трошкови, приходи, зајмови, штедња, буџети, валутни базени и лојалти картице раде потпуно офлајн. Све се чува на телефону и само се синхронизује кад се веза врати, било да је пао ваш интернет или мој кућни сервер. Дељено домаћинство и групна путовања су до тада само за преглед, јер измена мора да стигне и до друге стране.",
+    "feat.devices.title": "Исти налог на више уређаја",
+    "feat.devices.body":
+      "Пријавите се истим налогом на телефону и таблету. Измене се усклађују кад оба уређаја буду на мрежи. Ако се иста ставка измени на два места док сте офлајн, конфликт се покаже уместо да се подаци препишу. У подешавањима видите све активне сесије и можете било коју опозвати.",
+    "feat.backup.title": "Резервне копије и извоз",
+    "feat.backup.body":
+      "Извезите пуну JSON копију коју касније вратите, спајањем или заменом постојећих података, или TXT извештај и CSV за Excel. Ако укључите заштиту података, копија је шифрована истим кључем.",
+    "feat.statements.title": "Увоз банковног извода",
+    "feat.statements.body":
+      "Учитајте PDF извод и Трошкомир упише трошкове и приходе одједном, уз проверу да се салдо слаже. Тренутно: Banca Intesa, OTP банка Србија и Yettel банка. Дупликати се препознају, па исто не уносите двапут.",
+    "feat.widgets.title": "Виџет на почетном екрану",
+    "feat.widgets.body":
+      "На почетни екран ставите виџет са бројем скенираних рачуна овог месеца и онима који чекају преглед, или лојалти картице за брз приступ на каси. Скенирање рачуна креће директно са виџета.",
+    "feat.flags.title": "Управљање функцијама",
+    "feat.flags.body":
+      "Путовања, зајмови, штедња, буџети, рачуни, лојалти картице, валутни базени, увоз извода и локални AI могу да се искључе. Искључен модул нестаје из менија и престаје да шаље подсетнике. Подаци се не бришу, вратите га кад год пожелите. Трошкови, приходи и статистика увек остају укључени.",
 
     "cat.tracking": "Праћење трошкова",
     "cat.cards": "Картице и рате",
@@ -146,7 +166,7 @@ export const translations = {
 
     "hosting.heading": "Где апликација ради",
     "hosting.body":
-      "Трошкомир ради на мом кућном серверу (home lab), а не у некој великој комерцијалној cloud услузи. То смањује трошкове и омогућава ми да апликацију понудим бесплатно, али значи и да је доступност сервиса онолико поуздана колико и мој кућни интернет и струја.",
+      "Трошкомир ради на мом кућном серверу (home lab), а не у некој великој комерцијалној cloud услузи. То смањује трошкове и омогућава ми да апликацију понудим бесплатно, али значи и да је доступност сервиса онолико поуздана колико и мој кућни интернет и струја. Ако сервер падне, апликација и даље ради на вашем телефону: подаци се чувају локално и синхронизују се кад се веза врати. Исти налог можете користити на више уређаја.",
     "hosting.caption1":
       "Брвнара у дворишту, ту живи цео home lab (и моја радио опрема).",
     "hosting.caption2": "Сервери, док сам их тек монтирао.",
@@ -201,9 +221,9 @@ export const translations = {
     "open.title": "Otvaranje Troskomira",
     "open.body": "Ako se aplikacija ne otvori sama, dodirnite dugme ispod.",
     "open.button": "Otvori aplikaciju",
-    "open.fallback": "Nemate aplikaciju? Instalirajte je i pokušajte ponovo.",
+    "open.fallback": "Nemate aplikaciju? Preuzmite je sa Google Play-a i pokušajte ponovo.",
 
-    "hero.badge": "Uskoro",
+    "hero.badge": "Dostupno na Google Play",
     "hero.subtitle":
       "Troskomir vam pokazuje tačno gde ide vaš novac: troškovi, kartice, rate, štednja i podsetnici, sve pregledno, na jednom mestu.",
     "cta.playStore": "Preuzmi sa Google Play-a",
@@ -212,12 +232,32 @@ export const translations = {
     "cta.appStoreSoon": "App Store, uskoro",
     "cta.storesComingSoon": "Uskoro na Google Play i App Store",
     "cta.comingSoonHint":
-      "Linkovi će se pojaviti čim aplikacija bude objavljena u prodavnicama.",
+      "Link za App Store će se pojaviti čim Apple odobri aplikaciju.",
 
     "features.heading": "Šta Troskomir ume",
     "features.subheading":
       "Kratak pregled svih funkcija, da znate šta dobijate.",
     "features.joke": "svašta Troško umije, u sve se razumije..",
+
+    "cat.works": "Kako radi",
+    "feat.offline.title": "Radi bez interneta",
+    "feat.offline.body":
+      "Troškovi, prihodi, zajmovi, štednja, budžeti, valutni bazeni i lojalti kartice rade potpuno oflajn. Sve se čuva na telefonu i samo se sinhronizuje kad se veza vrati, bilo da je pao vaš internet ili moj kućni server. Deljeno domaćinstvo i grupna putovanja su do tada samo za pregled, jer izmena mora da stigne i do druge strane.",
+    "feat.devices.title": "Isti nalog na više uređaja",
+    "feat.devices.body":
+      "Prijavite se istim nalogom na telefonu i tabletu. Izmene se usklađuju kad oba uređaja budu na mreži. Ako se ista stavka izmeni na dva mesta dok ste oflajn, konflikt se pokaže umesto da se podaci prepišu. U podešavanjima vidite sve aktivne sesije i možete bilo koju opozvati.",
+    "feat.backup.title": "Rezervne kopije i izvoz",
+    "feat.backup.body":
+      "Izvezite punu JSON kopiju koju kasnije vratite, spajanjem ili zamenom postojećih podataka, ili TXT izveštaj i CSV za Excel. Ako uključite zaštitu podataka, kopija je šifrovana istim ključem.",
+    "feat.statements.title": "Uvoz bankovnog izvoda",
+    "feat.statements.body":
+      "Učitajte PDF izvod i Troskomir upiše troškove i prihode odjednom, uz proveru da se saldo slaže. Trenutno: Banca Intesa, OTP banka Srbija i Yettel banka. Duplikati se prepoznaju, pa isto ne unosite dvaput.",
+    "feat.widgets.title": "Vidžet na početnom ekranu",
+    "feat.widgets.body":
+      "Na početni ekran stavite vidžet sa brojem skeniranih računa ovog meseca i onima koji čekaju pregled, ili lojalti kartice za brz pristup na kasi. Skeniranje računa kreće direktno sa vidžeta.",
+    "feat.flags.title": "Upravljanje funkcijama",
+    "feat.flags.body":
+      "Putovanja, zajmovi, štednja, budžeti, računi, lojalti kartice, valutni bazeni, uvoz izvoda i lokalni AI mogu da se isključe. Isključen modul nestaje iz menija i prestaje da šalje podsetnike. Podaci se ne brišu, vratite ga kad god poželite. Troškovi, prihodi i statistika uvek ostaju uključeni.",
 
     "cat.tracking": "Praćenje troškova",
     "cat.cards": "Kartice i rate",
@@ -321,7 +361,7 @@ export const translations = {
 
     "hosting.heading": "Gde aplikacija radi",
     "hosting.body":
-      "Troskomir radi na mom kućnom serveru (home lab), a ne u nekoj velikoj komercijalnoj cloud usluzi. To smanjuje troškove i omogućava mi da aplikaciju ponudim besplatno, ali znači i da je dostupnost servisa onoliko pouzdana koliko i moj kućni internet i struja.",
+      "Troskomir radi na mom kućnom serveru (home lab), a ne u nekoj velikoj komercijalnoj cloud usluzi. To smanjuje troškove i omogućava mi da aplikaciju ponudim besplatno, ali znači i da je dostupnost servisa onoliko pouzdana koliko i moj kućni internet i struja. Ako server padne, aplikacija i dalje radi na vašem telefonu: podaci se čuvaju lokalno i sinhronizuju se kad se veza vrati. Isti nalog možete koristiti na više uređaja.",
     "hosting.caption1":
       "Brvnara u dvorištu, tu živi ceo home lab (i moja radio oprema).",
     "hosting.caption2": "Serveri, dok sam ih tek montirao.",
@@ -376,9 +416,9 @@ export const translations = {
     "open.title": "Opening Troškomir",
     "open.body": "If the app doesn't open on its own, tap the button below.",
     "open.button": "Open the app",
-    "open.fallback": "Don't have the app? Install it and try again.",
+    "open.fallback": "Don't have the app? Get it on Google Play and try again.",
 
-    "hero.badge": "Coming soon",
+    "hero.badge": "Now on Google Play",
     "hero.subtitle":
       "Troskomir shows you exactly where your money goes: expenses, cards, installments, savings and reminders, all in one place.",
     "cta.playStore": "Get it on Google Play",
@@ -387,12 +427,32 @@ export const translations = {
     "cta.appStoreSoon": "App Store, coming soon",
     "cta.storesComingSoon": "Coming soon on Google Play and the App Store",
     "cta.comingSoonHint":
-      "Links will appear once the app is published on the stores.",
+      "The App Store link will appear once Apple approves the app.",
 
     "features.heading": "What Troskomir does",
     "features.subheading":
       "A quick rundown of every feature, so you know what you're getting.",
     "features.joke": "",
+
+    "cat.works": "How it works",
+    "feat.offline.title": "Works without internet",
+    "feat.offline.body":
+      "Expenses, incomes, loans, savings, budgets, currency pools and loyalty cards all work fully offline. Everything is saved on your phone and syncs when the connection comes back, whether that's your internet or my home server. Shared household and group trips stay view-only until then, because an edit has to reach the other person too.",
+    "feat.devices.title": "Same account on several devices",
+    "feat.devices.body":
+      "Sign in with the same account on your phone and tablet. Changes catch up once both devices are online. If the same record is edited in two places while offline, the conflict is shown instead of silently overwriting. Settings lists every active session so you can revoke any of them.",
+    "feat.backup.title": "Backups and export",
+    "feat.backup.body":
+      "Export a full JSON copy you can restore later, merging or replacing what you have, or a TXT report and a CSV for Excel. Turn on data protection and the backup is encrypted with the same key.",
+    "feat.statements.title": "Bank statement import",
+    "feat.statements.body":
+      "Load a PDF statement and Troskomir books the expenses and incomes in one go, checking that the running balance adds up. Currently: Banca Intesa, OTP banka Srbija and Yettel banka. Duplicates are detected, so you don't enter the same row twice.",
+    "feat.widgets.title": "Home-screen widget",
+    "feat.widgets.body":
+      "Put a widget on your home screen with this month's scanned-receipt count and the ones waiting for review, or your loyalty cards for a quick pull-up at the till. Receipt scanning starts straight from the widget.",
+    "feat.flags.title": "Manage features",
+    "feat.flags.body":
+      "Trips, loans, savings, budgets, receipts, loyalty cards, currency pools, statement import and the on-device AI can each be switched off. A disabled module leaves the menu and stops sending its reminders. Your data is not deleted — turn it back on any time. Expenses, incomes and statistics stay on.",
 
     "cat.tracking": "Expense tracking",
     "cat.cards": "Cards & installments",
@@ -496,7 +556,7 @@ export const translations = {
 
     "hosting.heading": "Where it runs",
     "hosting.body":
-      "Troskomir runs on my own home server lab, not a big commercial cloud. That keeps costs low and lets me offer the app for free, though it also means the service is only as reliable as my home internet and power.",
+      "Troskomir runs on my own home server lab, not a big commercial cloud. That keeps costs low and lets me offer the app for free, though it also means the service is only as reliable as my home internet and power. If the server goes down, the app still works on your phone: data is saved locally and syncs when the connection comes back. The same account works on more than one device.",
     "hosting.caption1":
       "The wooden shed in my backyard, home to the whole lab (and my HAM radio gear).",
     "hosting.caption2": "The servers, mid-setup.",
@@ -551,9 +611,9 @@ export const translations = {
     "open.title": "Открываем Трошкомир",
     "open.body": "Если приложение не открылось само, нажмите кнопку ниже.",
     "open.button": "Открыть приложение",
-    "open.fallback": "Нет приложения? Установите его и попробуйте снова.",
+    "open.fallback": "Нет приложения? Загрузите его из Google Play и попробуйте снова.",
 
-    "hero.badge": "Скоро",
+    "hero.badge": "Уже в Google Play",
     "hero.subtitle":
       "Трошкомир точно показывает, куда уходят ваши деньги: расходы, карты, рассрочка, накопления и напоминания, всё в одном месте.",
     "cta.playStore": "Загрузите в Google Play",
@@ -562,12 +622,32 @@ export const translations = {
     "cta.appStoreSoon": "App Store, скоро",
     "cta.storesComingSoon": "Скоро в Google Play и App Store",
     "cta.comingSoonHint":
-      "Ссылки появятся, когда приложение будет опубликовано в магазинах.",
+      "Ссылка на App Store появится, когда Apple одобрит приложение.",
 
     "features.heading": "Что умеет Трошкомир",
     "features.subheading":
       "Короткий обзор всех функций, чтобы вы знали, что получаете.",
     "features.joke": "",
+
+    "cat.works": "Как это работает",
+    "feat.offline.title": "Работает без интернета",
+    "feat.offline.body":
+      "Расходы, доходы, займы, накопления, бюджеты, валютные пулы и карты лояльности полностью работают офлайн. Всё сохраняется на телефоне и синхронизируется, когда связь возвращается, будь то ваш интернет или мой домашний сервер. Общее домохозяйство и групповые поездки до тех пор доступны только для просмотра, потому что изменение должно дойти и до другой стороны.",
+    "feat.devices.title": "Один аккаунт на нескольких устройствах",
+    "feat.devices.body":
+      "Войдите с тем же аккаунтом на телефоне и планшете. Изменения подтягиваются, когда оба устройства снова в сети. Если одна и та же запись изменена в двух местах офлайн, конфликт показывается, а не перезаписывается молча. В настройках видны все активные сессии, любую можно отозвать.",
+    "feat.backup.title": "Резервные копии и экспорт",
+    "feat.backup.body":
+      "Экспортируйте полную JSON-копию, которую потом восстановите, с объединением или заменой текущих данных, либо TXT-отчёт и CSV для Excel. Если включить защиту данных, копия шифруется тем же ключом.",
+    "feat.statements.title": "Импорт банковской выписки",
+    "feat.statements.body":
+      "Загрузите PDF-выписку, и Трошкомир внесёт расходы и доходы сразу, проверив, что сальдо сходится. Сейчас: Banca Intesa, OTP banka Srbija и Yettel banka. Дубликаты распознаются, так что одну и ту же строку вы не внесёте дважды.",
+    "feat.widgets.title": "Виджет на домашнем экране",
+    "feat.widgets.body":
+      "Поставьте виджет с числом отсканированных чеков за этот месяц и теми, что ждут проверки, или карты лояльности для быстрого доступа на кассе. Сканирование чека запускается прямо с виджета.",
+    "feat.flags.title": "Управление функциями",
+    "feat.flags.body":
+      "Поездки, займы, накопления, бюджеты, чеки, карты лояльности, валютные пулы, импорт выписки и локальный ИИ можно выключить. Отключённый модуль исчезает из меню и перестаёт слать напоминания. Данные не удаляются, включите снова в любой момент. Расходы, доходы и статистика всегда остаются включёнными.",
 
     "cat.tracking": "Учёт расходов",
     "cat.cards": "Карты и рассрочка",
@@ -671,7 +751,7 @@ export const translations = {
 
     "hosting.heading": "Где это работает",
     "hosting.body":
-      "Трошкомир работает на моём домашнем сервере (home lab), а не в большом коммерческом облаке. Это снижает расходы и позволяет мне предлагать приложение бесплатно, но также означает, что доступность сервиса зависит от моего домашнего интернета и электричества.",
+      "Трошкомир работает на моём домашнем сервере (home lab), а не в большом коммерческом облаке. Это снижает расходы и позволяет мне предлагать приложение бесплатно, но также означает, что доступность сервиса зависит от моего домашнего интернета и электричества. Если сервер упадёт, приложение всё равно работает на телефоне: данные сохраняются локально и синхронизируются, когда связь вернётся. Один и тот же аккаунт можно использовать на нескольких устройствах.",
     "hosting.caption1":
       "Деревянный сарай на заднем дворе, здесь живёт вся домашняя лаборатория (и моё радиооборудование).",
     "hosting.caption2": "Серверы, во время установки.",

@@ -145,7 +145,13 @@ test('no page loads a resource from another origin', () => {
   // Catches a regression back to Google Fonts, which sent every visitor's IP
   // to Google — on the privacy pages of a privacy-branded app.
   const attributes = /(?:src|href)\s*=\s*"(https?:\/\/[^"]+)"/g;
-  const allowedAsLinks = ['https://t.me/', 'https://www.linkedin.com/', 'https://troskomir.stryna.com'];
+  const allowedAsLinks = [
+    'https://t.me/',
+    'https://www.linkedin.com/',
+    'https://troskomir.stryna.com',
+    'https://play.google.com/',
+    'https://apps.apple.com/',
+  ];
   for (const prefix of LOCALE_PREFIXES) {
     for (const path of ['', `${prefix}privacy`, `${prefix}terms`, `${prefix}about`]) {
       const html = page(path);

@@ -64,9 +64,11 @@ u `.astro` fajlovima.
 Sajt se automatski deployuje na GitHub Pages pri svakom push-u na `main`
 granu (`.github/workflows/deploy.yml`).
 
-The deploy workflow requires the `PUBLIC_PLAY_STORE_URL` and
-`PUBLIC_APP_STORE_URL` Actions variables to contain the final HTTPS listing
-URLs. Local builds may leave them unset and show the coming-soon state.
+Store listing URLs live in `src/site-config.ts`. Google Play is live;
+the App Store URL stays empty until Apple approves, and the hero shows
+a muted "coming soon" badge for iOS in the meantime. Optional
+`PUBLIC_PLAY_STORE_URL` / `PUBLIC_APP_STORE_URL` Actions variables
+override those defaults at build time if they are set.
 
 ### Jednokratno podešavanje (posle prvog push-a)
 

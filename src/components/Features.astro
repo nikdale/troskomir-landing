@@ -11,6 +11,12 @@ const { lang = defaultLang } = Astro.props;
 const t = useTranslations(lang);
 
 type FeatureKey =
+  | 'offline'
+  | 'devices'
+  | 'backup'
+  | 'statements'
+  | 'widgets'
+  | 'flags'
   | 'scan'
   | 'localAi'
   | 'expenses'
@@ -47,9 +53,21 @@ type IconName =
   | 'chart'
   | 'dollar'
   | 'map'
-  | 'trending';
+  | 'trending'
+  | 'offline'
+  | 'devices'
+  | 'backup'
+  | 'upload'
+  | 'widget'
+  | 'sliders';
 
 const iconByFeature: Record<FeatureKey, IconName> = {
+  offline: 'offline',
+  devices: 'devices',
+  backup: 'backup',
+  statements: 'upload',
+  widgets: 'widget',
+  flags: 'sliders',
   scan: 'scan',
   localAi: 'receipt',
   expenses: 'receipt',
@@ -73,6 +91,7 @@ const iconByFeature: Record<FeatureKey, IconName> = {
 };
 
 const groups: { category: TranslationKey; items: FeatureKey[] }[] = [
+  { category: 'cat.works', items: ['offline', 'devices', 'backup', 'statements', 'widgets', 'flags'] },
   { category: 'cat.tracking', items: ['scan', 'localAi', 'expenses', 'pools', 'budgets'] },
   { category: 'cat.cards', items: ['debit', 'credit', 'installments', 'household'] },
   { category: 'cat.reminders', items: ['warranty', 'notifications', 'reminders'] },

@@ -44,8 +44,12 @@ const stores = [
     >{strings[lang].button}</a>
     <p id="open-fallback" class="text-sm opacity-70">{strings[lang].fallback}</p>
     {stores.length > 0 && (
-      <p class="flex gap-4 text-sm">
-        {stores.map((url) => <a href={url}>{new URL(url).hostname}</a>)}
+      <p class="flex flex-wrap justify-center gap-4 text-sm">
+        {stores.map((url) => (
+          <a href={url} class="text-accent underline underline-offset-4">
+            {url.includes('play.google.com') ? 'Google Play' : 'App Store'}
+          </a>
+        ))}
       </p>
     )}
   </main>
