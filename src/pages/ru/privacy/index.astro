@@ -4,11 +4,17 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import LegalDocument from '../../../components/LegalDocument.astro';
 import { privacyPolicy } from '../../../i18n/legal';
+import { useTranslations } from '../../../i18n/utils';
 
 const lang = 'ru' as const;
+const t = useTranslations(lang);
 ---
 
-<Layout lang={lang}>
+<Layout
+  lang={lang}
+  title={t('page.privacy.title')}
+  description={t('page.privacy.description')}
+>
   <Header lang={lang} />
   <main>
     <LegalDocument document={privacyPolicy[lang]} />

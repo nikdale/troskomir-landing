@@ -18,6 +18,29 @@ export const translations = {
     "site.description":
       "Трошкомир: праћење трошкова, картица, рата, штедње и подсетника, све на једном месту.",
 
+    // Per-page <title>/<meta description>. Every page used to share
+    // site.title, and ~24 identical titles is the usual reason a crawler
+    // folds a multi-language site down to one indexed page — which here
+    // would take the privacy-policy URL Play re-checks with it.
+    "page.home.title": "Трошкомир — праћење трошкова, рата и штедње",
+    "page.home.description":
+      "Трошкомир прати трошкове, картице, рате, штедњу, буџете и подсетнике на једном месту. Ради и без интернета, а синхронизује се кад се веза врати.",
+    "page.about.title": "О аутору — Трошкомир",
+    "page.about.description":
+      "Ко пише Трошкомир и зашто ради на кућном серверу, а не у комерцијалном облаку. Основне функције зато остају бесплатне.",
+    "page.privacy.title": "Политика приватности — Трошкомир",
+    "page.privacy.description":
+      "Које податке Трошкомир чува, где се чувају и како да укључите end-to-end шифровање. Обавезујућа верзија политике приватности, у целости.",
+    "page.terms.title": "Услови коришћења — Трошкомир",
+    "page.terms.description":
+      "Услови под којима користите Трошкомир: ваша права, моје обавезе и границе одговорности за апликацију која ради на кућном серверу.",
+    "page.deleteAccount.title": "Брисање налога — Трошкомир",
+    "page.deleteAccount.description":
+      "Затражите трајно брисање Трошкомир налога и свих података уз њега. Потврђујете шестоцифреним кодом који стиже на вашу имејл адресу.",
+    "page.open.title": "Отварање апликације — Трошкомир",
+    "page.open.description":
+      "Веза из имејла која отвара Трошкомир на вашем уређају. Ако се апликација не отвори сама, дугме на страници то ради уместо вас.",
+
     "nav.features": "Функције",
     "nav.privacy": "Приватност",
     "nav.about": "О аутору",
@@ -212,6 +235,29 @@ export const translations = {
     "site.title": "Troskomir",
     "site.description":
       "Troskomir: praćenje troškova, kartica, rata, štednje i podsetnika, sve na jednom mestu.",
+
+    // Per-page <title>/<meta description>. Every page used to share
+    // site.title, and ~24 identical titles is the usual reason a crawler
+    // folds a multi-language site down to one indexed page — which here
+    // would take the privacy-policy URL Play re-checks with it.
+    "page.home.title": "Troskomir — praćenje troškova, rata i štednje",
+    "page.home.description":
+      "Troskomir prati troškove, kartice, rate, štednju, budžete i podsetnike na jednom mestu. Radi i bez interneta, a sinhronizuje se kad se veza vrati.",
+    "page.about.title": "O autoru — Troskomir",
+    "page.about.description":
+      "Ko piše Troskomir i zašto radi na kućnom serveru, a ne u komercijalnom oblaku. Osnovne funkcije zato ostaju besplatne.",
+    "page.privacy.title": "Politika privatnosti — Troskomir",
+    "page.privacy.description":
+      "Koje podatke Troskomir čuva, gde se čuvaju i kako da uključite end-to-end šifrovanje. Obavezujuća verzija politike privatnosti, u celosti.",
+    "page.terms.title": "Uslovi korišćenja — Troskomir",
+    "page.terms.description":
+      "Uslovi pod kojima koristite Troskomir: vaša prava, moje obaveze i granice odgovornosti za aplikaciju koja radi na kućnom serveru.",
+    "page.deleteAccount.title": "Brisanje naloga — Troskomir",
+    "page.deleteAccount.description":
+      "Zatražite trajno brisanje Troskomir naloga i svih podataka uz njega. Potvrđujete šestocifrenim kodom koji stiže na vašu imejl adresu.",
+    "page.open.title": "Otvaranje aplikacije — Troskomir",
+    "page.open.description":
+      "Veza iz imejla koja otvara Troskomir na vašem uređaju. Ako se aplikacija ne otvori sama, dugme na stranici to radi umesto vas.",
 
     "nav.features": "Funkcije",
     "nav.privacy": "Privatnost",
@@ -408,6 +454,29 @@ export const translations = {
     "site.description":
       "Troskomir: track expenses, cards, installments, savings and reminders, all in one place.",
 
+    // Per-page <title>/<meta description>. Every page used to share
+    // site.title, and ~24 identical titles is the usual reason a crawler
+    // folds a multi-language site down to one indexed page — which here
+    // would take the privacy-policy URL Play re-checks with it.
+    "page.home.title": "Troskomir — expense, card and installment tracking",
+    "page.home.description":
+      "Troskomir tracks expenses, cards, installments, savings, budgets and reminders in one place. It works offline and syncs when the connection comes back.",
+    "page.about.title": "About the author — Troskomir",
+    "page.about.description":
+      "Who writes Troskomir, and why it runs on a home server rather than a big commercial cloud — which is why the core features stay free.",
+    "page.privacy.title": "Privacy Policy — Troskomir",
+    "page.privacy.description":
+      "What Troskomir stores, where it is stored, and how to switch on end-to-end encryption. The full, binding privacy policy.",
+    "page.terms.title": "Terms of Use — Troskomir",
+    "page.terms.description":
+      "The terms you use Troskomir under: your rights, my obligations, and the limits of liability for an app that runs on a home server.",
+    "page.deleteAccount.title": "Delete account — Troskomir",
+    "page.deleteAccount.description":
+      "Request permanent deletion of your Troskomir account and everything stored with it. You confirm with a six-digit code sent to your e-mail address.",
+    "page.open.title": "Opening the app — Troskomir",
+    "page.open.description":
+      "The link an e-mail uses to open Troskomir on your device. If the app doesn't open on its own, the button on the page does it for you.",
+
     "nav.features": "Features",
     "nav.privacy": "Privacy",
     "nav.about": "About",
@@ -602,6 +671,29 @@ export const translations = {
     "site.title": "Трошкомир",
     "site.description":
       "Трошкомир: учёт расходов, карт, рассрочки, накоплений и напоминаний в одном месте.",
+
+    // Per-page <title>/<meta description>. Every page used to share
+    // site.title, and ~24 identical titles is the usual reason a crawler
+    // folds a multi-language site down to one indexed page — which here
+    // would take the privacy-policy URL Play re-checks with it.
+    "page.home.title": "Трошкомир — учёт расходов, карт и рассрочки",
+    "page.home.description":
+      "Трошкомир ведёт учёт расходов, карт, рассрочки, накоплений, бюджетов и напоминаний в одном месте. Работает без интернета и синхронизируется, когда связь вернётся.",
+    "page.about.title": "Об авторе — Трошкомир",
+    "page.about.description":
+      "Кто пишет Трошкомир и почему приложение работает на домашнем сервере, а не в большом коммерческом облаке — поэтому основные функции остаются бесплатными.",
+    "page.privacy.title": "Политика конфиденциальности — Трошкомир",
+    "page.privacy.description":
+      "Какие данные хранит Трошкомир, где они лежат и как включить end-to-end шифрование. Полная обязательная версия политики конфиденциальности.",
+    "page.terms.title": "Условия использования — Трошкомир",
+    "page.terms.description":
+      "Условия, на которых вы пользуетесь Трошкомиром: ваши права, мои обязанности и границы ответственности для приложения на домашнем сервере.",
+    "page.deleteAccount.title": "Удаление аккаунта — Трошкомир",
+    "page.deleteAccount.description":
+      "Запросите безвозвратное удаление аккаунта Трошкомир и всех данных к нему. Подтверждение — шестизначный код, который придёт на вашу почту.",
+    "page.open.title": "Открытие приложения — Трошкомир",
+    "page.open.description":
+      "Ссылка из письма, которая открывает Трошкомир на вашем устройстве. Если приложение не открылось само, это сделает кнопка на странице.",
 
     "nav.features": "Функции",
     "nav.privacy": "Конфиденциальность",

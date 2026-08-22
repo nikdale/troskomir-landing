@@ -55,8 +55,9 @@ u `.astro` fajlovima.
 | :---------------- | :------------------------------------------ |
 | `npm install`      | Instalira zavisnosti                        |
 | `npm run dev`      | Pokreće lokalni server na `localhost:4321`  |
-| `npm run build`    | Gradi produkcionu verziju u `./dist/`       |
-| `npm run validate` | Pokreće `astro check` i produkcioni build    |
+| `npm run build`    | Gradi `./dist/` i upisuje CSP hash-eve       |
+| `npm test`         | Proverava izgrađeni `./dist/` (posle build-a) |
+| `npm run validate` | `astro check` + build + testovi              |
 | `npm run preview`  | Pregled produkcione verzije lokalno         |
 
 ## Deploy

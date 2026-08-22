@@ -4,11 +4,17 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import LegalDocument from '../../components/LegalDocument.astro';
 import { termsOfUse } from '../../i18n/legal';
+import { useTranslations } from '../../i18n/utils';
 
 const lang = 'sr' as const;
+const t = useTranslations(lang);
 ---
 
-<Layout lang={lang}>
+<Layout
+  lang={lang}
+  title={t('page.terms.title')}
+  description={t('page.terms.description')}
+>
   <Header lang={lang} />
   <main>
     <LegalDocument document={termsOfUse[lang]} />

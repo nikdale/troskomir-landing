@@ -54,3 +54,12 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Test
+        # After the build, never before: every test in tests/ reads the emitted
+        # pages in dist/ rather than the source. That is deliberate — the things
+        # they guard (the per-page CSP script-src hashes, the hreflang
+        # alternates, the legal copy, the store links) are only decidable once
+        # the HTML exists. Nothing ran them here until now, which is how a
+        # comment claiming they gated the build stayed wrong for so long.
+        run: npm test

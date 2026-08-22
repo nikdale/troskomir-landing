@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/apply-csp-hashes.mjs",
     "check": "astro check",
     "validate": "npm run check && npm run build && npm test",
     "validate:release": "node scripts/validate-release-config.mjs",

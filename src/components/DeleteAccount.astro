@@ -28,7 +28,26 @@ const i18n = {
     <div class="section-divider mb-8"></div>
     <p class="text-text-muted text-sm leading-relaxed mb-8 text-center">{t('deleteAccount.intro')}</p>
 
-    <div id="da-alert" class="hidden mb-4 rounded-lg border border-error/30 bg-error/10 px-4 py-3 text-sm text-error"></div>
+    <!--
+      Every failure this flow can hit — wrong code, rate limit, network — is
+      reported only here, and until this carried a role a screen-reader user
+      submitted the form and got silence back. `role="alert"` (assertive) is
+      right for errors: the message contradicts what the user just tried to do,
+      so it should interrupt rather than wait for a pause.
+
+      The element is rendered on every page load, empty, so that the live region
+      already exists when a message lands in it; showAlert() below unhides it
+      before writing the text, because a `display: none` element is not in the
+      accessibility tree and a message written into one can be published with
+      nothing listening.
+    -->
+    <div
+      id="da-alert"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      class="hidden mb-4 rounded-lg border border-error/30 bg-error/10 px-4 py-3 text-sm text-error"
+    ></div>
 
     <form id="da-email-form" class="space-y-4">
       <div>
@@ -88,14 +107,38 @@ const i18n = {
       </button>
     </form>
 
-    <div id="da-success" class="hidden text-center">
+    <!--
+      Confirmation that an account was deleted, which is the one message on this
+      site a user must not miss. Its copy is server-rendered, so nothing about it
+      changes when it is revealed and a live region alone would announce
+      nothing — the script moves focus here after the reveal, and `role="status"`
+      (polite) then reads it out without cutting off whatever is being spoken.
+      Polite rather than assertive because this is the expected outcome, not an
+      interruption. `tabindex="-1"` makes it focusable without adding a tab stop.
+    -->
+    <div
+      id="da-success"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      tabindex="-1"
+      class="hidden text-center focus:outline-none"
+    >
       <p class="text-lg font-medium mb-2">{t('deleteAccount.successTitle')}</p>
       <p class="text-sm text-text-muted">{t('deleteAccount.successBody')}</p>
     </div>
   </div>
 </section>
 
-<script define:vars={{ apiBase: API_BASE_URL, i18n }}>
+<!--
+  `is:inline` is explicit because it is load-bearing, not incidental: this
+  script has to stay inline in the page (define:vars would force that anyway),
+  and its body therefore differs on each of the four delete-account pages
+  because the translated strings are interpolated into it. That is why the CSP
+  hash for it is computed per page, after the build — see
+  scripts/apply-csp-hashes.mjs.
+-->
+<script is:inline define:vars={{ apiBase: API_BASE_URL, i18n }}>
   const emailForm = document.getElementById('da-email-form');
   const codeForm = document.getElementById('da-code-form');
   const successBox = document.getElementById('da-success');
@@ -110,13 +153,24 @@ const i18n = {
   let currentEmail = '';
 
   function showAlert(message) {
-    alertBox.textContent = message;
-    alertBox.className =
-      'mb-4 rounded-lg border border-error/30 bg-error/10 px-4 py-3 text-sm text-error';
+    // Order matters. The box is unhidden first so the alert region is in the
+    // accessibility tree, and the text is written on the next frame so it
+    // arrives as a change to a region that is already there — a text node set
+    // while the element is still `display: none` is announced unreliably or not
+    // at all. Blanking it first also guarantees a change when the same error
+    // (a wrong code twice) is shown again.
+    alertBox.textContent = '';
+    alertBox.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      alertBox.textContent = message;
+    });
   }
 
   function hideAlert() {
     alertBox.classList.add('hidden');
+    // Cleared as well as hidden, so a stale message cannot be re-announced the
+    // next time the region is revealed.
+    alertBox.textContent = '';
   }
 
   async function postJson(path, body) {
@@ -200,5 +254,8 @@ const i18n = {
 
     codeForm.classList.add('hidden');
     successBox.classList.remove('hidden');
+    // The form the user was in has just gone away; without this, focus is left
+    // on a hidden button and the confirmation is never read out.
+    successBox.focus();
   });
 </script>

@@ -36,7 +36,17 @@ jobs:
         run: npm run check
 
       - name: Build with Astro
+        # `astro build` followed by scripts/apply-csp-hashes.mjs, which rewrites
+        # each page's script-src into the SHA-256 of that page's own inline
+        # scripts. Skip the second half and every page ships 'unsafe-inline'.
         run: npm run build
+
+      - name: Test the built site
+        # This job publishes straight to the live site, so the guards run
+        # against the exact dist/ that is about to be uploaded: a wrong CSP hash
+        # silently kills the account-deletion form, and a dangling hreflang
+        # alternate is a 404 in Search Console on the page Play re-checks.
+        run: npm test
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
