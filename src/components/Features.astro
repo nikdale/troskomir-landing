@@ -20,6 +20,7 @@ type FeatureKey =
   | 'scan'
   | 'localAi'
   | 'expenses'
+  | 'tips'
   | 'pools'
   | 'budgets'
   | 'debit'
@@ -36,7 +37,8 @@ type FeatureKey =
   | 'incomes'
   | 'statistics'
   | 'netposition'
-  | 'tags';
+  | 'tags'
+  | 'insights';
 
 type IconName =
   | 'scan'
@@ -71,6 +73,7 @@ const iconByFeature: Record<FeatureKey, IconName> = {
   scan: 'scan',
   localAi: 'receipt',
   expenses: 'receipt',
+  tips: 'dollar',
   pools: 'layers',
   budgets: 'chart',
   debit: 'card',
@@ -88,16 +91,17 @@ const iconByFeature: Record<FeatureKey, IconName> = {
   statistics: 'chart',
   netposition: 'layers',
   tags: 'tag',
+  insights: 'trending',
 };
 
 const groups: { category: TranslationKey; items: FeatureKey[] }[] = [
   { category: 'cat.works', items: ['offline', 'devices', 'backup', 'statements', 'widgets', 'flags'] },
-  { category: 'cat.tracking', items: ['scan', 'localAi', 'expenses', 'pools', 'budgets'] },
+  { category: 'cat.tracking', items: ['scan', 'localAi', 'expenses', 'tips', 'pools', 'budgets'] },
   { category: 'cat.cards', items: ['debit', 'credit', 'installments', 'household'] },
   { category: 'cat.reminders', items: ['warranty', 'notifications', 'reminders'] },
   { category: 'cat.savings', items: ['savings', 'loyalty'] },
   { category: 'cat.loans', items: ['loans', 'trips'] },
-  { category: 'cat.overview', items: ['incomes', 'statistics', 'netposition', 'tags'] },
+  { category: 'cat.overview', items: ['incomes', 'statistics', 'insights', 'netposition', 'tags'] },
 ];
 ---
 

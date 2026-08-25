@@ -103,6 +103,10 @@ export const translations = {
     "feat.expenses.body":
       "Обичну куповину унесете за секунд. За трошкове који се понављају (кирију, претплате), изаберете једном да ли Трошкомир сам уписује трошак на дан доспећа, или само вас подсети да га потврдите.",
 
+    "feat.tips.title": "Бакшиш, посебно праћен",
+    "feat.tips.body":
+      "Додајте бакшиш на рачун — укупан износ и даље одговара ономе што је картица стварно наплатила, али увек можете видети колико је био рачун, а колико бакшиш. Дали сте бакшиш у кешу без рачуна? Унесите га под посебну категорију Бакшиш. У сваком случају, урачунава се у то колико сте бакшиша дали овог месеца.",
+
     "feat.pools.title": "Валутни базени за путовања",
     "feat.pools.body":
       "Купите девизе унапред (рецимо 700 евра за пут у Немачку) и Трошкомир закључа курс по коме сте их купили. Сваки трошак на путу се одбија по том закључаном курсу, а не по дневном, тако тачно знате колико вам је остало.",
@@ -165,6 +169,10 @@ export const translations = {
     "feat.statistics.title": "Месечна статистика",
     "feat.statistics.body":
       "Прегледајте финансије за сваки месец: трошкови по категоријама, приходи по врстама, активност на зајмовима и штедња. Брз и прегледан поглед на месец иза вас.",
+
+    "feat.insights.title": "Обрасци и трендови потрошње",
+    "feat.insights.body":
+      "Више од месечног прегледа: пратите како се свака категорија и ознака мењају кроз више месеци, којим данима трошите највише, календарски приказ дневне потрошње, најчешће продавце и колико од ваше потрошње је стално, а колико повремено.",
 
     "feat.netposition.title": "Нето позиција",
     "feat.netposition.body":
@@ -321,6 +329,10 @@ export const translations = {
     "feat.expenses.body":
       "Običnu kupovinu unesete za sekund. Za troškove koji se ponavljaju (kiriju, pretplate), izaberete jednom da li Troskomir sam upisuje trošak na dan dospeća, ili samo vas podseti da ga potvrdite.",
 
+    "feat.tips.title": "Bakšiš, posebno praćen",
+    "feat.tips.body":
+      "Dodajte bakšiš na račun — ukupan iznos i dalje odgovara onome što je kartica stvarno naplatila, ali uvek možete videti koliko je bio račun, a koliko bakšiš. Dali ste bakšiš u kešu bez računa? Unesite ga pod posebnu kategoriju Bakšiš. U svakom slučaju, uračunava se u to koliko ste bakšiša dali ovog meseca.",
+
     "feat.pools.title": "Valutni bazeni za putovanja",
     "feat.pools.body":
       "Kupite devize unapred (recimo 700 evra za put u Nemačku) i Troskomir zaključa kurs po kome ste ih kupili. Svaki trošak na putu se odbija po tom zaključanom kursu, a ne po dnevnom, tako tačno znate koliko vam je ostalo.",
@@ -383,6 +395,10 @@ export const translations = {
     "feat.statistics.title": "Mesečna statistika",
     "feat.statistics.body":
       "Pregledajte finansije za svaki mesec: troškovi po kategorijama, prihodi po vrstama, aktivnost na zajmovima i štednja. Brz i pregledan pogled na mesec iza vas.",
+
+    "feat.insights.title": "Obrasci i trendovi potrošnje",
+    "feat.insights.body":
+      "Više od mesečnog pregleda: pratite kako se svaka kategorija i oznaka menjaju kroz više meseci, kojim danima trošite najviše, kalendarski prikaz dnevne potrošnje, najčešće prodavce i koliko od vaše potrošnje je stalno, a koliko povremeno.",
 
     "feat.netposition.title": "Neto pozicija",
     "feat.netposition.body":
@@ -539,6 +555,10 @@ export const translations = {
     "feat.expenses.body":
       "Log a regular purchase in seconds. For expenses that repeat (rent, subscriptions), choose once whether Troskomir logs the expense automatically on the due date, or just reminds you to confirm it.",
 
+    "feat.tips.title": "Tips, tracked separately",
+    "feat.tips.body":
+      "Add a tip on top of a bill — the total still matches what your card was actually charged, but you can always see how much was the bill and how much was the tip. Tipped in cash with no bill to attach it to? Log it under its own Tip category instead. Either way, it counts toward how much you've tipped this month.",
+
     "feat.pools.title": "Currency pools for trips",
     "feat.pools.body":
       "Buy foreign currency upfront (say \u20ac700 for a trip to Germany) and Troskomir locks in the exchange rate you paid. Every expense on the trip is deducted at that locked rate, not the daily rate, so you always know exactly how much is left.",
@@ -601,6 +621,10 @@ export const translations = {
     "feat.statistics.title": "Monthly statistics",
     "feat.statistics.body":
       "Review your finances month by month: spending by category, income by type, loan activity and savings. A quick, clear snapshot of the month behind you.",
+
+    "feat.insights.title": "Spending patterns & trends",
+    "feat.insights.body":
+      "Beyond the monthly snapshot: see how each category and tag trend over several months, which days you spend the most on, a calendar view of daily spending, your most frequent merchants, and how much of your spending is recurring versus one-off.",
 
     "feat.netposition.title": "Net worth at a glance",
     "feat.netposition.body":
@@ -757,6 +781,10 @@ export const translations = {
     "feat.expenses.body":
       "Обычную покупку вносите за секунду. Для повторяющихся расходов (аренда, подписки) один раз выбираете: пусть Трошкомир сам вносит расход в день платежа, либо просто напоминает подтвердить его.",
 
+    "feat.tips.title": "Чаевые отдельно",
+    "feat.tips.body":
+      "Добавьте чаевые поверх счёта — итоговая сумма по-прежнему совпадает с тем, что реально списала карта, но вы всегда видите, сколько был счёт, а сколько — чаевые. Дали чаевые наличными без чека? Запишите их в отдельную категорию «Чаевые». В любом случае сумма учитывается в том, сколько чаевых вы дали за месяц.",
+
     "feat.pools.title": "Валютные пулы для поездок",
     "feat.pools.body":
       "Купите валюту заранее (например, 700 евро для поездки в Германию) и Трошкомир зафиксирует курс покупки. Каждый расход в поездке списывается по этому зафиксированному курсу, а не по текущему, так что вы всегда точно знаете, сколько осталось.",
@@ -819,6 +847,10 @@ export const translations = {
     "feat.statistics.title": "Ежемесячная статистика",
     "feat.statistics.body":
       "Просматривайте финансы за каждый месяц: расходы по категориям, доходы по типам, активность по займам и накопления. Быстрый и понятный срез прошедшего месяца.",
+
+    "feat.insights.title": "Закономерности и тренды расходов",
+    "feat.insights.body":
+      "Больше, чем месячный снимок: смотрите, как меняются категории и метки за несколько месяцев, в какие дни вы тратите больше всего, календарь расходов по дням, самых частых продавцов и какая доля расходов регулярная, а какая разовая.",
 
     "feat.netposition.title": "Чистый капитал",
     "feat.netposition.body":
