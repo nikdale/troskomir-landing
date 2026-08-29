@@ -176,7 +176,7 @@ function toLatinDocument(doc: LegalDocument): LegalDocument {
 
 const privacyPolicySr: LegalDocument = {
   title: "Политика приватности",
-  effective: "Важи од: 16. август 2026.",
+  effective: "Важи од: 29. август 2026.",
   intro: [
     "Трошкомир је апликација за праћење личних финансија: трошкова, прихода, позајмица, штедње, буџета, путовања и подсетника.",
     `Руковалац подацима је ${DATA_CONTROLLER} (Србија). За сва питања о приватности пишите на <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
@@ -216,6 +216,7 @@ const privacyPolicySr: LegalDocument = {
         "Google Firebase Crashlytics — извештаји о падовима и дијагностички подаци, како би се грешке исправиле. Извештаји се шаљу компанији Google.",
         "Google Firebase Cloud Messaging — токен вашег уређаја, како бисте примали обавештења која сте укључили. Токен се шаље компанији Google.",
         `Државни фискални портали (${FISCAL_PORTALS}) — када скенирате QR код са фискалног рачуна, наш сервер у ваше име преузима садржај рачуна са портала надлежне пореске управе.`,
+        "Провера рачуна код пореске управе (suf.purs.gov.rs) — ако одлучите да проверите скенирани рачун, апликација отвара званичну страницу пореске управе за проверу директно на вашем уређају, у правом прегледачу, и попуњава број рачуна, контролни број, износ и датум/време које је већ прочитала са вашег скенирања. Ова веза иде директно између вашег уређаја и пореске управе; наш сервер у томе не учествује нити је види.",
         "EU VIES (ec.europa.eu) — када грчки рачун нема назив продавца, тражимо порески број (ΑΦΜ) на европском VIES сервису да бисмо добили званичан назив предузећа.",
         "Hugging Face — једнократно преузимање датотеке модела ако укључите обраду рачуна на уређају. Сам модел затим ради локално; слике рачуна се не шаљу никоме.",
       ],
@@ -278,7 +279,7 @@ const privacyPolicySr: LegalDocument = {
 
 const privacyPolicyEn: LegalDocument = {
   title: "Privacy Policy",
-  effective: "Effective: 16 August 2026",
+  effective: "Effective: 29 August 2026",
   intro: [
     "Troškomir is a personal finance app for tracking expenses, incomes, loans, savings, budgets, trips and reminders.",
     `The data controller is ${DATA_CONTROLLER} (Serbia). For any privacy question, write to <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
@@ -318,6 +319,7 @@ const privacyPolicyEn: LegalDocument = {
         "Google Firebase Crashlytics — crash reports and diagnostic data, so faults can be fixed. Reports go to Google.",
         "Google Firebase Cloud Messaging — your device push token, so you can receive the notifications you enable. The token goes to Google.",
         `Government fiscal portals (${FISCAL_PORTALS}) — when you scan a receipt QR code, our server fetches the receipt contents from the relevant tax authority's portal on your behalf.`,
+        "Tax authority receipt verification (suf.purs.gov.rs) — if you choose to verify a scanned receipt, the app opens the tax authority's own verification page directly on your device, in a real browser view, and fills in the invoice number, control number, amount and date/time already read from your scan. This connection runs directly between your device and the tax authority; our server is not involved in it and does not see it.",
         "EU VIES (ec.europa.eu) — when a Greek receipt has no seller name, we look up the tax number (ΑΦΜ) on the European VIES service to get the official company name.",
         "Hugging Face — a one-time model file download if you enable on-device receipt processing. The model then runs locally; receipt images are not sent anywhere.",
       ],
@@ -380,7 +382,7 @@ const privacyPolicyEn: LegalDocument = {
 
 const privacyPolicyRu: LegalDocument = {
   title: "Политика конфиденциальности",
-  effective: "Действует с: 16 августа 2026 г.",
+  effective: "Действует с: 29 августа 2026 г.",
   intro: [
     "Трошкомир — приложение для учёта личных финансов: расходов, доходов, займов, накоплений, бюджетов, поездок и напоминаний.",
     `Оператор данных — ${DATA_CONTROLLER} (Сербия). По любым вопросам о конфиденциальности пишите на <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
@@ -420,6 +422,7 @@ const privacyPolicyRu: LegalDocument = {
         "Google Firebase Crashlytics — отчёты о сбоях и диагностические данные для исправления ошибок. Отчёты отправляются в Google.",
         "Google Firebase Cloud Messaging — push-токен вашего устройства, чтобы вы получали включённые вами уведомления. Токен отправляется в Google.",
         `Государственные фискальные порталы (${FISCAL_PORTALS}) — при сканировании QR-кода чека наш сервер по вашему поручению получает содержимое чека с портала соответствующей налоговой службы.`,
+        "Проверка чека в налоговой службе (suf.purs.gov.rs) — если вы решите проверить отсканированный чек, приложение открывает официальную страницу проверки налоговой службы прямо на вашем устройстве, в настоящем браузере, и заполняет номер чека, контрольный номер, сумму и дату/время, уже считанные с вашего скана. Это соединение идёт напрямую между вашим устройством и налоговой службой; наш сервер в этом не участвует и его не видит.",
         "EU VIES (ec.europa.eu) — если на греческом чеке нет названия продавца, мы запрашиваем налоговый номер (ΑΦΜ) в европейском сервисе VIES, чтобы получить официальное название компании.",
         "Hugging Face — однократная загрузка файла модели, если вы включите обработку чеков на устройстве. Далее модель работает локально; изображения чеков никуда не отправляются.",
       ],
