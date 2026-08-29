@@ -97,7 +97,7 @@ export const translations = {
       "Скенирајте QR код са фискалног рачуна камером телефона. Тренутно подржано: 🇷🇸 Србија (suf.purs.gov.rs), 🇧🇦 Република Српска (suf.poreskaupravars.org), 🇲🇪 Црна Гора (mapr.tax.gov.me) и 🇬🇷 Грчка (mydatapi.aade.gr). Апликација учитава податке директно са званичне пореске странице и уписује продавницу, износ и артикле. Грчки називи се, где је могуће, преводе или транслитерују. Ускоро и Македонија.",
     "feat.localAi.title": "Локална AI обрада рачуна",
     "feat.localAi.body":
-      "Снимите или изаберите слику рачуна. Српски фискални рачуни имају законом прописан, фиксан распоред, па апликација чита продавца, износ и време директно са одштампаних ознака — поуздано, чак и када се на истом рачуну мешају ћирилица и латиница. Апликација чак исправља и сопствене грешке: контролни број рачуна је одштампан двапут, па нејасна цифра у једном делу бива исправљена на основу другог. Мали језички модел, преузет једном (око 547 MB) и покренут у потпуности на вашем уређају, укључује се само за оно што фиксна правила не могу — предлагање ознаке (тага). Сваки податак прегледате пре чувања.",
+      "Снимите или изаберите слику рачуна. Српски фискални рачуни имају законом прописан, фиксан распоред, па апликација чита продавца, износ и време директно са одштампаних ознака — поуздано, чак и када се на истом рачуну мешају ћирилица и латиница. Апликација чак исправља и сопствене грешке: контролни број рачуна је одштампан двапут, па нејасна цифра у једном делу бива исправљена на основу другог. Један од три опциона локална језичка модела (од 135 MB до 1,6 GB, бирате у Подешавањима) ради у потпуности на вашем уређају и укључује се само за оно што фиксна правила не могу — предлагање ознаке (тага). Сваки податак прегледате пре чувања.",
 
     "feat.expenses.title": "Једнократни и редовни трошкови",
     "feat.expenses.body":
@@ -187,7 +187,7 @@ export const translations = {
       "Ваши подаци се чувају на серверу у мом кућном лабу. Подразумевано нису шифровани, што је сасвим у реду за већину корисника. Ако желите end-to-end шифровање (тј. да ни ја не могу да прочитам ваше описе трошкова или рачуне), укључите га у подешавањима апликације. Искрено: не занима ме шта купујете ни од кога... мада ценовник кирија у Београду не би ни мало зашкодио.",
     "privacy.localAi.title": "Рачуни и локални AI",
     "privacy.localAi.body":
-      "Обрада слике рачуна остаје на вашем телефону: ML Kit издваја текст, а Qwen2.5 локално предлаже продавницу, износ, датум, валуту, начин плаћања, категорију и ознаке. Први пут се преузима само датотека модела са Hugging Face-а; рачун и OCR текст се не шаљу cloud AI сервису. Трошак се шаље Трошкомиру тек када га прегледате и сачувате.",
+      "Обрада слике рачуна остаје на вашем телефону: ML Kit издваја текст, а изабрани локални модел (један од три опциона) локално предлаже продавницу, износ, датум, валуту, начин плаћања, категорију и ознаке. Датотека долази са Hugging Face-а, а на уређају се чува само један модел одједном; рачун и OCR текст никада се не шаљу cloud AI сервису. Трошак се шаље Трошкомиру тек када га прегледате и сачувате.",
 
     "about.heading": "О аутору",
     "about.name": "Никола Дашић",
@@ -323,7 +323,7 @@ export const translations = {
       "Skenirajte QR kod sa fiskalnog računa kamerom telefona. Trenutno podržano: 🇷🇸 Srbija (suf.purs.gov.rs), 🇧🇦 Republika Srpska (suf.poreskaupravars.org), 🇲🇪 Crna Gora (mapr.tax.gov.me) i 🇬🇷 Grčka (mydatapi.aade.gr). Aplikacija učitava podatke direktno sa zvanične poreske stranice i upisuje prodavnicu, iznos i artikle. Grčki nazivi se, gde je moguće, prevode ili transliteruju. Uskoro i Makedonija.",
     "feat.localAi.title": "Lokalna AI obrada računa",
     "feat.localAi.body":
-      "Snimite ili izaberite sliku računa. Srpski fiskalni računi imaju zakonom propisan, fiksan raspored, pa aplikacija čita prodavca, iznos i vreme direktno sa odštampanih oznaka — pouzdano, čak i kada se na istom računu mešaju ćirilica i latinica. Aplikacija čak ispravlja i sopstvene greške: kontrolni broj računa je odštampan dvaput, pa nejasna cifra u jednom delu biva ispravljena na osnovu drugog. Mali jezički model, preuzet jednom (oko 547 MB) i pokrenut u potpunosti na vašem uređaju, uključuje se samo za ono što fiksna pravila ne mogu — predlaganje oznake (taga). Svaki podatak pregledate pre čuvanja.",
+      "Snimite ili izaberite sliku računa. Srpski fiskalni računi imaju zakonom propisan, fiksan raspored, pa aplikacija čita prodavca, iznos i vreme direktno sa odštampanih oznaka — pouzdano, čak i kada se na istom računu mešaju ćirilica i latinica. Aplikacija čak ispravlja i sopstvene greške: kontrolni broj računa je odštampan dvaput, pa nejasna cifra u jednom delu biva ispravljena na osnovu drugog. Jedan od tri opciona lokalna jezička modela (od 135 MB do 1,6 GB, birate u Podešavanjima) radi u potpunosti na vašem uređaju i uključuje se samo za ono što fiksna pravila ne mogu — predlaganje oznake (taga). Svaki podatak pregledate pre čuvanja.",
 
     "feat.expenses.title": "Jednokratni i redovni troškovi",
     "feat.expenses.body":
@@ -413,7 +413,7 @@ export const translations = {
       "Vaši podaci se čuvaju na serveru u mom kućnom labu. Podrazumevano nisu šifrovani, što je sasvim u redu za većinu korisnika. Ako želite end-to-end šifrovanje (tj. da ni ja ne mogu da pročitam vaše opise troškova ili račune), uključite ga u podešavanjima aplikacije. Iskreno: ne zanima me šta kupujete ni od koga... mada cenovnik kirija u Beogradu ne bi ni malo zaškodio.",
     "privacy.localAi.title": "Računi i lokalni AI",
     "privacy.localAi.body":
-      "Obrada slike računa ostaje na vašem telefonu: ML Kit izdvaja tekst, a Qwen2.5 lokalno predlaže prodavnicu, iznos, datum, valutu, način plaćanja, kategoriju i oznake. Prvi put se preuzima samo datoteka modela sa Hugging Face-a; račun i OCR tekst se ne šalju cloud AI servisu. Trošak se šalje Troskomiru tek kada ga pregledate i sačuvate.",
+      "Obrada slike računa ostaje na vašem telefonu: ML Kit izdvaja tekst, a izabrani lokalni model (jedan od tri opciona) lokalno predlaže prodavnicu, iznos, datum, valutu, način plaćanja, kategoriju i oznake. Datoteka dolazi sa Hugging Face-a, a na uređaju se čuva samo jedan model odjednom; račun i OCR tekst nikada se ne šalju cloud AI servisu. Trošak se šalje Troskomiru tek kada ga pregledate i sačuvate.",
 
     "about.heading": "O autoru",
     "about.name": "Nikola Dašić",
@@ -549,7 +549,7 @@ export const translations = {
       "Scan the QR code on a fiscal receipt with your phone's camera. Currently supported: 🇷🇸 Serbia (suf.purs.gov.rs), 🇧🇦 Republic of Srpska (suf.poreskaupravars.org), 🇲🇪 Montenegro (mapr.tax.gov.me) and 🇬🇷 Greece (mydatapi.aade.gr). The app pulls the data straight from the official tax portal and fills in the store, amount and items. Greek merchant names are translated or transliterated where possible. North Macedonia coming soon.",
     "feat.localAi.title": "On-device receipt AI",
     "feat.localAi.body":
-      "Take or choose a receipt photo. Serbian fiscal receipts follow a fixed legal layout, so the app reads the merchant, total and timestamp straight off their printed labels — reliably, even when Cyrillic and Latin letters appear on the same slip. It even catches its own mistakes: the receipt's control number is printed twice, so a smudged digit in one copy is corrected from the other. A small language model, downloaded once (about 547 MB) and running fully on your device, only steps in for the one thing fixed rules can't do — suggesting a tag. You review every field before saving.",
+      "Take or choose a receipt photo. Serbian fiscal receipts follow a fixed legal layout, so the app reads the merchant, total and timestamp straight off their printed labels — reliably, even when Cyrillic and Latin letters appear on the same slip. It even catches its own mistakes: the receipt's control number is printed twice, so a smudged digit in one copy is corrected from the other. One of three optional local language models (135 MB to 1.6 GB, your choice in Settings) runs fully on your device and only steps in for the one thing fixed rules can't do — suggesting a tag. You review every field before saving.",
 
     "feat.expenses.title": "One-time & recurring expenses",
     "feat.expenses.body":
@@ -639,7 +639,7 @@ export const translations = {
       "Your data lives on a server I run myself at home. By default it's stored as-is, which is fine for most people. If you want end-to-end encryption (meaning not even I can read your expense descriptions or receipts), switch it on in the app settings. Honest disclaimer: I don't care what you buy or from whom... though real Belgrade rent prices would be fun to know.",
     "privacy.localAi.title": "Receipts and local AI",
     "privacy.localAi.body":
-      "Receipt image processing stays on your phone: ML Kit extracts the text, and Qwen2.5 locally suggests the seller, amount, date, currency, payment method, category, and tags. Only the model file is downloaded from Hugging Face on first use; the receipt and OCR text are not sent to a cloud AI service. The expense reaches Troskomir only after you review and save it.",
+      "Receipt image processing stays on your phone: ML Kit extracts the text, and whichever of three optional local models you've chosen locally suggests the seller, amount, date, currency, payment method, category, and tags. Its file comes from Hugging Face, and only one model is kept on the device at a time; the receipt and OCR text are never sent to a cloud AI service. The expense reaches Troskomir only after you review and save it.",
 
     "about.heading": "About the author",
     "about.name": "Nikola Dašić",
@@ -775,7 +775,7 @@ export const translations = {
       "Отсканируйте QR-код на фискальном чеке камерой телефона. Сейчас поддерживаются: 🇷🇸 Сербия (suf.purs.gov.rs), 🇧🇦 Республика Сербская (suf.poreskaupravars.org), 🇲🇪 Черногория (mapr.tax.gov.me) и 🇬🇷 Греция (mydatapi.aade.gr). Приложение получает данные напрямую с официального налогового портала и само заполняет магазин, сумму и товары. Греческие названия по возможности переводятся или транслитерируются. Скоро: Северная Македония.",
     "feat.localAi.title": "Локальный ИИ для чеков",
     "feat.localAi.body":
-      "Сфотографируйте чек или выберите изображение. Сербские фискальные чеки имеют строго фиксированный, установленный законом формат, поэтому приложение считывает продавца, сумму и время прямо с напечатанных подписей полей — надёжно, даже если на одном чеке смешаны кириллица и латиница. Оно даже исправляет собственные ошибки: контрольный номер чека печатается дважды, поэтому нечёткая цифра в одной части исправляется по другой. Небольшая языковая модель, загружаемая один раз (около 547 МБ) и работающая полностью на вашем устройстве, подключается только там, где фиксированные правила бессильны — для подсказки тега. Каждое поле вы проверяете перед сохранением.",
+      "Сфотографируйте чек или выберите изображение. Сербские фискальные чеки имеют строго фиксированный, установленный законом формат, поэтому приложение считывает продавца, сумму и время прямо с напечатанных подписей полей — надёжно, даже если на одном чеке смешаны кириллица и латиница. Оно даже исправляет собственные ошибки: контрольный номер чека печатается дважды, поэтому нечёткая цифра в одной части исправляется по другой. Одна из трёх опциональных локальных языковых моделей (от 135 МБ до 1,6 ГБ, выбор в Настройках) работает полностью на вашем устройстве и подключается только там, где фиксированные правила бессильны — для подсказки тега. Каждое поле вы проверяете перед сохранением.",
 
     "feat.expenses.title": "Разовые и регулярные расходы",
     "feat.expenses.body":
@@ -865,7 +865,7 @@ export const translations = {
       "Ваши данные хранятся на сервере, который я держу дома (home lab). По умолчанию они хранятся как есть, и для большинства этого достаточно. Если хотите end-to-end шифрование (то есть чтобы даже я не мог читать описания расходов и чеки), включите его в настройках приложения. Честно: мне не интересно, что вы покупаете и где... хотя реальные цены на аренду в Белграде было бы забавно узнать.",
     "privacy.localAi.title": "Чеки и локальный ИИ",
     "privacy.localAi.body":
-      "Обработка изображения чека остаётся на телефоне: ML Kit извлекает текст, а Qwen2.5 локально предлагает продавца, сумму, дату, валюту, способ оплаты, категорию и теги. При первом использовании с Hugging Face загружается только файл модели; чек и OCR-текст не отправляются в облачный ИИ-сервис. Расход попадает в Трошкомир только после вашей проверки и сохранения.",
+      "Обработка изображения чека остаётся на телефоне: ML Kit извлекает текст, а выбранная локальная модель (одна из трёх опциональных) локально предлагает продавца, сумму, дату, валюту, способ оплаты, категорию и теги. Файл загружается с Hugging Face, и на устройстве хранится только одна модель одновременно; чек и OCR-текст никогда не отправляются в облачный ИИ-сервис. Расход попадает в Трошкомир только после вашей проверки и сохранения.",
 
     "about.heading": "Об авторе",
     "about.name": "Никола Дашич",
