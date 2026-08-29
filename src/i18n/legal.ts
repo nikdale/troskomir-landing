@@ -219,6 +219,7 @@ const privacyPolicySr: LegalDocument = {
         "Провера рачуна код пореске управе (suf.purs.gov.rs) — ако одлучите да проверите скенирани рачун, апликација отвара званичну страницу пореске управе за проверу директно на вашем уређају, у правом прегледачу, и попуњава број рачуна, контролни број, износ и датум/време које је већ прочитала са вашег скенирања. Ова веза иде директно између вашег уређаја и пореске управе; наш сервер у томе не учествује нити је види.",
         "EU VIES (ec.europa.eu) — када грчки рачун нема назив продавца, тражимо порески број (ΑΦΜ) на европском VIES сервису да бисмо добили званичан назив предузећа.",
         "Hugging Face — једнократно преузимање датотеке модела ако укључите обраду рачуна на уређају. Сам модел затим ради локално; слике рачуна се не шаљу никоме.",
+        "Аналитика коришћења функција апликације (Aptabase) и посета веб страници (Umami) — обе услуге су самостално хостоване на нашем серверу, не шаљу податке трећим компанијама, не користе колачиће нити идентификаторе уређаја и не могу се повезати са вашим налогом или идентитетом.",
       ],
     },
     {
@@ -260,6 +261,7 @@ const privacyPolicySr: LegalDocument = {
       heading: "Праћење и оглашавање",
       body: [
         "Трошкомир не приказује огласе, не користи рекламне SDK-ове и не повезује ваше податке са подацима трећих страна ради оглашавања или мерења.",
+        "Анонимна, збирна статистика о коришћењу функција (види „Услуге трећих страна\") користи се искључиво да бисмо разумели шта је корисно — никада за оглашавање нити за препознавање појединачног корисника.",
       ],
     },
     {
@@ -322,6 +324,7 @@ const privacyPolicyEn: LegalDocument = {
         "Tax authority receipt verification (suf.purs.gov.rs) — if you choose to verify a scanned receipt, the app opens the tax authority's own verification page directly on your device, in a real browser view, and fills in the invoice number, control number, amount and date/time already read from your scan. This connection runs directly between your device and the tax authority; our server is not involved in it and does not see it.",
         "EU VIES (ec.europa.eu) — when a Greek receipt has no seller name, we look up the tax number (ΑΦΜ) on the European VIES service to get the official company name.",
         "Hugging Face — a one-time model file download if you enable on-device receipt processing. The model then runs locally; receipt images are not sent anywhere.",
+        "App feature-usage analytics (Aptabase) and website analytics (Umami) — both are self-hosted on our own server, send no data to any third-party company, use no cookies or device identifiers, and cannot be linked to your account or identity.",
       ],
     },
     {
@@ -363,6 +366,7 @@ const privacyPolicyEn: LegalDocument = {
       heading: "Tracking and advertising",
       body: [
         "Troškomir shows no ads, uses no advertising SDKs, and does not combine your data with third-party data for advertising or measurement.",
+        "Anonymous, aggregate feature-usage statistics (see “Third-party services” above) are used solely to understand what's useful — never for advertising, and never to identify an individual user.",
       ],
     },
     {
@@ -425,6 +429,7 @@ const privacyPolicyRu: LegalDocument = {
         "Проверка чека в налоговой службе (suf.purs.gov.rs) — если вы решите проверить отсканированный чек, приложение открывает официальную страницу проверки налоговой службы прямо на вашем устройстве, в настоящем браузере, и заполняет номер чека, контрольный номер, сумму и дату/время, уже считанные с вашего скана. Это соединение идёт напрямую между вашим устройством и налоговой службой; наш сервер в этом не участвует и его не видит.",
         "EU VIES (ec.europa.eu) — если на греческом чеке нет названия продавца, мы запрашиваем налоговый номер (ΑΦΜ) в европейском сервисе VIES, чтобы получить официальное название компании.",
         "Hugging Face — однократная загрузка файла модели, если вы включите обработку чеков на устройстве. Далее модель работает локально; изображения чеков никуда не отправляются.",
+        "Аналитика использования функций приложения (Aptabase) и аналитика сайта (Umami) — оба сервиса размещены на нашем собственном сервере, не передают данные сторонним компаниям, не используют куки или идентификаторы устройств и не могут быть связаны с вашей учётной записью или личностью.",
       ],
     },
     {
@@ -466,6 +471,7 @@ const privacyPolicyRu: LegalDocument = {
       heading: "Отслеживание и реклама",
       body: [
         "Трошкомир не показывает рекламу, не использует рекламные SDK и не объединяет ваши данные со сторонними для рекламы или аналитики.",
+        "Анонимная, агрегированная статистика использования функций (см. «Сторонние сервисы» выше) используется исключительно для того, чтобы понять, что полезно, — никогда для рекламы и никогда для идентификации отдельного пользователя.",
       ],
     },
     {

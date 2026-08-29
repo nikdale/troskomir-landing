@@ -165,6 +165,9 @@ test('no page loads a resource from another origin', () => {
     'https://troskomir.stryna.com',
     'https://play.google.com/',
     'https://apps.apple.com/',
+    // Self-hosted Umami (troskomir-bekend/deploy/analytics) — only present
+    // when PUBLIC_ANALYTICS_URL is set at build time, see src/site-config.ts.
+    'https://analytics.troskomir.stryna.com',
   ];
   for (const prefix of LOCALE_PREFIXES) {
     for (const path of ['', `${prefix}privacy`, `${prefix}terms`, `${prefix}about`]) {

@@ -33,6 +33,12 @@ export function isLiveStoreUrl(url: string | undefined | null): boolean {
 // Used by the account-deletion form, which is the one page here that calls the API.
 export const API_BASE_URL = 'https://api.troskomir.stryna.com/api';
 
+// Self-hosted Umami (see troskomir-bekend/deploy/analytics). Both empty by
+// default so a build with no PUBLIC_* env vars set (e.g. local dev) omits the
+// analytics script entirely rather than shipping a broken data-website-id.
+export const ANALYTICS_URL = envUrl(import.meta.env.PUBLIC_ANALYTICS_URL, '');
+export const UMAMI_WEBSITE_ID = envUrl(import.meta.env.PUBLIC_UMAMI_WEBSITE_ID, '');
+
 // About-page age. Increments on 18 December, not on 1 January.
 export const AUTHOR_BIRTHDAY = { year: 1997, month: 12, day: 18 } as const;
 

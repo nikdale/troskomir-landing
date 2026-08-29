@@ -40,6 +40,13 @@ jobs:
         # each page's script-src into the SHA-256 of that page's own inline
         # scripts. Skip the second half and every page ships 'unsafe-inline'.
         run: npm run build
+        env:
+          # Self-hosted Umami (troskomir-bekend/deploy/analytics). Unset until
+          # that stack is actually live — site-config.ts's envUrl() fallback
+          # then omits the analytics script entirely rather than pointing it
+          # at nothing, so this is safe to leave unset in the meantime.
+          PUBLIC_ANALYTICS_URL: ${{ vars.PUBLIC_ANALYTICS_URL }}
+          PUBLIC_UMAMI_WEBSITE_ID: ${{ vars.PUBLIC_UMAMI_WEBSITE_ID }}
 
       - name: Test the built site
         # This job publishes straight to the live site, so the guards run
