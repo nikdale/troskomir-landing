@@ -49,9 +49,9 @@ export const translations = {
     "open.title": "Отварање Трошкомира",
     "open.body": "Ако се апликација не отвори сама, додирните дугме испод.",
     "open.button": "Отвори апликацију",
-    "open.fallback": "Немате апликацију? Преузмите је са Google Play-а и покушајте поново.",
+    "open.fallback": "Немате апликацију? Преузмите је са Google Play-а или App Store-а и покушајте поново.",
 
-    "hero.badge": "Доступно на Google Play",
+    "hero.badge": "Доступно на Google Play и App Store-у",
     "hero.subtitle":
       "Трошкомир вам показује тачно где иде ваш новац: трошкови, картице, рате, штедња и подсетници, све прегледно, на једном месту.",
     "cta.playStore": "Преузми са Google Play-а",
@@ -275,9 +275,9 @@ export const translations = {
     "open.title": "Otvaranje Troskomira",
     "open.body": "Ako se aplikacija ne otvori sama, dodirnite dugme ispod.",
     "open.button": "Otvori aplikaciju",
-    "open.fallback": "Nemate aplikaciju? Preuzmite je sa Google Play-a i pokušajte ponovo.",
+    "open.fallback": "Nemate aplikaciju? Preuzmite je sa Google Play-a ili App Store-a i pokušajte ponovo.",
 
-    "hero.badge": "Dostupno na Google Play",
+    "hero.badge": "Dostupno na Google Play i App Store-u",
     "hero.subtitle":
       "Troskomir vam pokazuje tačno gde ide vaš novac: troškovi, kartice, rate, štednja i podsetnici, sve pregledno, na jednom mestu.",
     "cta.playStore": "Preuzmi sa Google Play-a",
@@ -501,9 +501,9 @@ export const translations = {
     "open.title": "Opening Troškomir",
     "open.body": "If the app doesn't open on its own, tap the button below.",
     "open.button": "Open the app",
-    "open.fallback": "Don't have the app? Get it on Google Play and try again.",
+    "open.fallback": "Don't have the app? Get it on Google Play or the App Store and try again.",
 
-    "hero.badge": "Now on Google Play",
+    "hero.badge": "Available on Google Play and the App Store",
     "hero.subtitle":
       "Troskomir shows you exactly where your money goes: expenses, cards, installments, savings and reminders, all in one place.",
     "cta.playStore": "Get it on Google Play",
@@ -727,9 +727,9 @@ export const translations = {
     "open.title": "Открываем Трошкомир",
     "open.body": "Если приложение не открылось само, нажмите кнопку ниже.",
     "open.button": "Открыть приложение",
-    "open.fallback": "Нет приложения? Загрузите его из Google Play и попробуйте снова.",
+    "open.fallback": "Нет приложения? Загрузите его из Google Play или App Store и попробуйте снова.",
 
-    "hero.badge": "Уже в Google Play",
+    "hero.badge": "Уже в Google Play и App Store",
     "hero.subtitle":
       "Трошкомир точно показывает, куда уходят ваши деньги: расходы, карты, рассрочка, накопления и напоминания, всё в одном месте.",
     "cta.playStore": "Загрузите в Google Play",

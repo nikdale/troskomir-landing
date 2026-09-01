@@ -1,7 +1,7 @@
 ---
 import { useTranslations, type Lang, defaultLang, getLocalizedPath } from '../i18n/utils';
 import { PRIVACY_CONTACT_EMAIL } from '../i18n/legal';
-import { TELEGRAM_URL, PLAY_STORE_URL, isLiveStoreUrl } from '../site-config';
+import { TELEGRAM_URL, PLAY_STORE_URL, APP_STORE_URL, isLiveStoreUrl } from '../site-config';
 
 interface Props {
   lang?: Lang;
@@ -30,6 +30,11 @@ const legalLinks = [
     {isLiveStoreUrl(PLAY_STORE_URL) && (
       <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-sm text-accent hover:bg-secondary/80 transition-colors">
         {t('cta.playStore')}
+      </a>
+    )}
+    {isLiveStoreUrl(APP_STORE_URL) && (
+      <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-sm text-accent hover:bg-secondary/80 transition-colors">
+        {t('cta.appStore')}
       </a>
     )}
     <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-sm text-accent hover:bg-secondary/80 transition-colors">

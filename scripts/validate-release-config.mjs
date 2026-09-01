@@ -1,6 +1,6 @@
-// Store listings live in src/site-config.ts (Play is hardcoded; App Store
-// stays empty until Apple approves). Env vars are optional overrides: if
-// present they must be HTTPS, if absent the site-config default is used.
+// Store listings live in src/site-config.ts (both Play and App Store are
+// hardcoded there). Env vars are optional overrides: if present they must
+// be HTTPS, if absent the site-config default is used.
 const optional = [
   ['PUBLIC_PLAY_STORE_URL', process.env.PUBLIC_PLAY_STORE_URL],
   ['PUBLIC_APP_STORE_URL', process.env.PUBLIC_APP_STORE_URL],

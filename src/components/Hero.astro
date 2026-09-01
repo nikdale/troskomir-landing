@@ -28,20 +28,9 @@ const soonButtonClass =
      competing with the one line the page exists to deliver. Flat ground. -->
 <section class="relative pt-40 pb-28 px-6 text-center">
   <div class="max-w-3xl mx-auto">
-    {playLive ? (
-      <a
-        href={PLAY_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block mb-6 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-secondary text-accent hover:bg-secondary/80 transition-colors"
-      >
-        {t('hero.badge')}
-      </a>
-    ) : (
-      <span class="inline-block mb-6 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-secondary text-accent">
-        {t('hero.badge')}
-      </span>
-    )}
+    <span class="inline-block mb-6 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-secondary text-accent">
+      {t('hero.badge')}
+    </span>
     <h1 class="text-5xl sm:text-6xl font-bold tracking-tight mb-6 text-text">
       {t('site.title')}
     </h1>
