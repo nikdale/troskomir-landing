@@ -62,6 +62,35 @@ export const translations = {
     "cta.comingSoonHint":
       "Линк за App Store ће се појавити чим Apple одобри апликацију.",
 
+    "howItWorks.heading": "Два начина да унесете рачун",
+    "howItWorks.subheading":
+      "Исти скенер, различита количина корака — бирате шта вам треба у датом тренутку.",
+    "howItWorks.widget.label": "Са виџета",
+    "howItWorks.widget.step1": "Додирнете виџет на почетном екрану",
+    "howItWorks.widget.step2": "Усмерите камеру на QR код рачуна",
+    "howItWorks.widget.step3":
+      "Трошак се одмах сачува — износ, датум, продавница, начин плаћања. Без екрана за преглед.",
+    "howItWorks.app.label": "Из апликације",
+    "howItWorks.app.step1": "Отворите Трошкомир и додирнете дугме +",
+    "howItWorks.app.step2": "Скенирате QR код рачуна",
+    "howItWorks.app.step3": "Прегледате учитане податке",
+    "howItWorks.app.step4":
+      "Изаберете категорију, картицу или ознаке, па сачувате",
+
+    "scope.heading": "Није само бележење трошкова",
+    "scope.subheading":
+      "Један унесен рачун покреће цео ваш финансијски систем.",
+    "scope.chain.expenses": "Трошак",
+    "scope.chain.incomes": "Приход",
+    "scope.chain.budgets": "Буџет",
+    "scope.chain.cards": "Картица",
+    "scope.chain.installments": "Рата",
+    "scope.chain.pools": "Валутни базен",
+    "scope.chain.savings": "Штедња",
+    "scope.chain.loans": "Зајам",
+    "scope.chain.trips": "Путовање",
+    "scope.chain.household": "Домаћинство",
+
     "features.heading": "Шта Трошкомир уме",
     "features.subheading":
       "Кратак преглед свих функција, да знате шта добијате.",
@@ -82,7 +111,7 @@ export const translations = {
       "Учитајте PDF извод и Трошкомир упише трошкове и приходе одједном, уз проверу да се салдо слаже. Тренутно: Banca Intesa, OTP банка Србија и Yettel банка. Дупликати се препознају, па исто не уносите двапут.",
     "feat.widgets.title": "Виџет на почетном екрану",
     "feat.widgets.body":
-      "На почетни екран ставите виџет са бројем скенираних рачуна овог месеца и онима који чекају преглед, или лојалти картице за брз приступ на каси. Скенирање рачуна креће директно са виџета.",
+      "На почетни екран ставите виџет са бројем скенираних рачуна овог месеца и онима који чекају преглед, или лојалти картице за брз приступ на каси. Додир на виџет отвара камеру директно, без отварања апликације на почетном екрану — QR очитате, а трошак (износ, датум, продавница, начин плаћања) се одмах сачува, без екрана за уређивање. Видите само кратку потврду и враћате се на оно што сте радили. Категорију или белешку додате касније, отварањем тог трошка.",
     "feat.flags.title": "Управљање функцијама",
     "feat.flags.body":
       "Путовања, зајмови, штедња, буџети, рачуни, лојалти картице, валутни базени, увоз извода и локални AI могу да се искључе. Искључен модул нестаје из менија и престаје да шаље подсетнике. Подаци се не бришу, вратите га кад год пожелите. Трошкови, приходи и статистика увек остају укључени.",
@@ -94,7 +123,7 @@ export const translations = {
 
     "feat.scan.title": "Скенирање фискалног рачуна",
     "feat.scan.body":
-      "Скенирајте QR код са фискалног рачуна камером телефона. Тренутно подржано: 🇷🇸 Србија (suf.purs.gov.rs), 🇧🇦 Република Српска (suf.poreskaupravars.org), 🇲🇪 Црна Гора (mapr.tax.gov.me) и 🇬🇷 Грчка (mydatapi.aade.gr). Апликација учитава податке директно са званичне пореске странице и уписује продавницу, износ и артикле. Грчки називи се, где је могуће, преводе или транслитерују. Ускоро и Македонија.",
+      "Скенирајте QR код са фискалног рачуна камером телефона. Тренутно подржано: 🇷🇸 Србија (suf.purs.gov.rs), 🇧🇦 Република Српска (suf.poreskaupravars.org), 🇲🇪 Црна Гора (mapr.tax.gov.me) и 🇬🇷 Грчка (mydatapi.aade.gr). Апликација учитава податке директно са званичне пореске странице и уписује продавницу, износ и артикле. Грчки називи се, где је могуће, преводе или транслитерују. Ускоро и Македонија. Ако рачун скенирате изнутра апликације (дугме + у Трошковима), пре чувања добијате екран за преглед где бирате категорију, картицу, валутни базен и ознаке; скен покренут са виџета тај корак намерно прескаче ради брзине.",
     "feat.localAi.title": "Локална AI обрада рачуна",
     "feat.localAi.body":
       "Снимите или изаберите слику рачуна. Српски фискални рачуни имају законом прописан, фиксан распоред, па апликација чита продавца, износ и време директно са одштампаних ознака — поуздано, чак и када се на истом рачуну мешају ћирилица и латиница. Апликација чак исправља и сопствене грешке: контролни број рачуна је одштампан двапут, па нејасна цифра у једном делу бива исправљена на основу другог. Један од три опциона локална језичка модела (од 135 MB до 1,6 GB, бирате у Подешавањима) ради у потпуности на вашем уређају и укључује се само за оно што фиксна правила не могу — предлагање ознаке (тага). Сваки податак прегледате пре чувања.",
@@ -184,10 +213,22 @@ export const translations = {
 
     "privacy.title": "Приватност",
     "privacy.body":
-      "Ваши подаци се чувају на серверу у мом кућном лабу. Подразумевано нису шифровани, што је сасвим у реду за већину корисника. Ако желите end-to-end шифровање (тј. да ни ја не могу да прочитам ваше описе трошкова или рачуне), укључите га у подешавањима апликације. Искрено: не занима ме шта купујете ни од кога... мада ценовник кирија у Београду не би ни мало зашкодио.",
+      "Трошкомир је систем заснован на серверу — све што унесете чува се на серверу који сам лично покрећем код куће, а не само на телефону. Подразумевано, ти подаци се чувају у читљивом облику, што је сасвим у реду за већину корисника. Ако желите јачу заштиту, укључите шифровање с краја на крај у подешавањима апликације — тада ни ја не могу да прочитам ваше описе трошкова или рачуне. Шифровање је опционо и подразумевано искључено. Искрено: не читам ваше податке, не занима ме шта купујете ни од кога, и никада их не делим ни са ким... мада ценовник кирија у Београду не би ни мало зашкодио.",
     "privacy.localAi.title": "Рачуни и локални AI",
     "privacy.localAi.body":
       "Обрада слике рачуна остаје на вашем телефону: ML Kit издваја текст, а изабрани локални модел (један од три опциона) локално предлаже продавницу, износ, датум, валуту, начин плаћања, категорију и ознаке. Датотека долази са Hugging Face-а, а на уређају се чува само један модел одједном; рачун и OCR текст никада се не шаљу cloud AI сервису. Трошак се шаље Трошкомиру тек када га прегледате и сачувате.",
+
+    "privacy.whoSees.title": "Ко може да види моје податке?",
+    "privacy.whoSees.body":
+      "Подразумевано, технички да — серверу требају износи и датуми да би израчунао буџете и укупне суме, па их технички могу видети. У пракси их не читам, не анализирам их и не делим их ни са ким. Ако желите техничку, а не само обећану гаранцију, укључите шифровање с краја на крај у подешавањима: тада описи, белешке и детаљи рачуна постају нечитљиви за сервер — па ни за мене.",
+    "privacy.notDoes.title": "Шта Трошкомир не ради",
+    "privacy.notDoes.item1":
+      "Не приказује огласе нити користи рекламне SDK-ове.",
+    "privacy.notDoes.item2": "Не продаје ваше финансијске податке никоме.",
+    "privacy.notDoes.item3":
+      "Не шаље слике рачуна нити OCR текст cloud AI сервису.",
+    "privacy.notDoes.item4":
+      "Не дели податке са трећим странама, осим кад сами покренете функцију која то захтева (нпр. очитавање рачуна са пореског портала).",
 
     "about.heading": "О аутору",
     "about.name": "Никола Дашић",
@@ -288,6 +329,35 @@ export const translations = {
     "cta.comingSoonHint":
       "Link za App Store će se pojaviti čim Apple odobri aplikaciju.",
 
+    "howItWorks.heading": "Dva načina da unesete račun",
+    "howItWorks.subheading":
+      "Isti skener, različita količina koraka — birate šta vam treba u datom trenutku.",
+    "howItWorks.widget.label": "Sa vidžeta",
+    "howItWorks.widget.step1": "Dodirnete vidžet na početnom ekranu",
+    "howItWorks.widget.step2": "Usmerite kameru na QR kod računa",
+    "howItWorks.widget.step3":
+      "Trošak se odmah sačuva — iznos, datum, prodavnica, način plaćanja. Bez ekrana za pregled.",
+    "howItWorks.app.label": "Iz aplikacije",
+    "howItWorks.app.step1": "Otvorite Troskomir i dodirnete dugme +",
+    "howItWorks.app.step2": "Skenirate QR kod računa",
+    "howItWorks.app.step3": "Pregledate učitane podatke",
+    "howItWorks.app.step4":
+      "Izaberete kategoriju, karticu ili oznake, pa sačuvate",
+
+    "scope.heading": "Nije samo beleženje troškova",
+    "scope.subheading":
+      "Jedan unesen račun pokreće ceo vaš finansijski sistem.",
+    "scope.chain.expenses": "Trošak",
+    "scope.chain.incomes": "Prihod",
+    "scope.chain.budgets": "Budžet",
+    "scope.chain.cards": "Kartica",
+    "scope.chain.installments": "Rata",
+    "scope.chain.pools": "Valutni bazen",
+    "scope.chain.savings": "Štednja",
+    "scope.chain.loans": "Zajam",
+    "scope.chain.trips": "Putovanje",
+    "scope.chain.household": "Domaćinstvo",
+
     "features.heading": "Šta Troskomir ume",
     "features.subheading":
       "Kratak pregled svih funkcija, da znate šta dobijate.",
@@ -308,7 +378,7 @@ export const translations = {
       "Učitajte PDF izvod i Troskomir upiše troškove i prihode odjednom, uz proveru da se saldo slaže. Trenutno: Banca Intesa, OTP banka Srbija i Yettel banka. Duplikati se prepoznaju, pa isto ne unosite dvaput.",
     "feat.widgets.title": "Vidžet na početnom ekranu",
     "feat.widgets.body":
-      "Na početni ekran stavite vidžet sa brojem skeniranih računa ovog meseca i onima koji čekaju pregled, ili lojalti kartice za brz pristup na kasi. Skeniranje računa kreće direktno sa vidžeta.",
+      "Na početni ekran stavite vidžet sa brojem skeniranih računa ovog meseca i onima koji čekaju pregled, ili lojalti kartice za brz pristup na kasi. Dodir na vidžet otvara kameru direktno, bez otvaranja aplikacije na početnom ekranu — QR očitate, a trošak (iznos, datum, prodavnica, način plaćanja) se odmah sačuva, bez ekrana za uređivanje. Vidite samo kratku potvrdu i vraćate se na ono što ste radili. Kategoriju ili belešku dodate kasnije, otvaranjem tog troška.",
     "feat.flags.title": "Upravljanje funkcijama",
     "feat.flags.body":
       "Putovanja, zajmovi, štednja, budžeti, računi, lojalti kartice, valutni bazeni, uvoz izvoda i lokalni AI mogu da se isključe. Isključen modul nestaje iz menija i prestaje da šalje podsetnike. Podaci se ne brišu, vratite ga kad god poželite. Troškovi, prihodi i statistika uvek ostaju uključeni.",
@@ -320,7 +390,7 @@ export const translations = {
 
     "feat.scan.title": "Skeniranje fiskalnog računa",
     "feat.scan.body":
-      "Skenirajte QR kod sa fiskalnog računa kamerom telefona. Trenutno podržano: 🇷🇸 Srbija (suf.purs.gov.rs), 🇧🇦 Republika Srpska (suf.poreskaupravars.org), 🇲🇪 Crna Gora (mapr.tax.gov.me) i 🇬🇷 Grčka (mydatapi.aade.gr). Aplikacija učitava podatke direktno sa zvanične poreske stranice i upisuje prodavnicu, iznos i artikle. Grčki nazivi se, gde je moguće, prevode ili transliteruju. Uskoro i Makedonija.",
+      "Skenirajte QR kod sa fiskalnog računa kamerom telefona. Trenutno podržano: 🇷🇸 Srbija (suf.purs.gov.rs), 🇧🇦 Republika Srpska (suf.poreskaupravars.org), 🇲🇪 Crna Gora (mapr.tax.gov.me) i 🇬🇷 Grčka (mydatapi.aade.gr). Aplikacija učitava podatke direktno sa zvanične poreske stranice i upisuje prodavnicu, iznos i artikle. Grčki nazivi se, gde je moguće, prevode ili transliteruju. Uskoro i Makedonija. Ako račun skenirate iznutra aplikacije (dugme + u Troškovima), pre čuvanja dobijate ekran za pregled gde birate kategoriju, karticu, valutni bazen i oznake; sken pokrenut sa vidžeta taj korak namerno preskače radi brzine.",
     "feat.localAi.title": "Lokalna AI obrada računa",
     "feat.localAi.body":
       "Snimite ili izaberite sliku računa. Srpski fiskalni računi imaju zakonom propisan, fiksan raspored, pa aplikacija čita prodavca, iznos i vreme direktno sa odštampanih oznaka — pouzdano, čak i kada se na istom računu mešaju ćirilica i latinica. Aplikacija čak ispravlja i sopstvene greške: kontrolni broj računa je odštampan dvaput, pa nejasna cifra u jednom delu biva ispravljena na osnovu drugog. Jedan od tri opciona lokalna jezička modela (od 135 MB do 1,6 GB, birate u Podešavanjima) radi u potpunosti na vašem uređaju i uključuje se samo za ono što fiksna pravila ne mogu — predlaganje oznake (taga). Svaki podatak pregledate pre čuvanja.",
@@ -410,10 +480,22 @@ export const translations = {
 
     "privacy.title": "Privatnost",
     "privacy.body":
-      "Vaši podaci se čuvaju na serveru u mom kućnom labu. Podrazumevano nisu šifrovani, što je sasvim u redu za većinu korisnika. Ako želite end-to-end šifrovanje (tj. da ni ja ne mogu da pročitam vaše opise troškova ili račune), uključite ga u podešavanjima aplikacije. Iskreno: ne zanima me šta kupujete ni od koga... mada cenovnik kirija u Beogradu ne bi ni malo zaškodio.",
+      "Troškomir je sistem zasnovan na serveru — sve što unesete čuva se na serveru koji sam lično pokrećem kod kuće, a ne samo na telefonu. Podrazumevano, ti podaci se čuvaju u čitljivom obliku, što je sasvim u redu za većinu korisnika. Ako želite jaču zaštitu, uključite šifrovanje s kraja na kraj u podešavanjima aplikacije — tada ni ja ne mogu da pročitam vaše opise troškova ili račune. Šifrovanje je opciono i podrazumevano isključeno. Iskreno: ne čitam vaše podatke, ne zanima me šta kupujete ni od koga, i nikada ih ne delim ni sa kim... mada cenovnik kirija u Beogradu ne bi ni malo zaškodio.",
     "privacy.localAi.title": "Računi i lokalni AI",
     "privacy.localAi.body":
       "Obrada slike računa ostaje na vašem telefonu: ML Kit izdvaja tekst, a izabrani lokalni model (jedan od tri opciona) lokalno predlaže prodavnicu, iznos, datum, valutu, način plaćanja, kategoriju i oznake. Datoteka dolazi sa Hugging Face-a, a na uređaju se čuva samo jedan model odjednom; račun i OCR tekst nikada se ne šalju cloud AI servisu. Trošak se šalje Troskomiru tek kada ga pregledate i sačuvate.",
+
+    "privacy.whoSees.title": "Ko može da vidi moje podatke?",
+    "privacy.whoSees.body":
+      "Podrazumevano, tehnički da — serveru trebaju iznosi i datumi da bi izračunao budžete i ukupne sume, pa ih tehnički mogu videti. U praksi ih ne čitam, ne analiziram ih i ne delim ih ni sa kim. Ako želite tehničku, a ne samo obećanu garanciju, uključite šifrovanje s kraja na kraj u podešavanjima: tada opisi, beleške i detalji računa postaju nečitljivi za server — pa ni za mene.",
+    "privacy.notDoes.title": "Šta Troskomir ne radi",
+    "privacy.notDoes.item1":
+      "Ne prikazuje oglase niti koristi reklamne SDK-ove.",
+    "privacy.notDoes.item2": "Ne prodaje vaše finansijske podatke nikome.",
+    "privacy.notDoes.item3":
+      "Ne šalje slike računa niti OCR tekst cloud AI servisu.",
+    "privacy.notDoes.item4":
+      "Ne deli podatke sa trećim stranama, osim kad sami pokrenete funkciju koja to zahteva (npr. očitavanje računa sa poreskog portala).",
 
     "about.heading": "O autoru",
     "about.name": "Nikola Dašić",
@@ -514,6 +596,34 @@ export const translations = {
     "cta.comingSoonHint":
       "The App Store link will appear once Apple approves the app.",
 
+    "howItWorks.heading": "Two ways to log a receipt",
+    "howItWorks.subheading":
+      "Same scanner, different amount of friction — pick whichever fits the moment.",
+    "howItWorks.widget.label": "From the widget",
+    "howItWorks.widget.step1": "Tap the widget on your home screen",
+    "howItWorks.widget.step2": "Point the camera at the receipt's QR code",
+    "howItWorks.widget.step3":
+      "The expense saves immediately — amount, date, merchant, payment method. No screens in between.",
+    "howItWorks.app.label": "From inside the app",
+    "howItWorks.app.step1": "Open Troskomir and tap the + button",
+    "howItWorks.app.step2": "Scan the receipt's QR code",
+    "howItWorks.app.step3": "Review the pulled-in details",
+    "howItWorks.app.step4": "Pick a category, card or tags, then save",
+
+    "scope.heading": "Not just an expense tracker",
+    "scope.subheading":
+      "One logged receipt feeds your whole financial picture.",
+    "scope.chain.expenses": "Expense",
+    "scope.chain.incomes": "Income",
+    "scope.chain.budgets": "Budget",
+    "scope.chain.cards": "Card",
+    "scope.chain.installments": "Installment",
+    "scope.chain.pools": "Currency pool",
+    "scope.chain.savings": "Savings",
+    "scope.chain.loans": "Loan",
+    "scope.chain.trips": "Trip",
+    "scope.chain.household": "Household",
+
     "features.heading": "What Troskomir does",
     "features.subheading":
       "A quick rundown of every feature, so you know what you're getting.",
@@ -534,7 +644,7 @@ export const translations = {
       "Load a PDF statement and Troskomir books the expenses and incomes in one go, checking that the running balance adds up. Currently: Banca Intesa, OTP banka Srbija and Yettel banka. Duplicates are detected, so you don't enter the same row twice.",
     "feat.widgets.title": "Home-screen widget",
     "feat.widgets.body":
-      "Put a widget on your home screen with this month's scanned-receipt count and the ones waiting for review, or your loyalty cards for a quick pull-up at the till. Receipt scanning starts straight from the widget.",
+      "Put a widget on your home screen with this month's scanned-receipt count and the ones waiting for review, or your loyalty cards for a quick pull-up at the till. Tapping the widget opens the camera directly, without landing on the app's home screen first — scan the QR code and the expense (amount, date, merchant, payment method) is saved immediately, with no review screen. You just see a short confirmation and you're back to whatever you were doing. Add a category or note later by opening that expense.",
     "feat.flags.title": "Manage features",
     "feat.flags.body":
       "Trips, loans, savings, budgets, receipts, loyalty cards, currency pools, statement import and the on-device AI can each be switched off. A disabled module leaves the menu and stops sending its reminders. Your data is not deleted — turn it back on any time. Expenses, incomes and statistics stay on.",
@@ -546,7 +656,7 @@ export const translations = {
 
     "feat.scan.title": "Fiscal receipt scanning",
     "feat.scan.body":
-      "Scan the QR code on a fiscal receipt with your phone's camera. Currently supported: 🇷🇸 Serbia (suf.purs.gov.rs), 🇧🇦 Republic of Srpska (suf.poreskaupravars.org), 🇲🇪 Montenegro (mapr.tax.gov.me) and 🇬🇷 Greece (mydatapi.aade.gr). The app pulls the data straight from the official tax portal and fills in the store, amount and items. Greek merchant names are translated or transliterated where possible. North Macedonia coming soon.",
+      "Scan the QR code on a fiscal receipt with your phone's camera. Currently supported: 🇷🇸 Serbia (suf.purs.gov.rs), 🇧🇦 Republic of Srpska (suf.poreskaupravars.org), 🇲🇪 Montenegro (mapr.tax.gov.me) and 🇬🇷 Greece (mydatapi.aade.gr). The app pulls the data straight from the official tax portal and fills in the store, amount and items. Greek merchant names are translated or transliterated where possible. North Macedonia coming soon. Scan a receipt from inside the app instead (the + button in Expenses) and you get a review screen first, where you pick a category, card, currency pool and tags before saving; a widget-triggered scan skips that step on purpose, for speed.",
     "feat.localAi.title": "On-device receipt AI",
     "feat.localAi.body":
       "Take or choose a receipt photo. Serbian fiscal receipts follow a fixed legal layout, so the app reads the merchant, total and timestamp straight off their printed labels — reliably, even when Cyrillic and Latin letters appear on the same slip. It even catches its own mistakes: the receipt's control number is printed twice, so a smudged digit in one copy is corrected from the other. One of three optional local language models (135 MB to 1.6 GB, your choice in Settings) runs fully on your device and only steps in for the one thing fixed rules can't do — suggesting a tag. You review every field before saving.",
@@ -636,10 +746,21 @@ export const translations = {
 
     "privacy.title": "Privacy",
     "privacy.body":
-      "Your data lives on a server I run myself at home. By default it's stored as-is, which is fine for most people. If you want end-to-end encryption (meaning not even I can read your expense descriptions or receipts), switch it on in the app settings. Honest disclaimer: I don't care what you buy or from whom... though real Belgrade rent prices would be fun to know.",
+      "Troškomir is a server-based app — everything you enter is stored on a server I run myself at home, not just on your phone. By default, that data is stored in plain, readable form, which is fine for most people. If you want stronger protection, turn on end-to-end encryption in the app settings — then not even I can read your expense descriptions or receipts. Encryption is optional and off by default. Honest disclaimer: I don't read your data, I don't care what you buy or from whom, and I never share it with anyone... though real Belgrade rent prices would be fun to know.",
     "privacy.localAi.title": "Receipts and local AI",
     "privacy.localAi.body":
       "Receipt image processing stays on your phone: ML Kit extracts the text, and whichever of three optional local models you've chosen locally suggests the seller, amount, date, currency, payment method, category, and tags. Its file comes from Hugging Face, and only one model is kept on the device at a time; the receipt and OCR text are never sent to a cloud AI service. The expense reaches Troskomir only after you review and save it.",
+
+    "privacy.whoSees.title": "Who can see my data?",
+    "privacy.whoSees.body":
+      "By default, technically yes — the server needs amounts and dates to calculate budgets and totals, so it can technically see them. In practice I don't read it, don't analyze it, and don't share it with anyone. If you want a technical guarantee rather than a promise, turn on end-to-end encryption in Settings: then descriptions, notes and receipt details become unreadable to the server — and to me.",
+    "privacy.notDoes.title": "What Troskomir does not do",
+    "privacy.notDoes.item1": "Show ads or use advertising SDKs.",
+    "privacy.notDoes.item2": "Sell your financial data to anyone.",
+    "privacy.notDoes.item3":
+      "Send receipt images or OCR text to a cloud AI service.",
+    "privacy.notDoes.item4":
+      "Share data with third parties, except when you trigger a feature that needs it (e.g. pulling a receipt from a tax portal).",
 
     "about.heading": "About the author",
     "about.name": "Nikola Dašić",
@@ -740,6 +861,35 @@ export const translations = {
     "cta.comingSoonHint":
       "Ссылка на App Store появится, когда Apple одобрит приложение.",
 
+    "howItWorks.heading": "Два способа внести чек",
+    "howItWorks.subheading":
+      "Один и тот же сканер, разное число шагов — выбирайте, что подходит в моменте.",
+    "howItWorks.widget.label": "С виджета",
+    "howItWorks.widget.step1": "Нажимаете на виджет на домашнем экране",
+    "howItWorks.widget.step2": "Наводите камеру на QR-код чека",
+    "howItWorks.widget.step3":
+      "Расход сохраняется сразу — сумма, дата, продавец, способ оплаты. Без экранов между этим.",
+    "howItWorks.app.label": "Изнутри приложения",
+    "howItWorks.app.step1": "Открываете Трошкомир и нажимаете кнопку +",
+    "howItWorks.app.step2": "Сканируете QR-код чека",
+    "howItWorks.app.step3": "Проверяете загруженные данные",
+    "howItWorks.app.step4":
+      "Выбираете категорию, карту или теги и сохраняете",
+
+    "scope.heading": "Это не просто учёт расходов",
+    "scope.subheading":
+      "Один внесённый чек запускает всю вашу финансовую картину.",
+    "scope.chain.expenses": "Расход",
+    "scope.chain.incomes": "Доход",
+    "scope.chain.budgets": "Бюджет",
+    "scope.chain.cards": "Карта",
+    "scope.chain.installments": "Рассрочка",
+    "scope.chain.pools": "Валютный пул",
+    "scope.chain.savings": "Накопления",
+    "scope.chain.loans": "Займ",
+    "scope.chain.trips": "Поездка",
+    "scope.chain.household": "Домохозяйство",
+
     "features.heading": "Что умеет Трошкомир",
     "features.subheading":
       "Короткий обзор всех функций, чтобы вы знали, что получаете.",
@@ -760,7 +910,7 @@ export const translations = {
       "Загрузите PDF-выписку, и Трошкомир внесёт расходы и доходы сразу, проверив, что сальдо сходится. Сейчас: Banca Intesa, OTP banka Srbija и Yettel banka. Дубликаты распознаются, так что одну и ту же строку вы не внесёте дважды.",
     "feat.widgets.title": "Виджет на домашнем экране",
     "feat.widgets.body":
-      "Поставьте виджет с числом отсканированных чеков за этот месяц и теми, что ждут проверки, или карты лояльности для быстрого доступа на кассе. Сканирование чека запускается прямо с виджета.",
+      "Поставьте виджет с числом отсканированных чеков за этот месяц и теми, что ждут проверки, или карты лояльности для быстрого доступа на кассе. Нажатие на виджет сразу открывает камеру, минуя главный экран приложения — вы сканируете QR-код, и расход (сумма, дата, продавец, способ оплаты) сохраняется сразу же, без экрана редактирования. Вы видите только короткое подтверждение и возвращаетесь к своим делам. Категорию или заметку можно добавить позже, открыв этот расход.",
     "feat.flags.title": "Управление функциями",
     "feat.flags.body":
       "Поездки, займы, накопления, бюджеты, чеки, карты лояльности, валютные пулы, импорт выписки и локальный ИИ можно выключить. Отключённый модуль исчезает из меню и перестаёт слать напоминания. Данные не удаляются, включите снова в любой момент. Расходы, доходы и статистика всегда остаются включёнными.",
@@ -772,7 +922,7 @@ export const translations = {
 
     "feat.scan.title": "Сканирование фискального чека",
     "feat.scan.body":
-      "Отсканируйте QR-код на фискальном чеке камерой телефона. Сейчас поддерживаются: 🇷🇸 Сербия (suf.purs.gov.rs), 🇧🇦 Республика Сербская (suf.poreskaupravars.org), 🇲🇪 Черногория (mapr.tax.gov.me) и 🇬🇷 Греция (mydatapi.aade.gr). Приложение получает данные напрямую с официального налогового портала и само заполняет магазин, сумму и товары. Греческие названия по возможности переводятся или транслитерируются. Скоро: Северная Македония.",
+      "Отсканируйте QR-код на фискальном чеке камерой телефона. Сейчас поддерживаются: 🇷🇸 Сербия (suf.purs.gov.rs), 🇧🇦 Республика Сербская (suf.poreskaupravars.org), 🇲🇪 Черногория (mapr.tax.gov.me) и 🇬🇷 Греция (mydatapi.aade.gr). Приложение получает данные напрямую с официального налогового портала и само заполняет магазин, сумму и товары. Греческие названия по возможности переводятся или транслитерируются. Скоро: Северная Македония. Если сканировать чек изнутри приложения (кнопка + в Расходах), перед сохранением появится экран проверки, где вы выбираете категорию, карту, валютный пул и теги; сканирование через виджет намеренно пропускает этот шаг ради скорости.",
     "feat.localAi.title": "Локальный ИИ для чеков",
     "feat.localAi.body":
       "Сфотографируйте чек или выберите изображение. Сербские фискальные чеки имеют строго фиксированный, установленный законом формат, поэтому приложение считывает продавца, сумму и время прямо с напечатанных подписей полей — надёжно, даже если на одном чеке смешаны кириллица и латиница. Оно даже исправляет собственные ошибки: контрольный номер чека печатается дважды, поэтому нечёткая цифра в одной части исправляется по другой. Одна из трёх опциональных локальных языковых моделей (от 135 МБ до 1,6 ГБ, выбор в Настройках) работает полностью на вашем устройстве и подключается только там, где фиксированные правила бессильны — для подсказки тега. Каждое поле вы проверяете перед сохранением.",
@@ -862,10 +1012,21 @@ export const translations = {
 
     "privacy.title": "Конфиденциальность",
     "privacy.body":
-      "Ваши данные хранятся на сервере, который я держу дома (home lab). По умолчанию они хранятся как есть, и для большинства этого достаточно. Если хотите end-to-end шифрование (то есть чтобы даже я не мог читать описания расходов и чеки), включите его в настройках приложения. Честно: мне не интересно, что вы покупаете и где... хотя реальные цены на аренду в Белграде было бы забавно узнать.",
+      "Трошкомир — это серверное приложение: всё, что вы вводите, хранится на сервере, который я сам держу дома, а не только на телефоне. По умолчанию эти данные хранятся в читаемом виде, и для большинства этого достаточно. Если хотите более надёжную защиту, включите сквозное шифрование в настройках приложения — тогда даже я не смогу прочитать описания ваших расходов или чеки. Шифрование опционально и по умолчанию выключено. Честно: я не читаю ваши данные, мне не интересно, что вы покупаете и у кого, и я никогда никому их не передаю... хотя реальные цены на аренду в Белграде было бы забавно узнать.",
     "privacy.localAi.title": "Чеки и локальный ИИ",
     "privacy.localAi.body":
       "Обработка изображения чека остаётся на телефоне: ML Kit извлекает текст, а выбранная локальная модель (одна из трёх опциональных) локально предлагает продавца, сумму, дату, валюту, способ оплаты, категорию и теги. Файл загружается с Hugging Face, и на устройстве хранится только одна модель одновременно; чек и OCR-текст никогда не отправляются в облачный ИИ-сервис. Расход попадает в Трошкомир только после вашей проверки и сохранения.",
+
+    "privacy.whoSees.title": "Кто может увидеть мои данные?",
+    "privacy.whoSees.body":
+      "По умолчанию — технически да: серверу нужны суммы и даты, чтобы считать бюджеты и итоги, поэтому технически он их видит. На практике я их не читаю, не анализирую и никому не передаю. Если хотите техническую гарантию, а не просто обещание, включите сквозное шифрование в настройках: тогда описания, заметки и детали чеков станут нечитаемыми для сервера — и для меня тоже.",
+    "privacy.notDoes.title": "Чего Трошкомир не делает",
+    "privacy.notDoes.item1": "Не показывает рекламу и не использует рекламные SDK.",
+    "privacy.notDoes.item2": "Не продаёт ваши финансовые данные никому.",
+    "privacy.notDoes.item3":
+      "Не отправляет изображения чеков или OCR-текст в облачный ИИ-сервис.",
+    "privacy.notDoes.item4":
+      "Не передаёт данные третьим лицам, кроме случаев, когда вы сами запускаете функцию, которой это нужно (например, получение чека с налогового портала).",
 
     "about.heading": "Об авторе",
     "about.name": "Никола Дашич",

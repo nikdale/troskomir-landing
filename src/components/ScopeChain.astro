@@ -1,0 +1,44 @@
+---
+import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
+import type { TranslationKey } from '../i18n/translations';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = useTranslations(lang);
+
+const chain: TranslationKey[] = [
+  'scope.chain.expenses',
+  'scope.chain.incomes',
+  'scope.chain.budgets',
+  'scope.chain.cards',
+  'scope.chain.installments',
+  'scope.chain.pools',
+  'scope.chain.savings',
+  'scope.chain.loans',
+  'scope.chain.trips',
+  'scope.chain.household',
+];
+---
+
+<section class="pb-4 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-3">{t('scope.heading')}</h2>
+    <p class="text-text-muted mb-10">{t('scope.subheading')}</p>
+
+    <div class="flex flex-wrap justify-center items-center gap-x-2 gap-y-3">
+      {chain.map((key, i) => (
+        <>
+          <span class="px-4 py-2 rounded-full bg-secondary border border-border text-sm font-medium text-text">
+            {t(key)}
+          </span>
+          {i < chain.length - 1 && (
+            <span class="text-text-muted/50 select-none" aria-hidden="true">→</span>
+          )}
+        </>
+      ))}
+    </div>
+  </div>
+</section>
