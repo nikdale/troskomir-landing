@@ -56,21 +56,42 @@ test('open/ shows the default copy for a ?lang= it does not have', async ({page}
   await expect(page.locator('#open-button')).not.toBeEmpty();
 });
 
-test('an unknown URL gets the 404 page with the language switch', async ({page}) => {
-  const errors: string[] = [];
-  page.on('pageerror', error => errors.push(error.message));
-  await page.route('https://**/*', route => route.abort());
-  const response = await page.goto('/en/no-such-page/');
-  expect(response?.status()).toBe(404);
-  await expect(page.locator('h1')).toHaveText('Страница није пронађена');
-  // The switch leads to the localized homes, not to /en/no-such-page/.
-  for (const home of ['/', '/sr-Latn/', '/en/', '/ru/']) {
-    await expect(page.locator(`header details a[href="${home}"]`)).toHaveCount(1);
-  }
-  const results = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
-  expect(results.violations).toEqual([]);
-  expect(errors).toEqual([]);
-});
+// One dist/404.html stands in for every unknown URL; an inline script picks
+// the copy from the first path segment, so /en/… reads English with lang="en"
+// rather than the Cyrillic Serbian the file is built in.
+const NOT_FOUND = [
+  {path: '/no-such-page/', lang: 'sr-Cyrl', h1: 'Страница није пронађена', home: '/'},
+  {path: '/sr-Latn/no-such-page/', lang: 'sr-Latn', h1: 'Stranica nije pronađena', home: '/sr-Latn/'},
+  {path: '/en/no-such-page/', lang: 'en', h1: 'Page not found', home: '/en/'},
+  {path: '/ru/no-such-page/', lang: 'ru', h1: 'Страница не найдена', home: '/ru/'},
+  {path: '/en/about/x.html', lang: 'en', h1: 'Page not found', home: '/en/'},
+  // A segment that is a property of every object must not find one.
+  {path: '/constructor/', lang: 'sr-Cyrl', h1: 'Страница није пронађена', home: '/'},
+];
+for (const {path, lang, h1, home} of NOT_FOUND) {
+  test(`an unknown URL ${path} gets the 404 page in its own language`, async ({page}) => {
+    const errors: string[] = [];
+    const cspErrors: string[] = [];
+    page.on('pageerror', error => errors.push(error.message));
+    page.on('console', message => {
+      if (/Content Security Policy|Refused to/.test(message.text())) cspErrors.push(message.text());
+    });
+    await page.route('https://**/*', route => route.abort());
+    const response = await page.goto(path);
+    expect(response?.status()).toBe(404);
+    await expect(page.locator('html')).toHaveAttribute('lang', lang);
+    await expect(page.locator('h1')).toHaveText(h1);
+    await expect(page.locator('main a').first()).toHaveAttribute('href', home);
+    // The switch leads to the localized homes, not to the same missing path.
+    for (const href of ['/', '/sr-Latn/', '/en/', '/ru/']) {
+      await expect(page.locator(`header details a[href="${href}"]`)).toHaveCount(1);
+    }
+    const results = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    expect(results.violations).toEqual([]);
+    expect(errors).toEqual([]);
+    expect(cspErrors).toEqual([]);
+  });
+}
 
 // Inter is one variable file per subset. A first view downloads at most one
 // file per script it renders — never the same bytes once per weight.

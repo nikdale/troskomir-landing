@@ -2,22 +2,51 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { useTranslations, getLocalizedPath, defaultLang } from '../i18n/utils';
+import {
+  useTranslations,
+  getLocalizedPath,
+  defaultLang,
+  languages,
+  type Lang,
+} from '../i18n/utils';
 
 /**
  * Built as dist/404.html, which GitHub Pages serves — with a 404 status — for
  * any path that is not a page. Without it Pages showed its own generic page,
  * with no way back into the site.
  *
- * Default-language copy only: this one file stands in for every unknown URL in
- * every locale, so there is no /en/404 to build and the Layout is told not to
- * advertise a canonical or alternates for it. The language switch in the
- * header leads to the localized home pages rather than to the same missing
- * path in another language.
+ * One file stands in for every unknown URL in every locale, so there is no
+ * /en/404 to build and the Layout is told not to advertise a canonical or
+ * alternates for it. It is rendered in the default language; the inline
+ * script below then reads the first path segment of the URL the visitor
+ * actually hit (/en/…, /ru/…, /sr-Latn/…) and swaps in that locale's copy,
+ * `lang` and home link, so a reader who followed a dead English link is not
+ * met by Cyrillic Serbian. The language switch in the header leads to the
+ * localized home pages rather than to the same missing path in another
+ * language.
  */
 const lang = defaultLang;
 const t = useTranslations(lang);
 const base = import.meta.env.BASE_URL;
+
+// Every locale's copy, keyed by its URL prefix. Lands in the inline script
+// through define:vars; scripts/apply-csp-hashes.mjs hashes the result.
+const copy = Object.fromEntries(
+  (Object.keys(languages) as Lang[]).map((code) => {
+    const tl = useTranslations(code);
+    return [
+      code,
+      {
+        htmlLang: code === 'sr' ? 'sr-Cyrl' : code,
+        title: tl('page.notFound.title'),
+        heading: tl('notFound.heading'),
+        body: tl('notFound.body'),
+        home: tl('notFound.home'),
+        href: getLocalizedPath('', code, base),
+      },
+    ];
+  }),
+);
 ---
 
 <Layout
@@ -30,10 +59,11 @@ const base = import.meta.env.BASE_URL;
   <main>
     <section class="pt-40 pb-24 px-6">
       <div class="max-w-md mx-auto text-center">
-        <h1 class="text-3xl font-bold mb-4">{t('notFound.heading')}</h1>
+        <h1 id="nf-heading" class="text-3xl font-bold mb-4">{t('notFound.heading')}</h1>
         <div class="section-divider mb-8"></div>
-        <p class="text-text-muted text-sm leading-relaxed mb-8">{t('notFound.body')}</p>
+        <p id="nf-body" class="text-text-muted text-sm leading-relaxed mb-8">{t('notFound.body')}</p>
         <a
+          id="nf-home"
           href={getLocalizedPath('', lang, base)}
           class="inline-flex px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors text-accent font-medium text-sm"
         >
@@ -41,6 +71,26 @@ const base = import.meta.env.BASE_URL;
         </a>
       </div>
     </section>
+    <script is:inline define:vars={{ copy }}>
+      (function () {
+        // Object.hasOwn, not `copy[seg]`: a segment such as "constructor"
+        // would otherwise find a function on the prototype.
+        var seg = location.pathname.split('/')[1];
+        if (!Object.hasOwn(copy, seg)) return;
+        var c = copy[seg];
+        document.documentElement.lang = c.htmlLang;
+        document.title = c.title;
+        var heading = document.getElementById('nf-heading');
+        var body = document.getElementById('nf-body');
+        var home = document.getElementById('nf-home');
+        if (heading) heading.textContent = c.heading;
+        if (body) body.textContent = c.body;
+        if (home) {
+          home.textContent = c.home;
+          home.setAttribute('href', c.href);
+        }
+      })();
+    </script>
   </main>
   <Footer lang={lang} />
 </Layout>
