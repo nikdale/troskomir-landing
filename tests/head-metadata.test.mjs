@@ -47,6 +47,11 @@ const PAGES = htmlFiles().map((file) => ({
   html: readFileSync(file, 'utf8'),
 }));
 
+// The one built page that is not a URL of its own: GitHub Pages serves it for
+// every unknown path, so it carries no canonical, no alternates and a noindex.
+const NOT_FOUND = '/404.html';
+const INDEXABLE = PAGES.filter(({ name }) => name !== NOT_FOUND);
+
 function attr(html, pattern) {
   return html.match(pattern)?.[1];
 }
@@ -96,8 +101,23 @@ function inlineScripts(html) {
 
 const sha256 = (body) => createHash('sha256').update(body, 'utf8').digest('base64');
 
-test('the site still builds 21 pages', () => {
-  assert.equal(PAGES.length, 21, `expected 21 built pages, found ${PAGES.length}`);
+test('the site still builds 22 pages', () => {
+  assert.equal(PAGES.length, 22, `expected 22 built pages, found ${PAGES.length}`);
+});
+
+test('the 404 page is built, is noindex, and advertises no URL of its own', () => {
+  const page = PAGES.find(({ name }) => name === NOT_FOUND);
+  assert.ok(page, 'dist/404.html was not built — Pages falls back to its own generic page');
+  assert.match(page.html, /<meta name="robots" content="noindex"/);
+  assert.doesNotMatch(page.html, /<link rel="canonical"/);
+  assert.doesNotMatch(page.html, /<link rel="alternate"/);
+  assert.doesNotMatch(page.html, /<meta property="og:url"/);
+  // Default-language copy with the language switch: it stands in for every
+  // unknown URL in every locale, so the switch leads to the localized homes.
+  assert.match(page.html, /Страница није пронађена/);
+  for (const home of ['/', '/sr-Latn/', '/en/', '/ru/']) {
+    assert.match(page.html, new RegExp(`<a[^>]*href="${home}"`), `404 lacks the ${home} switch`);
+  }
 });
 
 test('no built page allows inline script', () => {
@@ -190,7 +210,7 @@ test('every page has its own title and description', () => {
 });
 
 test('canonical, og:url and the link preview image stay in agreement', () => {
-  for (const { name, html } of PAGES) {
+  for (const { name, html } of INDEXABLE) {
     const canonical = attr(html, /<link rel="canonical" href="([^"]+)"/);
     const ogUrl = attr(html, /<meta property="og:url" content="([^"]+)"/);
     assert.ok(canonical, `${name} has no canonical`);

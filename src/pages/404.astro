@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { useTranslations, getLocalizedPath, defaultLang } from '../i18n/utils';
+
+/**
+ * Built as dist/404.html, which GitHub Pages serves — with a 404 status — for
+ * any path that is not a page. Without it Pages showed its own generic page,
+ * with no way back into the site.
+ *
+ * Default-language copy only: this one file stands in for every unknown URL in
+ * every locale, so there is no /en/404 to build and the Layout is told not to
+ * advertise a canonical or alternates for it. The language switch in the
+ * header leads to the localized home pages rather than to the same missing
+ * path in another language.
+ */
+const lang = defaultLang;
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  lang={lang}
+  title={t('page.notFound.title')}
+  description={t('page.notFound.description')}
+  noindex
+>
+  <Header lang={lang} switchPath="/" />
+  <main>
+    <section class="pt-40 pb-24 px-6">
+      <div class="max-w-md mx-auto text-center">
+        <h1 class="text-3xl font-bold mb-4">{t('notFound.heading')}</h1>
+        <div class="section-divider mb-8"></div>
+        <p class="text-text-muted text-sm leading-relaxed mb-8">{t('notFound.body')}</p>
+        <a
+          href={getLocalizedPath('', lang, base)}
+          class="inline-flex px-5 py-3 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors text-accent font-medium text-sm"
+        >
+          {t('notFound.home')}
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer lang={lang} />
+</Layout>

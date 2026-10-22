@@ -84,8 +84,11 @@ const stores = [
   const target = ALLOWED.includes(requested) ? requested : '';
   const deepLink = 'troskomir://' + target;
 
-  const lang = params.get('lang');
-  const copy = strings[lang] || strings[defaultLang];
+  // An own-property check rather than a truthy-or-default one:
+  // `?lang=constructor` names a key every object has, and a function in place
+  // of the copy left the title and body empty.
+  const lang = params.get('lang') ?? '';
+  const copy = Object.hasOwn(strings, lang) ? strings[lang] : strings[defaultLang];
   document.getElementById('open-title').textContent = copy.title;
   document.getElementById('open-body').textContent = copy.body;
   document.getElementById('open-fallback').textContent = copy.fallback;

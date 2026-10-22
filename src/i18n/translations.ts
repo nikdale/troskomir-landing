@@ -40,6 +40,9 @@ export const translations = {
     "page.open.title": "Отварање апликације — Трошкомир",
     "page.open.description":
       "Веза из имејла која отвара Трошкомир на вашем уређају. Ако се апликација не отвори сама, дугме на страници то ради уместо вас.",
+    "page.notFound.title": "Страница није пронађена — Трошкомир",
+    "page.notFound.description":
+      "Тражена страница не постоји на сајту Трошкомира. Вратите се на почетну страницу или изаберите језик у заглављу.",
 
     "nav.features": "Функције",
     "nav.openMenu": "Отвори мени",
@@ -52,6 +55,9 @@ export const translations = {
     "open.body": "Ако се апликација не отвори сама, додирните дугме испод.",
     "open.button": "Отвори апликацију",
     "open.fallback": "Немате апликацију? Преузмите је са Google Play-а или App Store-а и покушајте поново.",
+    "notFound.heading": "Страница није пронађена",
+    "notFound.body": "Адреса коју сте отворили не постоји или је премештена.",
+    "notFound.home": "Назад на почетну страницу",
 
     "hero.badge": "Доступно на Google Play и App Store-у",
     "hero.subtitle":
@@ -309,6 +315,9 @@ export const translations = {
     "page.open.title": "Otvaranje aplikacije — Troskomir",
     "page.open.description":
       "Veza iz imejla koja otvara Troskomir na vašem uređaju. Ako se aplikacija ne otvori sama, dugme na stranici to radi umesto vas.",
+    "page.notFound.title": "Stranica nije pronađena — Troskomir",
+    "page.notFound.description":
+      "Tražena stranica ne postoji na sajtu Troskomira. Vratite se na početnu stranicu ili izaberite jezik u zaglavlju.",
 
     "nav.features": "Funkcije",
     "nav.openMenu": "Otvori meni",
@@ -321,6 +330,9 @@ export const translations = {
     "open.body": "Ako se aplikacija ne otvori sama, dodirnite dugme ispod.",
     "open.button": "Otvori aplikaciju",
     "open.fallback": "Nemate aplikaciju? Preuzmite je sa Google Play-a ili App Store-a i pokušajte ponovo.",
+    "notFound.heading": "Stranica nije pronađena",
+    "notFound.body": "Adresa koju ste otvorili ne postoji ili je premeštena.",
+    "notFound.home": "Nazad na početnu stranicu",
 
     "hero.badge": "Dostupno na Google Play i App Store-u",
     "hero.subtitle":
@@ -578,6 +590,9 @@ export const translations = {
     "page.open.title": "Opening the app — Troskomir",
     "page.open.description":
       "The link an e-mail uses to open Troskomir on your device. If the app doesn't open on its own, the button on the page does it for you.",
+    "page.notFound.title": "Page not found — Troskomir",
+    "page.notFound.description":
+      "The page you asked for does not exist on the Troskomir site. Go back to the home page or pick a language in the header.",
 
     "nav.features": "Features",
     "nav.openMenu": "Open menu",
@@ -590,6 +605,9 @@ export const translations = {
     "open.body": "If the app doesn't open on its own, tap the button below.",
     "open.button": "Open the app",
     "open.fallback": "Don't have the app? Get it on Google Play or the App Store and try again.",
+    "notFound.heading": "Page not found",
+    "notFound.body": "The address you opened does not exist or has moved.",
+    "notFound.home": "Back to the home page",
 
     "hero.badge": "Available on Google Play and the App Store",
     "hero.subtitle":
@@ -845,6 +863,9 @@ export const translations = {
     "page.open.title": "Открытие приложения — Трошкомир",
     "page.open.description":
       "Ссылка из письма, которая открывает Трошкомир на вашем устройстве. Если приложение не открылось само, это сделает кнопка на странице.",
+    "page.notFound.title": "Страница не найдена — Трошкомир",
+    "page.notFound.description":
+      "Запрошенная страница на сайте Трошкомира не существует. Вернитесь на главную страницу или выберите язык в шапке сайта.",
 
     "nav.features": "Функции",
     "nav.openMenu": "Открыть меню",
@@ -857,6 +878,9 @@ export const translations = {
     "open.body": "Если приложение не открылось само, нажмите кнопку ниже.",
     "open.button": "Открыть приложение",
     "open.fallback": "Нет приложения? Загрузите его из Google Play или App Store и попробуйте снова.",
+    "notFound.heading": "Страница не найдена",
+    "notFound.body": "Адрес, который вы открыли, не существует или был перемещён.",
+    "notFound.home": "На главную",
 
     "hero.badge": "Уже в Google Play и App Store",
     "hero.subtitle":
