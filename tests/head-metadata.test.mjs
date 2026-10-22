@@ -159,9 +159,10 @@ test("every inline script is allowed by its own page's CSP", () => {
     }
   }
   // About, DeleteAccount and /open: four pages each for the first two, one for
-  // /open. A drop to zero would mean the extraction above stopped matching and
-  // the assertions inside the loop never ran.
-  assert.equal(hashed, 9, `expected 9 inline scripts across dist, found ${hashed}`);
+  // /open, plus the 404 page's locale picker. A drop to zero would mean the
+  // extraction above stopped matching and the assertions inside the loop
+  // never ran.
+  assert.equal(hashed, 10, `expected 10 inline scripts across dist, found ${hashed}`);
 });
 
 test('the delete-account pages carry a distinct hash per locale', () => {

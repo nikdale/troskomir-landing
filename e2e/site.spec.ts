@@ -56,20 +56,83 @@ test('open/ shows the default copy for a ?lang= it does not have', async ({page}
   await expect(page.locator('#open-button')).not.toBeEmpty();
 });
 
-test('an unknown URL gets the 404 page with the language switch', async ({page}) => {
-  const errors: string[] = [];
-  page.on('pageerror', error => errors.push(error.message));
+// One dist/404.html stands in for every unknown URL; an inline script picks
+// the copy from the first path segment, so /en/… reads English with lang="en"
+// rather than the Cyrillic Serbian the file is built in.
+const NOT_FOUND = [
+  {path: '/no-such-page/', lang: 'sr-Cyrl', h1: 'Страница није пронађена', home: '/'},
+  {path: '/sr-Latn/no-such-page/', lang: 'sr-Latn', h1: 'Stranica nije pronađena', home: '/sr-Latn/'},
+  {path: '/en/no-such-page/', lang: 'en', h1: 'Page not found', home: '/en/'},
+  {path: '/ru/no-such-page/', lang: 'ru', h1: 'Страница не найдена', home: '/ru/'},
+  {path: '/en/about/x.html', lang: 'en', h1: 'Page not found', home: '/en/'},
+  // A segment that is a property of every object must not find one.
+  {path: '/constructor/', lang: 'sr-Cyrl', h1: 'Страница није пронађена', home: '/'},
+];
+for (const {path, lang, h1, home} of NOT_FOUND) {
+  test(`an unknown URL ${path} gets the 404 page in its own language`, async ({page}) => {
+    const errors: string[] = [];
+    const cspErrors: string[] = [];
+    page.on('pageerror', error => errors.push(error.message));
+    page.on('console', message => {
+      if (/Content Security Policy|Refused to/.test(message.text())) cspErrors.push(message.text());
+    });
+    await page.route('https://**/*', route => route.abort());
+    const response = await page.goto(path);
+    expect(response?.status()).toBe(404);
+    await expect(page.locator('html')).toHaveAttribute('lang', lang);
+    await expect(page.locator('h1')).toHaveText(h1);
+    await expect(page.locator('main a').first()).toHaveAttribute('href', home);
+    // The switch leads to the localized homes, not to the same missing path.
+    for (const href of ['/', '/sr-Latn/', '/en/', '/ru/']) {
+      await expect(page.locator(`header details a[href="${href}"]`)).toHaveCount(1);
+    }
+    const results = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    expect(results.violations).toEqual([]);
+    expect(errors).toEqual([]);
+    expect(cspErrors).toEqual([]);
+  });
+}
+
+// Inter is one variable file per subset. A first view downloads at most one
+// file per script it renders — never the same bytes once per weight.
+for (const path of ['/', '/sr-Latn/', '/en/', '/ru/', '/en/about/']) {
+  test(`${path} downloads at most three font files, each once`, async ({page}) => {
+    const fonts: {url: string; size: number}[] = [];
+    page.on('response', async response => {
+      if (!response.url().includes('/fonts/')) return;
+      fonts.push({url: new URL(response.url()).pathname, size: (await response.body()).length});
+    });
+    await page.route('https://**/*', route => route.abort());
+    await page.goto(path);
+    await page.waitForLoadState('networkidle');
+    const urls = fonts.map(f => f.url);
+    expect(new Set(urls).size).toBe(urls.length);
+    expect(urls.length).toBeLessThanOrEqual(3);
+    for (const url of urls) expect(url).toMatch(/\/fonts\/inter-(latin|latin-ext|cyrillic|cyrillic-ext)\.woff2$/);
+    const total = fonts.reduce((sum, f) => sum + f.size, 0);
+    // The Latin-script pages also need latin-ext for the Serbian diacritics
+    // in the footer; that subset alone is 85 KB, so their budget is larger.
+    expect(total).toBeLessThan(path === '/' || path === '/ru/' ? 100_000 : 160_000);
+  });
+}
+
+test('the About portrait is served resized, well under the original 512 KB', async ({page}) => {
+  const images: {url: string; size: number}[] = [];
+  page.on('response', async response => {
+    if (response.request().resourceType() !== 'image') return;
+    images.push({url: new URL(response.url()).pathname, size: (await response.body()).length});
+  });
   await page.route('https://**/*', route => route.abort());
-  const response = await page.goto('/en/no-such-page/');
-  expect(response?.status()).toBe(404);
-  await expect(page.locator('h1')).toHaveText('Страница није пронађена');
-  // The switch leads to the localized homes, not to /en/no-such-page/.
-  for (const home of ['/', '/sr-Latn/', '/en/', '/ru/']) {
-    await expect(page.locator(`header details a[href="${home}"]`)).toHaveCount(1);
-  }
-  const results = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
-  expect(results.violations).toEqual([]);
-  expect(errors).toEqual([]);
+  await page.goto('/en/about/');
+  await page.waitForLoadState('networkidle');
+  const portrait = page.locator('main img').first();
+  await expect(portrait).toHaveAttribute('alt', 'Nikola Dašić');
+  const currentSrc = await portrait.evaluate(img => new URL((img as HTMLImageElement).currentSrc).pathname);
+  expect(currentSrc).toMatch(/^\/_astro\//);
+  const fetched = images.find(i => i.url === currentSrc);
+  expect(fetched, `portrait ${currentSrc} was fetched`).toBeTruthy();
+  expect(fetched!.size).toBeLessThan(60_000);
+  expect(images.some(i => i.url === '/nikola.jpg')).toBe(false);
 });
 
 test('mobile menus work with the keyboard and have accessible names', async ({page}) => {
