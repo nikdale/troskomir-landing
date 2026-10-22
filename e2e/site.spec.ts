@@ -95,6 +95,25 @@ for (const path of ['/', '/sr-Latn/', '/en/', '/ru/', '/en/about/']) {
   });
 }
 
+test('the About portrait is served resized, well under the original 512 KB', async ({page}) => {
+  const images: {url: string; size: number}[] = [];
+  page.on('response', async response => {
+    if (response.request().resourceType() !== 'image') return;
+    images.push({url: new URL(response.url()).pathname, size: (await response.body()).length});
+  });
+  await page.route('https://**/*', route => route.abort());
+  await page.goto('/en/about/');
+  await page.waitForLoadState('networkidle');
+  const portrait = page.locator('main img').first();
+  await expect(portrait).toHaveAttribute('alt', 'Nikola Dašić');
+  const currentSrc = await portrait.evaluate(img => new URL((img as HTMLImageElement).currentSrc).pathname);
+  expect(currentSrc).toMatch(/^\/_astro\//);
+  const fetched = images.find(i => i.url === currentSrc);
+  expect(fetched, `portrait ${currentSrc} was fetched`).toBeTruthy();
+  expect(fetched!.size).toBeLessThan(60_000);
+  expect(images.some(i => i.url === '/nikola.jpg')).toBe(false);
+});
+
 test('mobile menus work with the keyboard and have accessible names', async ({page}) => {
   await page.setViewportSize({width: 390, height: 900});
   await page.route('https://**/*', route => route.abort());

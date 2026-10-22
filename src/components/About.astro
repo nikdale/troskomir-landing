@@ -4,6 +4,7 @@ import { useTranslations, type Lang, defaultLang } from '../i18n/utils';
 import { AUTHOR_BIRTHDAY, ageOn } from '../site-config';
 import brvnaraImg from '../assets/brvnara.jpg';
 import serveriImg from '../assets/serveri.jpg';
+import nikolaImg from '../assets/nikola.jpg';
 
 interface Props {
   lang?: Lang;
@@ -20,11 +21,18 @@ const bio = bioTemplate.replaceAll('{age}', String(ageOn(new Date())));
   <div class="max-w-xl mx-auto text-center">
     <h1 class="text-3xl font-bold mb-10">{t('about.heading')}</h1>
 
-    <img
-      src={`${import.meta.env.BASE_URL}nikola.jpg`}
+    <!--
+      Through the image pipeline, not public/: the original is 2170×2175
+      (512 KB) for a 224 px slot above the fold. Astro emits it resized at
+      1x/1.5x/2x so a phone fetches tens of kilobytes, not half a megabyte.
+    -->
+    <Image
+      src={nikolaImg}
       alt={t('about.name')}
-      width="224"
-      height="224"
+      width={224}
+      height={224}
+      densities={[1, 1.5, 2]}
+      loading="eager"
       class="w-44 h-44 sm:w-56 sm:h-56 mx-auto mb-6 rounded-full object-cover border border-accent/30"
     />
 
