@@ -72,6 +72,29 @@ test('an unknown URL gets the 404 page with the language switch', async ({page})
   expect(errors).toEqual([]);
 });
 
+// Inter is one variable file per subset. A first view downloads at most one
+// file per script it renders — never the same bytes once per weight.
+for (const path of ['/', '/sr-Latn/', '/en/', '/ru/', '/en/about/']) {
+  test(`${path} downloads at most three font files, each once`, async ({page}) => {
+    const fonts: {url: string; size: number}[] = [];
+    page.on('response', async response => {
+      if (!response.url().includes('/fonts/')) return;
+      fonts.push({url: new URL(response.url()).pathname, size: (await response.body()).length});
+    });
+    await page.route('https://**/*', route => route.abort());
+    await page.goto(path);
+    await page.waitForLoadState('networkidle');
+    const urls = fonts.map(f => f.url);
+    expect(new Set(urls).size).toBe(urls.length);
+    expect(urls.length).toBeLessThanOrEqual(3);
+    for (const url of urls) expect(url).toMatch(/\/fonts\/inter-(latin|latin-ext|cyrillic|cyrillic-ext)\.woff2$/);
+    const total = fonts.reduce((sum, f) => sum + f.size, 0);
+    // The Latin-script pages also need latin-ext for the Serbian diacritics
+    // in the footer; that subset alone is 85 KB, so their budget is larger.
+    expect(total).toBeLessThan(path === '/' || path === '/ru/' ? 100_000 : 160_000);
+  });
+}
+
 test('mobile menus work with the keyboard and have accessible names', async ({page}) => {
   await page.setViewportSize({width: 390, height: 900});
   await page.route('https://**/*', route => route.abort());
