@@ -10,9 +10,15 @@ import {
 
 interface Props {
   lang?: Lang;
+  /**
+   * Where the language switch lands, as a path without the language prefix.
+   * Defaults to this page's own path. The 404 page passes '/': the path it is
+   * served at is by definition not one that exists in any language.
+   */
+  switchPath?: string;
 }
 
-const { lang = defaultLang } = Astro.props;
+const { lang = defaultLang, switchPath } = Astro.props;
 const t = useTranslations(lang);
 const base = import.meta.env.BASE_URL;
 const homePath = getLocalizedPath('', lang, base);
@@ -28,7 +34,7 @@ const navItems = [
 ];
 
 // Preserve the current page (home vs about) when switching language.
-const currentPath = getPathWithoutLang(Astro.url.pathname.replace(base, '/'));
+const currentPath = switchPath ?? getPathWithoutLang(Astro.url.pathname.replace(base, '/'));
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 bg-primary border-b border-border">

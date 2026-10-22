@@ -248,7 +248,10 @@ const i18n = {
       return;
     }
     if (!ok) {
-      showAlert(i18n.errorInvalidCode);
+      // A wrong or expired code comes back as 400/401/404. No response at all
+      // (status 0) or a 5xx is not the user's code being wrong, and saying so
+      // sends people re-requesting codes through an outage.
+      showAlert(status === 0 || status >= 500 ? i18n.errorGeneric : i18n.errorInvalidCode);
       return;
     }
 

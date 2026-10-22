@@ -63,6 +63,15 @@ test('every destination it offers is one the app can actually open', () => {
   }
 });
 
+test('it looks the ?lang= copy up as an own property, not a prototype key', () => {
+  // `strings[lang] || strings[defaultLang]` let `?lang=constructor` through:
+  // Object.prototype.constructor is truthy, so the "copy" was a function and
+  // the title and body rendered empty.
+  const html = page();
+  assert.match(html, /Object\.hasOwn\(strings,\s*lang\)/);
+  assert.doesNotMatch(html, /strings\[lang\]\s*\|\|/);
+});
+
 test('it does not redirect to a store on a timer', () => {
   // On iOS a timed store redirect races the "Open in app?" system prompt and
   // dismisses it, so the link fails for the people who *do* have the app.

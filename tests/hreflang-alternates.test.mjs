@@ -38,6 +38,10 @@ const PAGES = htmlFiles().map((file) => ({
   html: readFileSync(file, 'utf8'),
 }));
 
+// dist/404.html is served for every unknown path and so has no URL of its own
+// to be canonical for; tests/head-metadata.test.mjs checks it advertises none.
+const INDEXABLE = PAGES.filter(({ name }) => name !== '/404.html');
+
 /** dist/ is served as-is, so /about/ is dist/about/index.html and nothing else. */
 function builtFileFor(url, context) {
   assert.ok(url.startsWith(`${SITE}/`), `${context}: ${url} is not on ${SITE}`);
@@ -72,7 +76,7 @@ test('every hreflang alternate on every built page resolves to a built page', ()
 });
 
 test('every canonical resolves to a built page', () => {
-  for (const { name, html } of PAGES) {
+  for (const { name, html } of INDEXABLE) {
     const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
     assert.ok(canonical, `${name} has no canonical`);
     assertResolves(canonical, `${name} (canonical)`);
@@ -83,7 +87,7 @@ test('a page is its own canonical', () => {
   // The canonical is taken from the same helper as the alternates so the two
   // cannot disagree about a trailing slash; this is the check that it points at
   // this page rather than at a sibling locale.
-  for (const { name, html } of PAGES) {
+  for (const { name, html } of INDEXABLE) {
     const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)[1];
     assert.equal(
       canonical,
@@ -130,7 +134,7 @@ test('the localized routes still advertise all four locales', () => {
 });
 
 test('x-default points at the default locale, which is Cyrillic Serbian', () => {
-  for (const { name, html } of PAGES) {
+  for (const { name, html } of INDEXABLE) {
     const alternates = alternatesOf(html);
     const xDefault = alternates.find(({ hreflang }) => hreflang === 'x-default');
     const cyrillic = alternates.find(({ hreflang }) => hreflang === 'sr-Cyrl');
@@ -146,6 +150,31 @@ test('the sitemap lists nothing that was not built', () => {
     ...[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url),
     ...[...sitemap.matchAll(/xhtml:link[^>]*href="([^"]+)"/g)].map(([, url]) => url),
   ];
-  assert.ok(urls.length >= PAGES.length, 'the sitemap is suspiciously short');
+  assert.ok(urls.length >= INDEXABLE.length, 'the sitemap is suspiciously short');
   for (const url of urls) assertResolves(url, 'sitemap-0.xml');
+  assert.ok(!sitemap.includes('/404'), 'the sitemap lists the 404 page');
+});
+
+test('every internal link points at a built page, spelled the way the sitemap spells it', () => {
+  // GitHub Pages answers /en/about with a 301 to /en/about/. The nav and footer
+  // used to be the only place on the site that spelled a URL without the slash
+  // (getLocalizedPath), so every click through the site paid that redirect, and
+  // a link that differs from the canonical only by a slash is the same
+  // contradiction the canonical itself was fixed for.
+  let checked = 0;
+  for (const { name, html } of PAGES) {
+    for (const [, href] of html.matchAll(/<a\b[^>]*\bhref="(\/[^"]*)"/g)) {
+      const path = href.split('#')[0];
+      assert.ok(path.endsWith('/'), `${name} links to ${href}, which Pages redirects to ${path}/`);
+      assert.ok(
+        existsSync(join(DIST, path, 'index.html')),
+        `${name} links to ${href}, which is not built`,
+      );
+      checked += 1;
+    }
+  }
+  // 21 pages with a header and footer × (logo + 5 nav links twice + 4 languages
+  // + 3 legal links) + the policy link in the 4 home pages' privacy section +
+  // the 404 page's own home link; /open/ has neither header nor footer.
+  assert.equal(checked, 383, `expected 383 internal links, found ${checked}`);
 });

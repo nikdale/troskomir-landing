@@ -4,7 +4,7 @@ export { languages, defaultLang, type Lang } from './translations';
 
 export function getLangFromUrl(url: URL): Lang {
   const [, lang] = url.pathname.split('/');
-  if (lang in translations) return lang as Lang;
+  if (Object.hasOwn(translations, lang)) return lang as Lang;
   return defaultLang;
 }
 
@@ -15,19 +15,24 @@ export function useTranslations(lang: Lang) {
 }
 
 export function getLocalizedPath(path: string, lang: Lang, base: string = ''): string {
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  // Always the trailing-slash form. Astro builds every route as a directory
+  // (/about/index.html), the sitemap and the canonical say /about/, and GitHub
+  // Pages 301s /about to it — the nav and footer links built here were the one
+  // place the site spelled a URL without the slash, so every click through
+  // them paid that redirect.
+  const cleanPath = path.replace(/^\/+|\/+$/g, '');
   const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
 
   if (lang === defaultLang) {
-    return cleanPath ? `${cleanBase}/${cleanPath}` : `${cleanBase}/`;
+    return cleanPath ? `${cleanBase}/${cleanPath}/` : `${cleanBase}/`;
   }
 
-  return cleanPath ? `${cleanBase}/${lang}/${cleanPath}` : `${cleanBase}/${lang}/`;
+  return cleanPath ? `${cleanBase}/${lang}/${cleanPath}/` : `${cleanBase}/${lang}/`;
 }
 
 export function getPathWithoutLang(pathname: string): string {
   const segments = pathname.split('/').filter(Boolean);
-  if (segments[0] in translations) {
+  if (Object.hasOwn(translations, segments[0])) {
     // The trailing slash is kept deliberately. Astro builds every route as a
     // directory (/about/index.html), the sitemap lists it as /about/, and
     // GitHub Pages 301s /about to /about/. Dropping it here made the hreflang
@@ -65,6 +70,9 @@ const routeLocales: Map<string, Lang[]> = (() => {
 
   for (const file of Object.keys(import.meta.glob('../pages/**/*.astro'))) {
     const relative = file.slice(file.lastIndexOf('/pages/') + '/pages/'.length);
+    // Not a route: Pages serves dist/404.html for every unknown path, and the
+    // page carries no canonical or alternates (Layout's `noindex`).
+    if (relative === '404.astro') continue;
     const segments = relative
       .replace(/\.astro$/, '')
       .split('/')
