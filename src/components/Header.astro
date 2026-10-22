@@ -39,7 +39,7 @@ const currentPath = getPathWithoutLang(Astro.url.pathname.replace(base, '/'));
     </a>
     <nav class="hidden sm:flex gap-6 text-sm text-text-muted">
       {navItems.map((item) => (
-        <a href={item.href} class={`hover:text-text transition-colors ${'subtle' in item && item.subtle ? 'opacity-50 hover:opacity-100 text-xs' : ''}`}>{item.label}</a>
+        <a href={item.href} class={`hover:text-text transition-colors ${'subtle' in item && item.subtle ? 'text-xs' : ''}`}>{item.label}</a>
       ))}
     </nav>
 
@@ -49,6 +49,7 @@ const currentPath = getPathWithoutLang(Astro.url.pathname.replace(base, '/'));
            etc. on a phone. -->
       <details class="relative sm:hidden">
         <summary
+          aria-label={t('nav.openMenu')}
           class="list-none cursor-pointer p-2 rounded-lg bg-secondary text-text-muted hover:text-text transition-colors [&::-webkit-details-marker]:hidden"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
@@ -66,6 +67,7 @@ const currentPath = getPathWithoutLang(Astro.url.pathname.replace(base, '/'));
 
       <details class="relative">
         <summary
+          aria-label={t('nav.language')}
           class="list-none cursor-pointer flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary text-sm text-text-muted hover:text-text transition-colors [&::-webkit-details-marker]:hidden"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">

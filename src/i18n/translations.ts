@@ -42,6 +42,8 @@ export const translations = {
       "Веза из имејла која отвара Трошкомир на вашем уређају. Ако се апликација не отвори сама, дугме на страници то ради уместо вас.",
 
     "nav.features": "Функције",
+    "nav.openMenu": "Отвори мени",
+    "nav.language": "Изабери језик",
     "nav.privacy": "Приватност",
     "nav.about": "О аутору",
     "nav.contact": "Контакт",
@@ -309,6 +311,8 @@ export const translations = {
       "Veza iz imejla koja otvara Troskomir na vašem uređaju. Ako se aplikacija ne otvori sama, dugme na stranici to radi umesto vas.",
 
     "nav.features": "Funkcije",
+    "nav.openMenu": "Otvori meni",
+    "nav.language": "Izaberi jezik",
     "nav.privacy": "Privatnost",
     "nav.about": "O autoru",
     "nav.contact": "Kontakt",
@@ -576,6 +580,8 @@ export const translations = {
       "The link an e-mail uses to open Troskomir on your device. If the app doesn't open on its own, the button on the page does it for you.",
 
     "nav.features": "Features",
+    "nav.openMenu": "Open menu",
+    "nav.language": "Choose language",
     "nav.privacy": "Privacy",
     "nav.about": "About",
     "nav.contact": "Contact",
@@ -841,6 +847,8 @@ export const translations = {
       "Ссылка из письма, которая открывает Трошкомир на вашем устройстве. Если приложение не открылось само, это сделает кнопка на странице.",
 
     "nav.features": "Функции",
+    "nav.openMenu": "Открыть меню",
+    "nav.language": "Выбрать язык",
     "nav.privacy": "Конфиденциальность",
     "nav.about": "Об авторе",
     "nav.contact": "Контакты",
