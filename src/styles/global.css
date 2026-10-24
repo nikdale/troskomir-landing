@@ -50,6 +50,27 @@ body {
   color: var(--color-text);
 }
 
+/* First focusable control. Parked above the viewport until it receives
+   focus, so it stays in the tab order without covering the header. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 600;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0.75rem);
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
 /* A plain rule. This was a transparent→accent→transparent gradient; the app
    dropped gradients wholesale, and a divider is the last place worth spending
    one. */

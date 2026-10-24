@@ -88,6 +88,16 @@ const i18n = {
           class="w-full rounded-lg bg-secondary border border-border px-4 py-3 text-center text-lg tracking-[0.5em] text-text focus:outline-none focus:ring-1 focus:ring-accent"
         />
       </div>
+      <div>
+        <label for="da-password" class="block text-sm font-medium mb-2">{t('deleteAccount.passwordLabel')}</label>
+        <input
+          id="da-password"
+          type="password"
+          required
+          autocomplete="current-password"
+          class="w-full rounded-lg bg-secondary border border-border px-4 py-3 text-text focus:outline-none focus:ring-1 focus:ring-accent"
+        />
+      </div>
       <p class="rounded-lg border border-warning/30 bg-warning/10 px-4 py-3 text-xs text-warning leading-relaxed">
         {t('deleteAccount.warning')}
       </p>
@@ -146,6 +156,7 @@ const i18n = {
   const targetEmailEl = document.getElementById('da-target-email');
   const emailInput = document.getElementById('da-email');
   const codeInput = document.getElementById('da-code');
+  const passwordInput = document.getElementById('da-password');
   const sendBtn = document.getElementById('da-send-btn');
   const confirmBtn = document.getElementById('da-confirm-btn');
   const backBtn = document.getElementById('da-back-btn');
@@ -222,13 +233,15 @@ const i18n = {
     codeForm.classList.add('hidden');
     emailForm.classList.remove('hidden');
     codeInput.value = '';
+    passwordInput.value = '';
   });
 
   codeForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     hideAlert();
     const code = codeInput.value.trim();
-    if (!code) return;
+    const password = passwordInput.value;
+    if (!code || !password) return;
     if (!window.confirm(i18n.confirmPrompt)) return;
 
     const originalLabel = confirmBtn.textContent;
@@ -238,6 +251,7 @@ const i18n = {
     const { ok, status } = await postJson('/account-deletion/confirm', {
       email: currentEmail,
       code,
+      password,
     });
 
     confirmBtn.disabled = false;

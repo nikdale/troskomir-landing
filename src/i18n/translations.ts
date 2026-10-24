@@ -46,6 +46,7 @@ export const translations = {
 
     "nav.features": "Функције",
     "nav.openMenu": "Отвори мени",
+    "a11y.skipToContent": "Пређи на садржај",
     "nav.language": "Изабери језик",
     "nav.privacy": "Приватност",
     "nav.about": "О аутору",
@@ -271,6 +272,7 @@ export const translations = {
     "deleteAccount.sending": "Слање...",
     "deleteAccount.codeSentIntro": "Послали смо шестоцифрени код на:",
     "deleteAccount.codeLabel": "Код за потврду",
+    "deleteAccount.passwordLabel": "Лозинка налога",
     "deleteAccount.warning":
       "Пажња: ова радња је трајна и не може се опозвати. Сви ваши подаци (трошкови, картице, штедња, рачуни и остало) биће неповратно обрисани.",
     "deleteAccount.confirmButton": "Трајно обриши налог",
@@ -321,6 +323,7 @@ export const translations = {
 
     "nav.features": "Funkcije",
     "nav.openMenu": "Otvori meni",
+    "a11y.skipToContent": "Pređi na sadržaj",
     "nav.language": "Izaberi jezik",
     "nav.privacy": "Privatnost",
     "nav.about": "O autoru",
@@ -546,6 +549,7 @@ export const translations = {
     "deleteAccount.sending": "Slanje...",
     "deleteAccount.codeSentIntro": "Poslali smo šestocifreni kod na:",
     "deleteAccount.codeLabel": "Kod za potvrdu",
+    "deleteAccount.passwordLabel": "Lozinka naloga",
     "deleteAccount.warning":
       "Pažnja: ova radnja je trajna i ne može se opozvati. Svi vaši podaci (troškovi, kartice, štednja, računi i ostalo) biće nepovratno obrisani.",
     "deleteAccount.confirmButton": "Trajno obriši nalog",
@@ -596,6 +600,7 @@ export const translations = {
 
     "nav.features": "Features",
     "nav.openMenu": "Open menu",
+    "a11y.skipToContent": "Skip to content",
     "nav.language": "Choose language",
     "nav.privacy": "Privacy",
     "nav.about": "About",
@@ -819,6 +824,7 @@ export const translations = {
     "deleteAccount.sending": "Sending...",
     "deleteAccount.codeSentIntro": "We sent a six-digit code to:",
     "deleteAccount.codeLabel": "Confirmation code",
+    "deleteAccount.passwordLabel": "Account password",
     "deleteAccount.warning":
       "Warning: this action is permanent and cannot be undone. All your data (expenses, cards, savings, receipts and everything else) will be erased for good.",
     "deleteAccount.confirmButton": "Permanently delete my account",
@@ -869,6 +875,7 @@ export const translations = {
 
     "nav.features": "Функции",
     "nav.openMenu": "Открыть меню",
+    "a11y.skipToContent": "Перейти к содержимому",
     "nav.language": "Выбрать язык",
     "nav.privacy": "Конфиденциальность",
     "nav.about": "Об авторе",
@@ -1093,6 +1100,7 @@ export const translations = {
     "deleteAccount.sending": "Отправка...",
     "deleteAccount.codeSentIntro": "Мы отправили шестизначный код на:",
     "deleteAccount.codeLabel": "Код подтверждения",
+    "deleteAccount.passwordLabel": "Пароль аккаунта",
     "deleteAccount.warning":
       "Внимание: это действие необратимо. Все ваши данные (расходы, карты, накопления, чеки и остальное) будут удалены безвозвратно.",
     "deleteAccount.confirmButton": "Удалить аккаунт навсегда",
