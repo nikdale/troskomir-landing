@@ -163,9 +163,10 @@ test('deletion handles rate limit, invalid code and success without a real accou
   await page.locator('#da-send-btn').click();
   await expect(page.locator('#da-code-form')).toBeVisible();
   await page.locator('#da-code').fill('123456');
+  await page.locator('#da-password').fill('synthetic-password');
   page.on('dialog', dialog => dialog.accept());
   await page.locator('#da-confirm-btn').click();
-  await expect(page.getByRole('alert')).toHaveText(/Incorrect or expired code/);
+  await expect(page.getByRole('alert')).toHaveText(/The code or the password is incorrect/);
   await expect(page.locator('#da-confirm-btn')).toBeEnabled();
   await page.locator('#da-confirm-btn').click();
   await expect(page.getByRole('status')).toBeVisible();
@@ -186,6 +187,7 @@ test('deletion tells a server error or no response apart from a wrong code', asy
   await page.locator('#da-send-btn').click();
   await expect(page.locator('#da-code-form')).toBeVisible();
   await page.locator('#da-code').fill('123456');
+  await page.locator('#da-password').fill('synthetic-password');
   page.on('dialog', dialog => dialog.accept());
   // 5xx: the code was never checked, so "incorrect or expired code" is wrong.
   await page.locator('#da-confirm-btn').click();
@@ -222,3 +224,40 @@ test('the shipped CSP admits the analytics origin without reopening inline scrip
   await expect(page.getByRole('alert')).toBeVisible();
   expect(cspErrors).toEqual([]);
 });
+
+// The backend in production answers a wrong password with 401 and a wrong or
+// expired code with 400. After the deletion-confirm hardening (one generic
+// answer, so the public form stops telling a stranger whether an address has
+// an account or a password is right) every one of those is the same 400. The
+// page cannot tell which field was wrong under either backend, and must not
+// guess "code" when it may be the password: it names both, in every locale.
+const CODE_OR_PASSWORD = {
+  '': 'Код или лозинка нису тачни, или је код истекао. Проверите обоје или затражите нови код.',
+  'sr-Latn/': 'Kod ili lozinka nisu tačni, ili je kod istekao. Proverite oboje ili zatražite novi kod.',
+  'en/': 'The code or the password is incorrect, or the code has expired. Check both, or request a new code.',
+  'ru/': 'Неверный код или пароль, либо срок действия кода истёк. Проверьте оба поля или запросите новый код.',
+};
+for (const [locale, message] of Object.entries(CODE_OR_PASSWORD)) {
+  test(`${locale || 'sr/'}delete-account: a wrong password (401 today, 400 after the backend change) and a wrong code read the same`, async ({page}) => {
+    const answers = [200, 401, 400, 404];
+    let requests = 0;
+    await page.route('https://**/*', async route => {
+      if (!route.request().url().includes('/account-deletion/')) return route.abort();
+      const status = answers[requests++];
+      await route.fulfill({status, contentType: 'application/json', body: JSON.stringify({message: 'Synthetic test response'})});
+    });
+    await page.goto(`/${locale}delete-account/`);
+    await page.locator('#da-email').fill('synthetic@example.invalid');
+    await page.locator('#da-send-btn').click();
+    await expect(page.locator('#da-code-form')).toBeVisible();
+    await page.locator('#da-code').fill('123456');
+    await page.locator('#da-password').fill('synthetic-password');
+    page.on('dialog', dialog => dialog.accept());
+    for (let attempt = 0; attempt < 3; attempt++) {
+      await page.locator('#da-confirm-btn').click();
+      await expect(page.getByRole('alert')).toHaveText(message);
+      await expect(page.locator('#da-confirm-btn')).toBeEnabled();
+    }
+    expect(requests).toBe(4);
+  });
+}
