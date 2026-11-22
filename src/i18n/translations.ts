@@ -274,7 +274,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Код за потврду",
     "deleteAccount.passwordLabel": "Лозинка налога",
     "deleteAccount.warning":
-      "Пажња: ова радња је трајна и не може се опозвати. Сви ваши подаци (трошкови, картице, штедња, рачуни и остало) биће неповратно обрисани. Подаци у нашим шифрованим резервним копијама нестају са тим копијама, најкасније за 30 дана.",
+      "Пажња: ова радња је трајна и не може се опозвати. Сви ваши подаци (трошкови, картице, штедња, рачуни и остало) биће неповратно обрисани. Подаци у нашим резервним копијама нестају са тим копијама, најкасније за 60 дана.",
     "deleteAccount.confirmButton": "Трајно обриши налог",
     "deleteAccount.deleting": "Брисање...",
     "deleteAccount.confirmPrompt":
@@ -282,7 +282,7 @@ export const translations = {
     "deleteAccount.backButton": "Промени имејл адресу",
     "deleteAccount.successTitle": "Налог је обрисан",
     "deleteAccount.successBody":
-      "Ваш налог и сви подаци су обрисани. Подаци у нашим шифрованим резервним копијама нестају са тим копијама, најкасније за 30 дана. Хвала што сте користили Трошкомир.",
+      "Ваш налог и сви подаци су обрисани. Подаци у нашим резервним копијама нестају са тим копијама, најкасније за 60 дана. Хвала што сте користили Трошкомир.",
     "deleteAccount.errorGeneric":
       "Дошло је до грешке. Покушајте поново за неколико тренутака.",
     "deleteAccount.errorRateLimited":
@@ -551,7 +551,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Kod za potvrdu",
     "deleteAccount.passwordLabel": "Lozinka naloga",
     "deleteAccount.warning":
-      "Pažnja: ova radnja je trajna i ne može se opozvati. Svi vaši podaci (troškovi, kartice, štednja, računi i ostalo) biće nepovratno obrisani. Podaci u našim šifrovanim rezervnim kopijama nestaju sa tim kopijama, najkasnije za 30 dana.",
+      "Pažnja: ova radnja je trajna i ne može se opozvati. Svi vaši podaci (troškovi, kartice, štednja, računi i ostalo) biće nepovratno obrisani. Podaci u našim rezervnim kopijama nestaju sa tim kopijama, najkasnije za 60 dana.",
     "deleteAccount.confirmButton": "Trajno obriši nalog",
     "deleteAccount.deleting": "Brisanje...",
     "deleteAccount.confirmPrompt":
@@ -559,7 +559,7 @@ export const translations = {
     "deleteAccount.backButton": "Promeni imejl adresu",
     "deleteAccount.successTitle": "Nalog je obrisan",
     "deleteAccount.successBody":
-      "Vaš nalog i svi podaci su obrisani. Podaci u našim šifrovanim rezervnim kopijama nestaju sa tim kopijama, najkasnije za 30 dana. Hvala što ste koristili Troskomir.",
+      "Vaš nalog i svi podaci su obrisani. Podaci u našim rezervnim kopijama nestaju sa tim kopijama, najkasnije za 60 dana. Hvala što ste koristili Troskomir.",
     "deleteAccount.errorGeneric":
       "Došlo je do greške. Pokušajte ponovo za nekoliko trenutaka.",
     "deleteAccount.errorRateLimited":
@@ -826,7 +826,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Confirmation code",
     "deleteAccount.passwordLabel": "Account password",
     "deleteAccount.warning":
-      "Warning: this action is permanent and cannot be undone. All your data (expenses, cards, savings, receipts and everything else) will be erased for good. Data in our encrypted backups disappears with those backups, within 30 days.",
+      "Warning: this action is permanent and cannot be undone. All your data (expenses, cards, savings, receipts and everything else) will be erased for good. Data in our backups disappears with those backups, within 60 days.",
     "deleteAccount.confirmButton": "Permanently delete my account",
     "deleteAccount.deleting": "Deleting...",
     "deleteAccount.confirmPrompt":
@@ -834,7 +834,7 @@ export const translations = {
     "deleteAccount.backButton": "Change e-mail address",
     "deleteAccount.successTitle": "Account deleted",
     "deleteAccount.successBody":
-      "Your account and all its data have been deleted. Data in our encrypted backups disappears with those backups, within 30 days. Thanks for having used Troskomir.",
+      "Your account and all its data have been deleted. Data in our backups disappears with those backups, within 60 days. Thanks for having used Troskomir.",
     "deleteAccount.errorGeneric":
       "Something went wrong. Please try again in a moment.",
     "deleteAccount.errorRateLimited":
@@ -1102,7 +1102,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Код подтверждения",
     "deleteAccount.passwordLabel": "Пароль аккаунта",
     "deleteAccount.warning":
-      "Внимание: это действие необратимо. Все ваши данные (расходы, карты, накопления, чеки и остальное) будут удалены безвозвратно. Данные в наших зашифрованных резервных копиях исчезнут вместе с этими копиями не позднее чем через 30 дней.",
+      "Внимание: это действие необратимо. Все ваши данные (расходы, карты, накопления, чеки и остальное) будут удалены безвозвратно. Данные в наших резервных копиях исчезнут вместе с этими копиями не позднее чем через 60 дней.",
     "deleteAccount.confirmButton": "Удалить аккаунт навсегда",
     "deleteAccount.deleting": "Удаление...",
     "deleteAccount.confirmPrompt":
@@ -1110,7 +1110,7 @@ export const translations = {
     "deleteAccount.backButton": "Изменить адрес почты",
     "deleteAccount.successTitle": "Аккаунт удалён",
     "deleteAccount.successBody":
-      "Ваш аккаунт и все данные удалены. Данные в наших зашифрованных резервных копиях исчезнут вместе с этими копиями не позднее чем через 30 дней. Спасибо, что пользовались Трошкомир.",
+      "Ваш аккаунт и все данные удалены. Данные в наших резервных копиях исчезнут вместе с этими копиями не позднее чем через 60 дней. Спасибо, что пользовались Трошкомир.",
     "deleteAccount.errorGeneric":
       "Что-то пошло не так. Попробуйте ещё раз через минуту.",
     "deleteAccount.errorRateLimited":

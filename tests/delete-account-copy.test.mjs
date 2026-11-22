@@ -22,25 +22,25 @@ const DIST = new URL('../dist/', import.meta.url).pathname;
 const EXPECT = {
   '': {
     password: /потврђујете тим кодом и лозинком налога/,
-    backups: /резервним копијама нестају са тим копијама, најкасније за 30 дана/,
+    backups: /резервним копијама нестају са тим копијама, најкасније за 60 дана/,
     error: 'Код или лозинка нису тачни, или је код истекао.',
     stale: 'Нетачан или истекао код',
   },
   'sr-Latn/': {
     password: /potvrđujete tim kodom i lozinkom naloga/,
-    backups: /rezervnim kopijama nestaju sa tim kopijama, najkasnije za 30 dana/,
+    backups: /rezervnim kopijama nestaju sa tim kopijama, najkasnije za 60 dana/,
     error: 'Kod ili lozinka nisu tačni, ili je kod istekao.',
     stale: 'Netačan ili istekao kod',
   },
   'en/': {
     password: /confirm with that code and your account password/,
-    backups: /encrypted backups disappears with those backups, within 30 days/,
+    backups: /our backups disappears with those backups, within 60 days/,
     error: 'The code or the password is incorrect, or the code has expired.',
     stale: 'Incorrect or expired code',
   },
   'ru/': {
     password: /подтверждаете удаление этим кодом и паролем аккаунта/,
-    backups: /резервных копиях исчезнут вместе с этими копиями не позднее чем через 30 дней/,
+    backups: /резервных копиях исчезнут вместе с этими копиями не позднее чем через 60 дней/,
     error: 'Неверный код или пароль, либо срок действия кода истёк.',
     stale: 'Неверный или истёкший код',
   },

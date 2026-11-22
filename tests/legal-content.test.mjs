@@ -203,32 +203,32 @@ const PRIVACY_TRUTH = {
     crashToggle: 'Подешавања > Приватност података > Шаљи извештаје о падовима',
     analyticsToggle: 'Подешавања > Приватност података > Шаљи анонимну статистику коришћења',
     onByDefault: /Подразумевано укључено/,
-    backups: /резервне копије базе чувају се 30 дана/,
-    backupsAfterDeletion: /30 дана након што су направљене/,
+    backups: /резервне копије базе \(шифроване\) чувају се 31 дан.*недељне слике целог сервера.*4 недеље/,
+    backupsAfterDeletion: /најкасније 60 дана после брисања/,
     websitePassword: /на веб страници су потребни и код и лозинка налога/,
   },
   'sr-Latn/': {
     crashToggle: 'Podešavanja > Privatnost podataka > Šalji izveštaje o padovima',
     analyticsToggle: 'Podešavanja > Privatnost podataka > Šalji anonimnu statistiku korišćenja',
     onByDefault: /Podrazumevano uključeno/,
-    backups: /rezervne kopije baze čuvaju se 30 dana/,
-    backupsAfterDeletion: /30 dana nakon što su napravljene/,
+    backups: /rezervne kopije baze \(šifrovane\) čuvaju se 31 dan.*nedeljne slike celog servera.*4 nedelje/,
+    backupsAfterDeletion: /najkasnije 60 dana posle brisanja/,
     websitePassword: /na veb stranici su potrebni i kod i lozinka naloga/,
   },
   'en/': {
     crashToggle: 'Settings > Data privacy > Send crash reports',
     analyticsToggle: 'Settings > Data privacy > Send anonymous usage statistics',
     onByDefault: /On by default/,
-    backups: /nightly database backups are kept for 30 days/,
-    backupsAfterDeletion: /deleted 30 days after they were made/,
+    backups: /nightly database backups \(encrypted\) for 31 days.*weekly images of the whole server.*for 4 weeks/,
+    backupsAfterDeletion: /at the latest 60 days after the deletion/,
     websitePassword: /on the website you need both the code and your account password/,
   },
   'ru/': {
     crashToggle: 'Настройки > Конфиденциальность данных > Отправлять отчёты о сбоях',
     analyticsToggle: 'Настройки > Конфиденциальность данных > Отправлять анонимную статистику использования',
     onByDefault: /Включено по умолчанию/,
-    backups: /ночные резервные копии базы данных хранятся 30 дней/,
-    backupsAfterDeletion: /удалены через 30 дней после создания/,
+    backups: /ночные резервные копии базы данных \(зашифрованные\) хранятся 31 день.*еженедельные образы всего сервера.*4 недели/,
+    backupsAfterDeletion: /не позднее чем через 60 дней после удаления/,
     websitePassword: /на сайте нужны и код, и пароль учётной записи/,
   },
 };
@@ -246,7 +246,7 @@ test('the policy says how long backups keep data, including after deletion (V-PR
     const want = PRIVACY_TRUTH[prefix];
     assert.match(body, want.backups, `${prefix}privacy omits the backup retention`);
     assert.match(body, want.backupsAfterDeletion, `${prefix}privacy omits what deletion leaves in backups`);
-    assert.match(body, /\b14\b/, `${prefix}privacy omits the pre-update snapshot limit`);
+    assert.match(body, /\b15\b/, `${prefix}privacy omits the pre-update snapshot limit`);
   }
 });
 

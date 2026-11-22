@@ -35,9 +35,12 @@ import type { Lang } from "./translations";
  * Facts this text states that live outside this repository, and must be
  * changed here when they change there:
  *  - backup retention: troskomir-bekend `scripts/backup-db.sh`
- *    (BACKUP_RETENTION_DAYS 30, pre-deploy snapshots 2 and at most 14 days),
- *    and every other copy of the database (off-host copies, VM images) has to
- *    expire within the same 30 days or the deletion section becomes untrue;
+ *    (BACKUP_RETENTION_DAYS 30, pruned with `-mtime +30`, so 31 days;
+ *    pre-deploy snapshots 2, pruned nightly past 14 days, so at most 15),
+ *    the weekly Proxmox image of VM 604 (keep-last=4, about 4 weeks, holds the
+ *    nightly dumps too) and any off-host copy: together they must be gone
+ *    within 60 days of a deletion or the deletion section becomes untrue.
+ *    Only the nightly dumps are encrypted; the VM images are not;
  *  - the geo-IP lookup: `src/auth/geo-ip.service.ts` (ipwho.is, IP only);
  *  - push text sent through FCM: `src/notifications/notification-content.ts`;
  *  - the shared QR-receipt cache: `src/fiscal-receipt/fiscal-receipt.service.ts`
@@ -264,7 +267,7 @@ const privacyPolicySr: LegalDocument = {
         "Пријављени уређаји (назив уређаја, IP адреса и приближна локација прве и последње пријаве): док се сесија користи. Сесија се завршава када се одјавите или после 35 дана некоришћења, а њен запис се брише најкасније 35 дана после последњег коришћења.",
         "Сачувани одговори на захтеве апликације (чувају се да захтев који апликација понови после прекида везе не би био примењен двапут): садржај одговора 90 дана; после тога само белешка да је захтев обрађен, без садржаја, док налог постоји.",
         "Рачуни преузети са пореског портала: у кешу сервера 24 сата (трошак који сачувате чува се као и сваки други запис).",
-        "Резервне копије: ноћне резервне копије базе чувају се 30 дана, а копије направљене непосредно пре ажурирања највише 14 дана; после тога се бришу.",
+        "Резервне копије: ноћне резервне копије базе (шифроване) чувају се 31 дан, копије направљене непосредно пре ажурирања највише 15 дана, а недељне слике целог сервера, које садрже и ноћне копије, 4 недеље; после тога се бришу.",
         "Извештаји о падовима: 90 дана, према правилима задржавања услуге Firebase Crashlytics.",
         "Статистика коришћења: чува се на нашем серверу; није повезана са вашим налогом, па се не може ни пронаћи ни обрисати заједно са њим.",
       ],
@@ -277,7 +280,7 @@ const privacyPolicySr: LegalDocument = {
         "Неки трагови остају још ограничено време или у облику који вас више не идентификује:",
       ],
       bullets: [
-        "Подаци у резервним копијама направљеним пре брисања, док се те копије не обришу 30 дана након што су направљене.",
+        "Подаци у резервним копијама направљеним пре брисања, док се те копије не обришу, најкасније 60 дана после брисања.",
         "Путовања и заједничке позајмице у којима сте учествовали остају осталим учесницима, јер је то и њихова евиденција; ваше име и адреса е-поште се из њих уклањају и приказујете се као обрисан члан.",
         "Ако налог обришете преко веб странице, запис о брисању у безбедносном дневнику (ваша адреса е-поште и IP адреса са које је брисање тражено) чува се 90 дана.",
         "Статистика коришћења и извештаји о падовима нису повезани са вашим налогом и не бришу се са њим (види „Колико дуго чувамо податке“).",
@@ -383,7 +386,7 @@ const privacyPolicyEn: LegalDocument = {
         "Signed-in devices (device name, IP address and approximate location of the first and the latest sign-in): while the session is in use. A session ends when you sign out or after 35 days without use, and its record is deleted at the latest 35 days after its last use.",
         "Saved responses to app requests (kept so that a request the app repeats after a lost connection is not applied twice): the response for 90 days; after that only a note that the request was handled, without its content, for as long as the account exists.",
         "Receipts fetched from a tax portal: in the server's cache for 24 hours (the expense you save is kept like any other record).",
-        "Backups: nightly database backups are kept for 30 days and copies made just before an update for at most 14 days; after that they are deleted.",
+        "Backups: nightly database backups (encrypted) for 31 days, copies made just before an update for at most 15 days, and weekly images of the whole server, which also contain the nightly backups, for 4 weeks; after that they are deleted.",
         "Crash reports: 90 days, under Firebase Crashlytics' retention rules.",
         "Usage statistics: kept on our server; they are not linked to your account, so they can neither be found nor deleted with it.",
       ],
@@ -396,7 +399,7 @@ const privacyPolicyEn: LegalDocument = {
         "Some traces outlast it for a limited time, or in a form that no longer identifies you:",
       ],
       bullets: [
-        "Data in backups made before the deletion, until those backups are deleted 30 days after they were made.",
+        "Data in backups made before the deletion, until those backups are deleted, at the latest 60 days after the deletion.",
         "Trips and shared loans you took part in stay with the other people in them, because the record is theirs too; your name and e-mail address are removed from them and you appear as a deleted member.",
         "If you delete your account on the website, a security log entry of the deletion (your e-mail address and the IP address the request came from) is kept for 90 days.",
         "Usage statistics and crash reports are not linked to your account and are not deleted with it (see “How long we keep data”).",
@@ -502,7 +505,7 @@ const privacyPolicyRu: LegalDocument = {
         "Устройства, на которых выполнен вход (название устройства, IP-адрес и приблизительное местоположение первого и последнего входа): пока сессия используется. Сессия завершается при выходе из аккаунта или после 35 дней без использования, а её запись удаляется не позднее чем через 35 дней после последнего использования.",
         "Сохранённые ответы на запросы приложения (хранятся, чтобы запрос, повторённый приложением после обрыва связи, не был выполнен дважды): содержимое ответа — 90 дней; после этого только отметка о том, что запрос обработан, без содержимого, пока существует учётная запись.",
         "Чеки, полученные с налогового портала: в кэше сервера 24 часа (сохранённый вами расход хранится как любая другая запись).",
-        "Резервные копии: ночные резервные копии базы данных хранятся 30 дней, а копии, сделанные непосредственно перед обновлением, — не более 14 дней; затем они удаляются.",
+        "Резервные копии: ночные резервные копии базы данных (зашифрованные) хранятся 31 день, копии, сделанные непосредственно перед обновлением, — не более 15 дней, а еженедельные образы всего сервера, в которых есть и ночные копии, — 4 недели; после этого они удаляются.",
         "Отчёты о сбоях: 90 дней, согласно правилам хранения Firebase Crashlytics.",
         "Статистика использования: хранится на нашем сервере; она не связана с вашей учётной записью, поэтому её нельзя ни найти, ни удалить вместе с ней.",
       ],
@@ -515,7 +518,7 @@ const privacyPolicyRu: LegalDocument = {
         "Некоторые следы остаются ещё ограниченное время или в виде, который больше не указывает на вас:",
       ],
       bullets: [
-        "Данные в резервных копиях, сделанных до удаления, — пока эти копии не будут удалены через 30 дней после создания.",
+        "Данные в резервных копиях, сделанных до удаления, — пока эти копии не будут удалены, не позднее чем через 60 дней после удаления.",
         "Поездки и совместные займы, в которых вы участвовали, остаются у других участников, потому что это и их учёт; ваше имя и адрес почты из них удаляются, и вы отображаетесь как удалённый участник.",
         "Если вы удаляете учётную запись на сайте, запись об удалении в журнале безопасности (ваш адрес почты и IP-адрес, с которого пришёл запрос) хранится 90 дней.",
         "Статистика использования и отчёты о сбоях не связаны с вашей учётной записью и вместе с ней не удаляются (см. «Сколько мы храним данные»).",
