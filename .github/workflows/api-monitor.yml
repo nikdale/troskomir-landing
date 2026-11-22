@@ -1,0 +1,87 @@
+name: API monitor
+
+# Watches the production API from outside the home lab (VELES V-INFRA-03).
+#
+# Every other alert path runs on the same machines as the API, so a dead VM,
+# a power cut or an ISP outage silences the alarm together with the service.
+# This runs on GitHub's hosted runners, free for a public repository, and
+# checks only public facts: GET /api/health, the certificate's expiry and its
+# key against the pins the mobile app ships. See scripts/monitor-api.sh.
+#
+# How it alerts: a failed scheduled run makes GitHub e-mail the person who
+# last changed the `schedule:` below (Settings > Notifications > Actions must
+# allow failed-workflow e-mails). One failed round is retried after 60 s, so
+# a single dropped request does not page. While the API stays down every run
+# fails, so expect one e-mail per run until it is back.
+#
+# Two limits of GitHub's scheduler that this cannot fix by itself:
+#  - Scheduled runs are best effort and can start many minutes late under load.
+#  - In a public repository GitHub disables scheduled workflows after 60 days
+#    without repository activity. Re-enable with
+#    `gh workflow enable api-monitor.yml -R nikdale/troskomir-landing`.
+#    The optional heartbeat step below closes both gaps: point a free
+#    Healthchecks.io check at it and Healthchecks.io e-mails when the runs
+#    stop arriving, whatever the reason.
+#
+# This workflow cannot deploy anything: it holds a read-only token, never
+# commits or pushes, and does not call the Pages actions. The live site is
+# published only by deploy.yml.
+
+on:
+  schedule:
+    # Every 15 minutes, off the top of the hour when GitHub's queue is busiest.
+    - cron: '4,19,34,49 * * * *'
+  workflow_dispatch:
+  # A change to the monitor itself is exercised when it is proposed and when
+  # it lands, rather than at the next scheduled run.
+  pull_request:
+    paths:
+      - 'scripts/monitor-api.sh'
+      - 'scripts/monitor-api.test.sh'
+      - '.github/workflows/api-monitor.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/monitor-api.sh'
+      - 'scripts/monitor-api.test.sh'
+      - '.github/workflows/api-monitor.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: api-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    name: production API is up, certificate fresh, key pinned
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # Optional. A Healthchecks.io ping URL (repository secret). Unset, the
+      # heartbeat steps are skipped and the workflow still works.
+      HEALTHCHECKS_PING_URL: ${{ secrets.HEALTHCHECKS_PING_URL }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Self-test the monitor (offline, loopback only)
+        # Not on the schedule: a change in the runner image should not page
+        # anyone about the API. It runs whenever the monitor itself changes
+        # and on manual runs.
+        if: github.event_name != 'schedule'
+        run: bash scripts/monitor-api.test.sh
+
+      - name: Check the production API
+        run: bash scripts/monitor-api.sh
+
+      - name: Heartbeat (success)
+        if: success() && env.HEALTHCHECKS_PING_URL != ''
+        run: curl --silent --show-error --max-time 10 --retry 2 --output /dev/null "$HEALTHCHECKS_PING_URL"
+
+      - name: Heartbeat (failure)
+        if: failure() && env.HEALTHCHECKS_PING_URL != ''
+        run: curl --silent --show-error --max-time 10 --retry 2 --output /dev/null "$HEALTHCHECKS_PING_URL/fail"
