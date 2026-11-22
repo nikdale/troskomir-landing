@@ -36,7 +36,7 @@ export const translations = {
       "Услови под којима користите Трошкомир: ваша права, моје обавезе и границе одговорности за апликацију која ради на кућном серверу.",
     "page.deleteAccount.title": "Брисање налога — Трошкомир",
     "page.deleteAccount.description":
-      "Затражите трајно брисање Трошкомир налога и свих података уз њега. Потврђујете шестоцифреним кодом који стиже на вашу имејл адресу.",
+      "Затражите трајно брисање Трошкомир налога и свих података уз њега. Потврђујете шестоцифреним кодом који стиже на вашу имејл адресу и лозинком налога.",
     "page.open.title": "Отварање апликације — Трошкомир",
     "page.open.description":
       "Веза из имејла која отвара Трошкомир на вашем уређају. Ако се апликација не отвори сама, дугме на страници то ради уместо вас.",
@@ -265,7 +265,7 @@ export const translations = {
 
     "deleteAccount.title": "Брисање налога",
     "deleteAccount.intro":
-      "Овде можете затражити трајно брисање свог Трошкомир налога и свих података везаних за њега. Унесите имејл адресу коју користите за пријаву, послаћемо вам шестоцифрени код за потврду.",
+      "Овде можете затражити трајно брисање свог Трошкомир налога и свих података везаних за њега. Унесите имејл адресу коју користите за пријаву, послаћемо вам шестоцифрени код за потврду. Брисање затим потврђујете тим кодом и лозинком налога.",
     "deleteAccount.emailLabel": "Имејл адреса",
     "deleteAccount.emailPlaceholder": "vasa@adresa.com",
     "deleteAccount.sendCodeButton": "Пошаљи код за потврду",
@@ -274,7 +274,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Код за потврду",
     "deleteAccount.passwordLabel": "Лозинка налога",
     "deleteAccount.warning":
-      "Пажња: ова радња је трајна и не може се опозвати. Сви ваши подаци (трошкови, картице, штедња, рачуни и остало) биће неповратно обрисани.",
+      "Пажња: ова радња је трајна и не може се опозвати. Сви ваши подаци (трошкови, картице, штедња, рачуни и остало) биће неповратно обрисани. Подаци у нашим шифрованим резервним копијама нестају са тим копијама, најкасније за 30 дана.",
     "deleteAccount.confirmButton": "Трајно обриши налог",
     "deleteAccount.deleting": "Брисање...",
     "deleteAccount.confirmPrompt":
@@ -282,13 +282,13 @@ export const translations = {
     "deleteAccount.backButton": "Промени имејл адресу",
     "deleteAccount.successTitle": "Налог је обрисан",
     "deleteAccount.successBody":
-      "Ваш налог и сви подаци су трајно обрисани. Хвала што сте користили Трошкомир.",
+      "Ваш налог и сви подаци су обрисани. Подаци у нашим шифрованим резервним копијама нестају са тим копијама, најкасније за 30 дана. Хвала што сте користили Трошкомир.",
     "deleteAccount.errorGeneric":
       "Дошло је до грешке. Покушајте поново за неколико тренутака.",
     "deleteAccount.errorRateLimited":
       "Превише покушаја. Сачекајте минут па покушајте поново.",
-    "deleteAccount.errorInvalidCode":
-      "Нетачан или истекао код. Проверите код или затражите нови.",
+    "deleteAccount.errorInvalidCodeOrPassword":
+      "Код или лозинка нису тачни, или је код истекао. Проверите обоје или затражите нови код.",
   },
   "sr-Latn": {
     "site.title": "Troskomir",
@@ -313,7 +313,7 @@ export const translations = {
       "Uslovi pod kojima koristite Troskomir: vaša prava, moje obaveze i granice odgovornosti za aplikaciju koja radi na kućnom serveru.",
     "page.deleteAccount.title": "Brisanje naloga — Troskomir",
     "page.deleteAccount.description":
-      "Zatražite trajno brisanje Troskomir naloga i svih podataka uz njega. Potvrđujete šestocifrenim kodom koji stiže na vašu imejl adresu.",
+      "Zatražite trajno brisanje Troskomir naloga i svih podataka uz njega. Potvrđujete šestocifrenim kodom koji stiže na vašu imejl adresu i lozinkom naloga.",
     "page.open.title": "Otvaranje aplikacije — Troskomir",
     "page.open.description":
       "Veza iz imejla koja otvara Troskomir na vašem uređaju. Ako se aplikacija ne otvori sama, dugme na stranici to radi umesto vas.",
@@ -542,7 +542,7 @@ export const translations = {
 
     "deleteAccount.title": "Brisanje naloga",
     "deleteAccount.intro":
-      "Ovde možete zatražiti trajno brisanje svog Troskomir naloga i svih podataka vezanih za njega. Unesite imejl adresu koju koristite za prijavu, poslaćemo vam šestocifreni kod za potvrdu.",
+      "Ovde možete zatražiti trajno brisanje svog Troskomir naloga i svih podataka vezanih za njega. Unesite imejl adresu koju koristite za prijavu, poslaćemo vam šestocifreni kod za potvrdu. Brisanje zatim potvrđujete tim kodom i lozinkom naloga.",
     "deleteAccount.emailLabel": "Imejl adresa",
     "deleteAccount.emailPlaceholder": "vasa@adresa.com",
     "deleteAccount.sendCodeButton": "Pošalji kod za potvrdu",
@@ -551,7 +551,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Kod za potvrdu",
     "deleteAccount.passwordLabel": "Lozinka naloga",
     "deleteAccount.warning":
-      "Pažnja: ova radnja je trajna i ne može se opozvati. Svi vaši podaci (troškovi, kartice, štednja, računi i ostalo) biće nepovratno obrisani.",
+      "Pažnja: ova radnja je trajna i ne može se opozvati. Svi vaši podaci (troškovi, kartice, štednja, računi i ostalo) biće nepovratno obrisani. Podaci u našim šifrovanim rezervnim kopijama nestaju sa tim kopijama, najkasnije za 30 dana.",
     "deleteAccount.confirmButton": "Trajno obriši nalog",
     "deleteAccount.deleting": "Brisanje...",
     "deleteAccount.confirmPrompt":
@@ -559,13 +559,13 @@ export const translations = {
     "deleteAccount.backButton": "Promeni imejl adresu",
     "deleteAccount.successTitle": "Nalog je obrisan",
     "deleteAccount.successBody":
-      "Vaš nalog i svi podaci su trajno obrisani. Hvala što ste koristili Troskomir.",
+      "Vaš nalog i svi podaci su obrisani. Podaci u našim šifrovanim rezervnim kopijama nestaju sa tim kopijama, najkasnije za 30 dana. Hvala što ste koristili Troskomir.",
     "deleteAccount.errorGeneric":
       "Došlo je do greške. Pokušajte ponovo za nekoliko trenutaka.",
     "deleteAccount.errorRateLimited":
       "Previše pokušaja. Sačekajte minut pa pokušajte ponovo.",
-    "deleteAccount.errorInvalidCode":
-      "Netačan ili istekao kod. Proverite kod ili zatražite novi.",
+    "deleteAccount.errorInvalidCodeOrPassword":
+      "Kod ili lozinka nisu tačni, ili je kod istekao. Proverite oboje ili zatražite novi kod.",
   },
   en: {
     "site.title": "Troskomir",
@@ -590,7 +590,7 @@ export const translations = {
       "The terms you use Troskomir under: your rights, my obligations, and the limits of liability for an app that runs on a home server.",
     "page.deleteAccount.title": "Delete account — Troskomir",
     "page.deleteAccount.description":
-      "Request permanent deletion of your Troskomir account and everything stored with it. You confirm with a six-digit code sent to your e-mail address.",
+      "Request permanent deletion of your Troskomir account and everything stored with it. You confirm with a six-digit code sent to your e-mail address and your account password.",
     "page.open.title": "Opening the app — Troskomir",
     "page.open.description":
       "The link an e-mail uses to open Troskomir on your device. If the app doesn't open on its own, the button on the page does it for you.",
@@ -817,7 +817,7 @@ export const translations = {
 
     "deleteAccount.title": "Delete account",
     "deleteAccount.intro":
-      "Request permanent deletion of your Troskomir account and all data linked to it. Enter the e-mail address you use to sign in and we'll send you a six-digit confirmation code.",
+      "Request permanent deletion of your Troskomir account and all data linked to it. Enter the e-mail address you use to sign in and we'll send you a six-digit confirmation code. You then confirm with that code and your account password.",
     "deleteAccount.emailLabel": "E-mail address",
     "deleteAccount.emailPlaceholder": "you@example.com",
     "deleteAccount.sendCodeButton": "Send confirmation code",
@@ -826,7 +826,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Confirmation code",
     "deleteAccount.passwordLabel": "Account password",
     "deleteAccount.warning":
-      "Warning: this action is permanent and cannot be undone. All your data (expenses, cards, savings, receipts and everything else) will be erased for good.",
+      "Warning: this action is permanent and cannot be undone. All your data (expenses, cards, savings, receipts and everything else) will be erased for good. Data in our encrypted backups disappears with those backups, within 30 days.",
     "deleteAccount.confirmButton": "Permanently delete my account",
     "deleteAccount.deleting": "Deleting...",
     "deleteAccount.confirmPrompt":
@@ -834,13 +834,13 @@ export const translations = {
     "deleteAccount.backButton": "Change e-mail address",
     "deleteAccount.successTitle": "Account deleted",
     "deleteAccount.successBody":
-      "Your account and all its data have been permanently deleted. Thanks for having used Troskomir.",
+      "Your account and all its data have been deleted. Data in our encrypted backups disappears with those backups, within 30 days. Thanks for having used Troskomir.",
     "deleteAccount.errorGeneric":
       "Something went wrong. Please try again in a moment.",
     "deleteAccount.errorRateLimited":
       "Too many attempts. Please wait a minute and try again.",
-    "deleteAccount.errorInvalidCode":
-      "Incorrect or expired code. Check the code or request a new one.",
+    "deleteAccount.errorInvalidCodeOrPassword":
+      "The code or the password is incorrect, or the code has expired. Check both, or request a new code.",
   },
   ru: {
     "site.title": "Трошкомир",
@@ -865,7 +865,7 @@ export const translations = {
       "Условия, на которых вы пользуетесь Трошкомиром: ваши права, мои обязанности и границы ответственности для приложения на домашнем сервере.",
     "page.deleteAccount.title": "Удаление аккаунта — Трошкомир",
     "page.deleteAccount.description":
-      "Запросите безвозвратное удаление аккаунта Трошкомир и всех данных к нему. Подтверждение — шестизначный код, который придёт на вашу почту.",
+      "Запросите безвозвратное удаление аккаунта Трошкомир и всех данных к нему. Подтверждение — шестизначный код, который придёт на вашу почту, и пароль аккаунта.",
     "page.open.title": "Открытие приложения — Трошкомир",
     "page.open.description":
       "Ссылка из письма, которая открывает Трошкомир на вашем устройстве. Если приложение не открылось само, это сделает кнопка на странице.",
@@ -1093,7 +1093,7 @@ export const translations = {
 
     "deleteAccount.title": "Удаление аккаунта",
     "deleteAccount.intro":
-      "Здесь вы можете запросить полное удаление своего аккаунта Трошкомир и всех связанных с ним данных. Введите адрес электронной почты, который используете для входа, мы вышлем шестизначный код подтверждения.",
+      "Здесь вы можете запросить полное удаление своего аккаунта Трошкомир и всех связанных с ним данных. Введите адрес электронной почты, который используете для входа, мы вышлем шестизначный код подтверждения. Затем вы подтверждаете удаление этим кодом и паролем аккаунта.",
     "deleteAccount.emailLabel": "Адрес электронной почты",
     "deleteAccount.emailPlaceholder": "you@example.com",
     "deleteAccount.sendCodeButton": "Отправить код подтверждения",
@@ -1102,7 +1102,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Код подтверждения",
     "deleteAccount.passwordLabel": "Пароль аккаунта",
     "deleteAccount.warning":
-      "Внимание: это действие необратимо. Все ваши данные (расходы, карты, накопления, чеки и остальное) будут удалены безвозвратно.",
+      "Внимание: это действие необратимо. Все ваши данные (расходы, карты, накопления, чеки и остальное) будут удалены безвозвратно. Данные в наших зашифрованных резервных копиях исчезнут вместе с этими копиями не позднее чем через 30 дней.",
     "deleteAccount.confirmButton": "Удалить аккаунт навсегда",
     "deleteAccount.deleting": "Удаление...",
     "deleteAccount.confirmPrompt":
@@ -1110,13 +1110,13 @@ export const translations = {
     "deleteAccount.backButton": "Изменить адрес почты",
     "deleteAccount.successTitle": "Аккаунт удалён",
     "deleteAccount.successBody":
-      "Ваш аккаунт и все данные удалены безвозвратно. Спасибо, что пользовались Трошкомир.",
+      "Ваш аккаунт и все данные удалены. Данные в наших зашифрованных резервных копиях исчезнут вместе с этими копиями не позднее чем через 30 дней. Спасибо, что пользовались Трошкомир.",
     "deleteAccount.errorGeneric":
       "Что-то пошло не так. Попробуйте ещё раз через минуту.",
     "deleteAccount.errorRateLimited":
       "Слишком много попыток. Подождите минуту и попробуйте снова.",
-    "deleteAccount.errorInvalidCode":
-      "Неверный или истёкший код. Проверьте код или запросите новый.",
+    "deleteAccount.errorInvalidCodeOrPassword":
+      "Неверный код или пароль, либо срок действия кода истёк. Проверьте оба поля или запросите новый код.",
   },
 } as const;
 

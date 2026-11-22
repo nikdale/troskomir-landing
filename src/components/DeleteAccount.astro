@@ -18,7 +18,7 @@ const i18n = {
   confirmPrompt: t('deleteAccount.confirmPrompt'),
   errorGeneric: t('deleteAccount.errorGeneric'),
   errorRateLimited: t('deleteAccount.errorRateLimited'),
-  errorInvalidCode: t('deleteAccount.errorInvalidCode'),
+  errorInvalidCodeOrPassword: t('deleteAccount.errorInvalidCodeOrPassword'),
 };
 ---
 
@@ -262,10 +262,17 @@ const i18n = {
       return;
     }
     if (!ok) {
-      // A wrong or expired code comes back as 400/401/404. No response at all
-      // (status 0) or a 5xx is not the user's code being wrong, and saying so
-      // sends people re-requesting codes through an outage.
-      showAlert(status === 0 || status >= 500 ? i18n.errorGeneric : i18n.errorInvalidCode);
+      // Any other 4xx means the code or the password was not accepted, and the
+      // page cannot know which: the backend in production answers a wrong
+      // password with 401 and a wrong or expired code with 400, and once the
+      // deletion-confirm hardening ships every failure (unknown address, wrong
+      // password, wrong, expired or used-up code) is one identical 400, so the
+      // public form no longer tells a stranger whether an address has an
+      // account. The message therefore names both, and works under either
+      // backend. No response at all (status 0) or a 5xx is not the user's
+      // input being wrong, and saying so sends people re-requesting codes
+      // through an outage.
+      showAlert(status === 0 || status >= 500 ? i18n.errorGeneric : i18n.errorInvalidCodeOrPassword);
       return;
     }
 
