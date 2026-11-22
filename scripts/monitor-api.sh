@@ -62,10 +62,12 @@ check_health() {
     return
   fi
   # status, db and redis must be "ok"; any other component the backend adds
-  # later (mail) must be "ok" too when present. timestamp is informational.
+  # (mail answers "up", "down", "unknown" or "disabled") must be "ok" or "up"
+  # when present. "unknown" right after a restart fails this round and the
+  # retry a minute later sees the settled value. timestamp is informational.
   if ! jq -e '
       (.status == "ok") and (.db == "ok") and (.redis == "ok")
-      and ([to_entries[] | select(.key != "timestamp" and (.value | type) == "string") | .value == "ok"] | all)
+      and ([to_entries[] | select(.key != "timestamp" and (.value | type) == "string") | .value == "ok" or .value == "up"] | all)
     ' >/dev/null 2>&1 <<<"$body"; then
     fail "health: unhealthy body: ${body:0:300}"
     return

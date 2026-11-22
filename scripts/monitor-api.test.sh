@@ -88,6 +88,10 @@ respond 200 '{"status":"ok","timestamp":"x","db":"ok","redis":"ok","mail":"down"
 expect 1 "a component added later (mail) is checked too"
 respond 200 '{"status":"ok","timestamp":"x","db":"ok","redis":"ok","mail":"ok"}'
 expect 0 "a healthy added component passes"
+respond 200 '{"status":"ok","timestamp":"x","db":"ok","redis":"ok","mail":"up"}'
+expect 0 "mail \"up\" (what the backend answers) passes"
+respond 200 '{"status":"ok","timestamp":"x","db":"ok","redis":"ok","mail":"disabled"}'
+expect 1 "mail \"disabled\" fails: sign-in codes would not be sent"
 respond 200 'not json'
 expect 1 "a body that is not JSON fails"
 
