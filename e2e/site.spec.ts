@@ -163,6 +163,7 @@ test('deletion handles rate limit, invalid code and success without a real accou
   await page.locator('#da-send-btn').click();
   await expect(page.locator('#da-code-form')).toBeVisible();
   await page.locator('#da-code').fill('123456');
+  await page.locator('#da-password').fill('synthetic-password');
   page.on('dialog', dialog => dialog.accept());
   await page.locator('#da-confirm-btn').click();
   await expect(page.getByRole('alert')).toHaveText(/Incorrect or expired code/);
@@ -186,6 +187,7 @@ test('deletion tells a server error or no response apart from a wrong code', asy
   await page.locator('#da-send-btn').click();
   await expect(page.locator('#da-code-form')).toBeVisible();
   await page.locator('#da-code').fill('123456');
+  await page.locator('#da-password').fill('synthetic-password');
   page.on('dialog', dialog => dialog.accept());
   // 5xx: the code was never checked, so "incorrect or expired code" is wrong.
   await page.locator('#da-confirm-btn').click();

@@ -10,7 +10,11 @@ export function getLangFromUrl(url: URL): Lang {
 
 export function useTranslations(lang: Lang) {
   return function t(key: TranslationKey): string {
-    return translations[lang][key] || translations[defaultLang][key] || key;
+    // `??`, not `||`: an empty string is a deliberate translation ("this
+    // locale has no such line"), not a missing one. With `||` the empty
+    // `features.joke` of en and ru fell through to the Serbian Cyrillic line
+    // and the English and Russian homepages printed it (VELES V-L10N-01).
+    return translations[lang][key] ?? translations[defaultLang][key] ?? key;
   };
 }
 
