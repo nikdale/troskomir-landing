@@ -71,6 +71,14 @@ export const PRIVACY_CONTACT_EMAIL = "nikdale@duck.com";
 /** The data controller, named as GDPR Art. 13 requires. */
 export const DATA_CONTROLLER = "Nikola Dašić";
 
+/** The same name in the script of the Cyrillic documents (VELES V-L10N-05).
+ *  Serbian writes it natively in Cyrillic, and transliterateToLatin() turns it
+ *  back into exactly DATA_CONTROLLER for sr-Latn. Russian transliterates the
+ *  surname differently, so the legal Latin spelling follows in brackets to
+ *  keep the controller unambiguous. */
+const DATA_CONTROLLER_SR = "Никола Дашић";
+const DATA_CONTROLLER_RU = `Никола Дашич (${DATA_CONTROLLER})`;
+
 /** Minimum age. Serbia's ZZPL follows GDPR Art. 8; 16 is the ceiling and needs
  *  no parental-consent machinery, which this app has none of. */
 export const MINIMUM_AGE = 16;
@@ -196,7 +204,7 @@ const privacyPolicySr: LegalDocument = {
   effective: "Важи од: 22. новембар 2026.",
   intro: [
     "Трошкомир је апликација за праћење личних финансија: трошкова, прихода, позајмица, штедње, буџета, путовања и подсетника.",
-    `Руковалац подацима је ${DATA_CONTROLLER} (Србија). За сва питања о приватности пишите на <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
+    `Руковалац подацима је ${DATA_CONTROLLER_SR} (Србија). За сва питања о приватности пишите на <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
   ],
   sections: [
     {
@@ -304,7 +312,7 @@ const privacyPolicySr: LegalDocument = {
     {
       heading: "Контакт",
       body: [
-        `${DATA_CONTROLLER}, Србија — <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>`,
+        `${DATA_CONTROLLER_SR}, Србија — <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>`,
       ],
     },
   ],
@@ -434,7 +442,7 @@ const privacyPolicyRu: LegalDocument = {
   effective: "Действует с: 22 ноября 2026 г.",
   intro: [
     "Трошкомир — приложение для учёта личных финансов: расходов, доходов, займов, накоплений, бюджетов, поездок и напоминаний.",
-    `Оператор данных — ${DATA_CONTROLLER} (Сербия). По любым вопросам о конфиденциальности пишите на <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
+    `Оператор данных — ${DATA_CONTROLLER_RU} (Сербия). По любым вопросам о конфиденциальности пишите на <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>.`,
   ],
   sections: [
     {
@@ -542,7 +550,7 @@ const privacyPolicyRu: LegalDocument = {
     {
       heading: "Контакт",
       body: [
-        `${DATA_CONTROLLER}, Сербия — <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>`,
+        `${DATA_CONTROLLER_RU}, Сербия — <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>`,
       ],
     },
   ],
@@ -594,7 +602,7 @@ const termsSr: LegalDocument = {
     {
       heading: "Контакт",
       body: [
-        `${DATA_CONTROLLER}, Србија — <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>`,
+        `${DATA_CONTROLLER_SR}, Србија — <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>`,
       ],
     },
   ],
@@ -698,7 +706,7 @@ const termsRu: LegalDocument = {
     {
       heading: "Контакт",
       body: [
-        `${DATA_CONTROLLER}, Сербия — <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>`,
+        `${DATA_CONTROLLER_RU}, Сербия — <a href="mailto:${PRIVACY_CONTACT_EMAIL}">${PRIVACY_CONTACT_EMAIL}</a>`,
       ],
     },
   ],

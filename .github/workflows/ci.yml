@@ -63,3 +63,27 @@ jobs:
         # the HTML exists. Nothing ran them here until now, which is how a
         # comment claiming they gated the build stayed wrong for so long.
         run: npm test
+
+      - name: Install the Playwright browser
+        # Chromium only: e2e/ asserts layout, keyboard use, the CSP and axe
+        # WCAG 2.1 AA, none of which differs by engine enough to triple the
+        # job time. --with-deps pulls the system libraries the runner lacks.
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser and accessibility tests (Playwright + axe)
+        # Every page in every locale at three widths through axe, the 404 and
+        # /open/ bridges, font and image budgets, and the deletion form against
+        # a mocked API. It was red for weeks without anyone noticing because
+        # nothing ran it (VELES V-A11Y-02). playwright.config.ts builds and
+        # serves dist/ itself with production-like analytics values; every
+        # https:// request is aborted, so nothing leaves the runner.
+        run: npx playwright test
+
+      - name: Keep the Playwright traces of a failed run
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: playwright-test-results
+          path: test-results/
+          retention-days: 7
+          if-no-files-found: ignore
