@@ -36,7 +36,7 @@ export const translations = {
       "Услови под којима користите Трошкомир: ваша права, моје обавезе и границе одговорности за апликацију која ради на кућном серверу.",
     "page.deleteAccount.title": "Брисање налога — Трошкомир",
     "page.deleteAccount.description":
-      "Затражите трајно брисање Трошкомир налога и свих података уз њега. Потврђујете шестоцифреним кодом који стиже на вашу имејл адресу.",
+      "Затражите трајно брисање Трошкомир налога и свих података уз њега. Потврђујете шестоцифреним кодом који стиже на вашу имејл адресу и лозинком налога.",
     "page.open.title": "Отварање апликације — Трошкомир",
     "page.open.description":
       "Веза из имејла која отвара Трошкомир на вашем уређају. Ако се апликација не отвори сама, дугме на страници то ради уместо вас.",
@@ -222,14 +222,14 @@ export const translations = {
 
     "privacy.title": "Приватност",
     "privacy.body":
-      "Трошкомир је систем заснован на серверу — све што унесете чува се на серверу који сам лично покрећем код куће, а не само на телефону. Подразумевано, ти подаци се чувају у читљивом облику, што је сасвим у реду за већину корисника. Ако желите јачу заштиту, укључите шифровање с краја на крај у подешавањима апликације — тада ни ја не могу да прочитам ваше описе трошкова или рачуне. Шифровање је опционо и подразумевано искључено. Искрено: не читам ваше податке, не занима ме шта купујете ни од кога, и никада их не делим ни са ким... мада ценовник кирија у Београду не би ни мало зашкодио.",
+      "Трошкомир је систем заснован на серверу — све што унесете чува се на серверу који сам лично покрећем код куће, а не само на телефону. Подразумевано, ти подаци се чувају у читљивом облику, што је сасвим у реду за већину корисника. Ако желите јачу заштиту, укључите шифровање с краја на крај у подешавањима апликације — тада ни ја не могу да прочитам ваше описе трошкова или рачуне. Шифровање је опционо и подразумевано искључено. Искрено: не читам ваше податке и не занима ме шта купујете ни од кога... мада ценовник кирија у Београду не би ни мало зашкодио. Не продајем их и не дајем их никоме за оглашавање; неколико услуга без којих апликација не ради (извештаји о падовима, push обавештења, приближна локација пријаве, рачуни са пореских портала) добија само свој део, а политика приватности наводи сваку.",
     "privacy.localAi.title": "Рачуни и локални AI",
     "privacy.localAi.body":
       "Обрада слике рачуна остаје на вашем телефону: ML Kit издваја текст, а изабрани локални модел (један од три опциона) локално предлаже продавницу, износ, датум, валуту, начин плаћања, категорију и ознаке. Датотека долази са Hugging Face-а, а на уређају се чува само један модел одједном; рачун и OCR текст никада се не шаљу cloud AI сервису. Трошак се шаље Трошкомиру тек када га прегледате и сачувате.",
 
     "privacy.whoSees.title": "Ко може да види моје податке?",
     "privacy.whoSees.body":
-      "Подразумевано, технички да — серверу требају износи и датуми да би израчунао буџете и укупне суме, па их технички могу видети. У пракси их не читам, не анализирам их и не делим их ни са ким. Ако желите техничку, а не само обећану гаранцију, укључите шифровање с краја на крај у подешавањима: тада описи, белешке и детаљи рачуна постају нечитљиви за сервер — па ни за мене.",
+      "Подразумевано, технички да — сервер чува оно што унесете у читљивом облику, а износи и датуми су му увек потребни да би израчунао буџете и укупне суме. У пракси их не читам и не анализирам. Ако желите техничку, а не само обећану гаранцију, укључите шифровање с краја на крај у подешавањима: тада описи, белешке и детаљи рачуна постају нечитљиви за сервер — па ни за мене. Које спољне услуге добијају део ваших података, и који део, наведено је у политици приватности.",
     "privacy.notDoes.title": "Шта Трошкомир не ради",
     "privacy.notDoes.item1":
       "Не приказује огласе нити користи рекламне SDK-ове.",
@@ -237,7 +237,7 @@ export const translations = {
     "privacy.notDoes.item3":
       "Не шаље слике рачуна нити OCR текст cloud AI сервису.",
     "privacy.notDoes.item4":
-      "Не дели податке са трећим странама, осим кад сами покренете функцију која то захтева (нпр. очитавање рачуна са пореског портала).",
+      "Не дели ваше податке ван услуга без којих не може да ради. Свака од њих, и тачно шта добија, наведена је у политици приватности.",
 
     "about.heading": "О аутору",
     "about.name": "Никола Дашић",
@@ -265,7 +265,7 @@ export const translations = {
 
     "deleteAccount.title": "Брисање налога",
     "deleteAccount.intro":
-      "Овде можете затражити трајно брисање свог Трошкомир налога и свих података везаних за њега. Унесите имејл адресу коју користите за пријаву, послаћемо вам шестоцифрени код за потврду.",
+      "Овде можете затражити трајно брисање свог Трошкомир налога и свих података везаних за њега. Унесите имејл адресу коју користите за пријаву, послаћемо вам шестоцифрени код за потврду. Брисање затим потврђујете тим кодом и лозинком налога.",
     "deleteAccount.emailLabel": "Имејл адреса",
     "deleteAccount.emailPlaceholder": "vasa@adresa.com",
     "deleteAccount.sendCodeButton": "Пошаљи код за потврду",
@@ -274,7 +274,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Код за потврду",
     "deleteAccount.passwordLabel": "Лозинка налога",
     "deleteAccount.warning":
-      "Пажња: ова радња је трајна и не може се опозвати. Сви ваши подаци (трошкови, картице, штедња, рачуни и остало) биће неповратно обрисани.",
+      "Пажња: ова радња је трајна и не може се опозвати. Сви ваши подаци (трошкови, картице, штедња, рачуни и остало) биће неповратно обрисани. Подаци у нашим резервним копијама нестају са тим копијама, најкасније за 60 дана.",
     "deleteAccount.confirmButton": "Трајно обриши налог",
     "deleteAccount.deleting": "Брисање...",
     "deleteAccount.confirmPrompt":
@@ -282,13 +282,13 @@ export const translations = {
     "deleteAccount.backButton": "Промени имејл адресу",
     "deleteAccount.successTitle": "Налог је обрисан",
     "deleteAccount.successBody":
-      "Ваш налог и сви подаци су трајно обрисани. Хвала што сте користили Трошкомир.",
+      "Ваш налог и сви подаци су обрисани. Подаци у нашим резервним копијама нестају са тим копијама, најкасније за 60 дана. Хвала што сте користили Трошкомир.",
     "deleteAccount.errorGeneric":
       "Дошло је до грешке. Покушајте поново за неколико тренутака.",
     "deleteAccount.errorRateLimited":
       "Превише покушаја. Сачекајте минут па покушајте поново.",
-    "deleteAccount.errorInvalidCode":
-      "Нетачан или истекао код. Проверите код или затражите нови.",
+    "deleteAccount.errorInvalidCodeOrPassword":
+      "Код или лозинка нису тачни, или је код истекао. Проверите обоје или затражите нови код.",
   },
   "sr-Latn": {
     "site.title": "Troskomir",
@@ -313,7 +313,7 @@ export const translations = {
       "Uslovi pod kojima koristite Troskomir: vaša prava, moje obaveze i granice odgovornosti za aplikaciju koja radi na kućnom serveru.",
     "page.deleteAccount.title": "Brisanje naloga — Troskomir",
     "page.deleteAccount.description":
-      "Zatražite trajno brisanje Troskomir naloga i svih podataka uz njega. Potvrđujete šestocifrenim kodom koji stiže na vašu imejl adresu.",
+      "Zatražite trajno brisanje Troskomir naloga i svih podataka uz njega. Potvrđujete šestocifrenim kodom koji stiže na vašu imejl adresu i lozinkom naloga.",
     "page.open.title": "Otvaranje aplikacije — Troskomir",
     "page.open.description":
       "Veza iz imejla koja otvara Troskomir na vašem uređaju. Ako se aplikacija ne otvori sama, dugme na stranici to radi umesto vas.",
@@ -499,14 +499,14 @@ export const translations = {
 
     "privacy.title": "Privatnost",
     "privacy.body":
-      "Troškomir je sistem zasnovan na serveru — sve što unesete čuva se na serveru koji sam lično pokrećem kod kuće, a ne samo na telefonu. Podrazumevano, ti podaci se čuvaju u čitljivom obliku, što je sasvim u redu za većinu korisnika. Ako želite jaču zaštitu, uključite šifrovanje s kraja na kraj u podešavanjima aplikacije — tada ni ja ne mogu da pročitam vaše opise troškova ili račune. Šifrovanje je opciono i podrazumevano isključeno. Iskreno: ne čitam vaše podatke, ne zanima me šta kupujete ni od koga, i nikada ih ne delim ni sa kim... mada cenovnik kirija u Beogradu ne bi ni malo zaškodio.",
+      "Troškomir je sistem zasnovan na serveru — sve što unesete čuva se na serveru koji sam lično pokrećem kod kuće, a ne samo na telefonu. Podrazumevano, ti podaci se čuvaju u čitljivom obliku, što je sasvim u redu za većinu korisnika. Ako želite jaču zaštitu, uključite šifrovanje s kraja na kraj u podešavanjima aplikacije — tada ni ja ne mogu da pročitam vaše opise troškova ili račune. Šifrovanje je opciono i podrazumevano isključeno. Iskreno: ne čitam vaše podatke i ne zanima me šta kupujete ni od koga... mada cenovnik kirija u Beogradu ne bi ni malo zaškodio. Ne prodajem ih i ne dajem ih nikome za oglašavanje; nekoliko usluga bez kojih aplikacija ne radi (izveštaji o padovima, push obaveštenja, približna lokacija prijave, računi sa poreskih portala) dobija samo svoj deo, a politika privatnosti navodi svaku.",
     "privacy.localAi.title": "Računi i lokalni AI",
     "privacy.localAi.body":
       "Obrada slike računa ostaje na vašem telefonu: ML Kit izdvaja tekst, a izabrani lokalni model (jedan od tri opciona) lokalno predlaže prodavnicu, iznos, datum, valutu, način plaćanja, kategoriju i oznake. Datoteka dolazi sa Hugging Face-a, a na uređaju se čuva samo jedan model odjednom; račun i OCR tekst nikada se ne šalju cloud AI servisu. Trošak se šalje Troskomiru tek kada ga pregledate i sačuvate.",
 
     "privacy.whoSees.title": "Ko može da vidi moje podatke?",
     "privacy.whoSees.body":
-      "Podrazumevano, tehnički da — serveru trebaju iznosi i datumi da bi izračunao budžete i ukupne sume, pa ih tehnički mogu videti. U praksi ih ne čitam, ne analiziram ih i ne delim ih ni sa kim. Ako želite tehničku, a ne samo obećanu garanciju, uključite šifrovanje s kraja na kraj u podešavanjima: tada opisi, beleške i detalji računa postaju nečitljivi za server — pa ni za mene.",
+      "Podrazumevano, tehnički da — server čuva ono što unesete u čitljivom obliku, a iznosi i datumi su mu uvek potrebni da bi izračunao budžete i ukupne sume. U praksi ih ne čitam i ne analiziram. Ako želite tehničku, a ne samo obećanu garanciju, uključite šifrovanje s kraja na kraj u podešavanjima: tada opisi, beleške i detalji računa postaju nečitljivi za server — pa ni za mene. Koje spoljne usluge dobijaju deo vaših podataka, i koji deo, navedeno je u politici privatnosti.",
     "privacy.notDoes.title": "Šta Troskomir ne radi",
     "privacy.notDoes.item1":
       "Ne prikazuje oglase niti koristi reklamne SDK-ove.",
@@ -514,7 +514,7 @@ export const translations = {
     "privacy.notDoes.item3":
       "Ne šalje slike računa niti OCR tekst cloud AI servisu.",
     "privacy.notDoes.item4":
-      "Ne deli podatke sa trećim stranama, osim kad sami pokrenete funkciju koja to zahteva (npr. očitavanje računa sa poreskog portala).",
+      "Ne deli vaše podatke van usluga bez kojih ne može da radi. Svaka od njih, i tačno šta dobija, navedena je u politici privatnosti.",
 
     "about.heading": "O autoru",
     "about.name": "Nikola Dašić",
@@ -542,7 +542,7 @@ export const translations = {
 
     "deleteAccount.title": "Brisanje naloga",
     "deleteAccount.intro":
-      "Ovde možete zatražiti trajno brisanje svog Troskomir naloga i svih podataka vezanih za njega. Unesite imejl adresu koju koristite za prijavu, poslaćemo vam šestocifreni kod za potvrdu.",
+      "Ovde možete zatražiti trajno brisanje svog Troskomir naloga i svih podataka vezanih za njega. Unesite imejl adresu koju koristite za prijavu, poslaćemo vam šestocifreni kod za potvrdu. Brisanje zatim potvrđujete tim kodom i lozinkom naloga.",
     "deleteAccount.emailLabel": "Imejl adresa",
     "deleteAccount.emailPlaceholder": "vasa@adresa.com",
     "deleteAccount.sendCodeButton": "Pošalji kod za potvrdu",
@@ -551,7 +551,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Kod za potvrdu",
     "deleteAccount.passwordLabel": "Lozinka naloga",
     "deleteAccount.warning":
-      "Pažnja: ova radnja je trajna i ne može se opozvati. Svi vaši podaci (troškovi, kartice, štednja, računi i ostalo) biće nepovratno obrisani.",
+      "Pažnja: ova radnja je trajna i ne može se opozvati. Svi vaši podaci (troškovi, kartice, štednja, računi i ostalo) biće nepovratno obrisani. Podaci u našim rezervnim kopijama nestaju sa tim kopijama, najkasnije za 60 dana.",
     "deleteAccount.confirmButton": "Trajno obriši nalog",
     "deleteAccount.deleting": "Brisanje...",
     "deleteAccount.confirmPrompt":
@@ -559,13 +559,13 @@ export const translations = {
     "deleteAccount.backButton": "Promeni imejl adresu",
     "deleteAccount.successTitle": "Nalog je obrisan",
     "deleteAccount.successBody":
-      "Vaš nalog i svi podaci su trajno obrisani. Hvala što ste koristili Troskomir.",
+      "Vaš nalog i svi podaci su obrisani. Podaci u našim rezervnim kopijama nestaju sa tim kopijama, najkasnije za 60 dana. Hvala što ste koristili Troskomir.",
     "deleteAccount.errorGeneric":
       "Došlo je do greške. Pokušajte ponovo za nekoliko trenutaka.",
     "deleteAccount.errorRateLimited":
       "Previše pokušaja. Sačekajte minut pa pokušajte ponovo.",
-    "deleteAccount.errorInvalidCode":
-      "Netačan ili istekao kod. Proverite kod ili zatražite novi.",
+    "deleteAccount.errorInvalidCodeOrPassword":
+      "Kod ili lozinka nisu tačni, ili je kod istekao. Proverite oboje ili zatražite novi kod.",
   },
   en: {
     "site.title": "Troskomir",
@@ -590,7 +590,7 @@ export const translations = {
       "The terms you use Troskomir under: your rights, my obligations, and the limits of liability for an app that runs on a home server.",
     "page.deleteAccount.title": "Delete account — Troskomir",
     "page.deleteAccount.description":
-      "Request permanent deletion of your Troskomir account and everything stored with it. You confirm with a six-digit code sent to your e-mail address.",
+      "Request permanent deletion of your Troskomir account and everything stored with it. You confirm with a six-digit code sent to your e-mail address and your account password.",
     "page.open.title": "Opening the app — Troskomir",
     "page.open.description":
       "The link an e-mail uses to open Troskomir on your device. If the app doesn't open on its own, the button on the page does it for you.",
@@ -775,21 +775,21 @@ export const translations = {
 
     "privacy.title": "Privacy",
     "privacy.body":
-      "Troškomir is a server-based app — everything you enter is stored on a server I run myself at home, not just on your phone. By default, that data is stored in plain, readable form, which is fine for most people. If you want stronger protection, turn on end-to-end encryption in the app settings — then not even I can read your expense descriptions or receipts. Encryption is optional and off by default. Honest disclaimer: I don't read your data, I don't care what you buy or from whom, and I never share it with anyone... though real Belgrade rent prices would be fun to know.",
+      "Troškomir is a server-based app — everything you enter is stored on a server I run myself at home, not just on your phone. By default, that data is stored in plain, readable form, which is fine for most people. If you want stronger protection, turn on end-to-end encryption in the app settings — then not even I can read your expense descriptions or receipts. Encryption is optional and off by default. Honest disclaimer: I don't read your data and I don't care what you buy or from whom... though real Belgrade rent prices would be fun to know. I don't sell it and don't hand it to anyone for advertising; the few services the app needs in order to work (crash reports, push notifications, an approximate sign-in location, receipts from tax portals) get only their part, and the privacy policy lists every one.",
     "privacy.localAi.title": "Receipts and local AI",
     "privacy.localAi.body":
       "Receipt image processing stays on your phone: ML Kit extracts the text, and whichever of three optional local models you've chosen locally suggests the seller, amount, date, currency, payment method, category, and tags. Its file comes from Hugging Face, and only one model is kept on the device at a time; the receipt and OCR text are never sent to a cloud AI service. The expense reaches Troskomir only after you review and save it.",
 
     "privacy.whoSees.title": "Who can see my data?",
     "privacy.whoSees.body":
-      "By default, technically yes — the server needs amounts and dates to calculate budgets and totals, so it can technically see them. In practice I don't read it, don't analyze it, and don't share it with anyone. If you want a technical guarantee rather than a promise, turn on end-to-end encryption in Settings: then descriptions, notes and receipt details become unreadable to the server — and to me.",
+      "By default, technically yes — the server stores what you enter in readable form, and it always needs amounts and dates to calculate budgets and totals. In practice I don't read it and don't analyze it. If you want a technical guarantee rather than a promise, turn on end-to-end encryption in Settings: then descriptions, notes and receipt details become unreadable to the server — and to me. Which outside services receive a piece of your data, and which piece, is listed in the privacy policy.",
     "privacy.notDoes.title": "What Troskomir does not do",
     "privacy.notDoes.item1": "Show ads or use advertising SDKs.",
     "privacy.notDoes.item2": "Sell your financial data to anyone.",
     "privacy.notDoes.item3":
       "Send receipt images or OCR text to a cloud AI service.",
     "privacy.notDoes.item4":
-      "Share data with third parties, except when you trigger a feature that needs it (e.g. pulling a receipt from a tax portal).",
+      "Share your data beyond the services it needs to work. Each of them, and exactly what it receives, is listed in the privacy policy.",
 
     "about.heading": "About the author",
     "about.name": "Nikola Dašić",
@@ -817,7 +817,7 @@ export const translations = {
 
     "deleteAccount.title": "Delete account",
     "deleteAccount.intro":
-      "Request permanent deletion of your Troskomir account and all data linked to it. Enter the e-mail address you use to sign in and we'll send you a six-digit confirmation code.",
+      "Request permanent deletion of your Troskomir account and all data linked to it. Enter the e-mail address you use to sign in and we'll send you a six-digit confirmation code. You then confirm with that code and your account password.",
     "deleteAccount.emailLabel": "E-mail address",
     "deleteAccount.emailPlaceholder": "you@example.com",
     "deleteAccount.sendCodeButton": "Send confirmation code",
@@ -826,7 +826,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Confirmation code",
     "deleteAccount.passwordLabel": "Account password",
     "deleteAccount.warning":
-      "Warning: this action is permanent and cannot be undone. All your data (expenses, cards, savings, receipts and everything else) will be erased for good.",
+      "Warning: this action is permanent and cannot be undone. All your data (expenses, cards, savings, receipts and everything else) will be erased for good. Data in our backups disappears with those backups, within 60 days.",
     "deleteAccount.confirmButton": "Permanently delete my account",
     "deleteAccount.deleting": "Deleting...",
     "deleteAccount.confirmPrompt":
@@ -834,13 +834,13 @@ export const translations = {
     "deleteAccount.backButton": "Change e-mail address",
     "deleteAccount.successTitle": "Account deleted",
     "deleteAccount.successBody":
-      "Your account and all its data have been permanently deleted. Thanks for having used Troskomir.",
+      "Your account and all its data have been deleted. Data in our backups disappears with those backups, within 60 days. Thanks for having used Troskomir.",
     "deleteAccount.errorGeneric":
       "Something went wrong. Please try again in a moment.",
     "deleteAccount.errorRateLimited":
       "Too many attempts. Please wait a minute and try again.",
-    "deleteAccount.errorInvalidCode":
-      "Incorrect or expired code. Check the code or request a new one.",
+    "deleteAccount.errorInvalidCodeOrPassword":
+      "The code or the password is incorrect, or the code has expired. Check both, or request a new code.",
   },
   ru: {
     "site.title": "Трошкомир",
@@ -865,7 +865,7 @@ export const translations = {
       "Условия, на которых вы пользуетесь Трошкомиром: ваши права, мои обязанности и границы ответственности для приложения на домашнем сервере.",
     "page.deleteAccount.title": "Удаление аккаунта — Трошкомир",
     "page.deleteAccount.description":
-      "Запросите безвозвратное удаление аккаунта Трошкомир и всех данных к нему. Подтверждение — шестизначный код, который придёт на вашу почту.",
+      "Запросите безвозвратное удаление аккаунта Трошкомир и всех данных к нему. Подтверждение — шестизначный код, который придёт на вашу почту, и пароль аккаунта.",
     "page.open.title": "Открытие приложения — Трошкомир",
     "page.open.description":
       "Ссылка из письма, которая открывает Трошкомир на вашем устройстве. Если приложение не открылось само, это сделает кнопка на странице.",
@@ -1051,21 +1051,21 @@ export const translations = {
 
     "privacy.title": "Конфиденциальность",
     "privacy.body":
-      "Трошкомир — это серверное приложение: всё, что вы вводите, хранится на сервере, который я сам держу дома, а не только на телефоне. По умолчанию эти данные хранятся в читаемом виде, и для большинства этого достаточно. Если хотите более надёжную защиту, включите сквозное шифрование в настройках приложения — тогда даже я не смогу прочитать описания ваших расходов или чеки. Шифрование опционально и по умолчанию выключено. Честно: я не читаю ваши данные, мне не интересно, что вы покупаете и у кого, и я никогда никому их не передаю... хотя реальные цены на аренду в Белграде было бы забавно узнать.",
+      "Трошкомир — это серверное приложение: всё, что вы вводите, хранится на сервере, который я сам держу дома, а не только на телефоне. По умолчанию эти данные хранятся в читаемом виде, и для большинства этого достаточно. Если хотите более надёжную защиту, включите сквозное шифрование в настройках приложения — тогда даже я не смогу прочитать описания ваших расходов или чеки. Шифрование опционально и по умолчанию выключено. Честно: я не читаю ваши данные, и мне не интересно, что вы покупаете и у кого... хотя реальные цены на аренду в Белграде было бы забавно узнать. Я их не продаю и не передаю никому для рекламы; несколько сервисов, без которых приложение не работает (отчёты о сбоях, push-уведомления, приблизительное место входа, чеки с налоговых порталов), получают только свою часть, и политика конфиденциальности перечисляет каждый из них.",
     "privacy.localAi.title": "Чеки и локальный ИИ",
     "privacy.localAi.body":
       "Обработка изображения чека остаётся на телефоне: ML Kit извлекает текст, а выбранная локальная модель (одна из трёх опциональных) локально предлагает продавца, сумму, дату, валюту, способ оплаты, категорию и теги. Файл загружается с Hugging Face, и на устройстве хранится только одна модель одновременно; чек и OCR-текст никогда не отправляются в облачный ИИ-сервис. Расход попадает в Трошкомир только после вашей проверки и сохранения.",
 
     "privacy.whoSees.title": "Кто может увидеть мои данные?",
     "privacy.whoSees.body":
-      "По умолчанию — технически да: серверу нужны суммы и даты, чтобы считать бюджеты и итоги, поэтому технически он их видит. На практике я их не читаю, не анализирую и никому не передаю. Если хотите техническую гарантию, а не просто обещание, включите сквозное шифрование в настройках: тогда описания, заметки и детали чеков станут нечитаемыми для сервера — и для меня тоже.",
+      "По умолчанию — технически да: сервер хранит то, что вы вводите, в читаемом виде, а суммы и даты нужны ему всегда, чтобы считать бюджеты и итоги. На практике я их не читаю и не анализирую. Если хотите техническую гарантию, а не просто обещание, включите сквозное шифрование в настройках: тогда описания, заметки и детали чеков станут нечитаемыми для сервера — и для меня тоже. Какие внешние сервисы получают часть ваших данных и какую именно, указано в политике конфиденциальности.",
     "privacy.notDoes.title": "Чего Трошкомир не делает",
     "privacy.notDoes.item1": "Не показывает рекламу и не использует рекламные SDK.",
     "privacy.notDoes.item2": "Не продаёт ваши финансовые данные никому.",
     "privacy.notDoes.item3":
       "Не отправляет изображения чеков или OCR-текст в облачный ИИ-сервис.",
     "privacy.notDoes.item4":
-      "Не передаёт данные третьим лицам, кроме случаев, когда вы сами запускаете функцию, которой это нужно (например, получение чека с налогового портала).",
+      "Не передаёт ваши данные никому, кроме сервисов, без которых не может работать. Каждый из них и то, что именно он получает, указаны в политике конфиденциальности.",
 
     "about.heading": "Об авторе",
     "about.name": "Никола Дашич",
@@ -1093,7 +1093,7 @@ export const translations = {
 
     "deleteAccount.title": "Удаление аккаунта",
     "deleteAccount.intro":
-      "Здесь вы можете запросить полное удаление своего аккаунта Трошкомир и всех связанных с ним данных. Введите адрес электронной почты, который используете для входа, мы вышлем шестизначный код подтверждения.",
+      "Здесь вы можете запросить полное удаление своего аккаунта Трошкомир и всех связанных с ним данных. Введите адрес электронной почты, который используете для входа, мы вышлем шестизначный код подтверждения. Затем вы подтверждаете удаление этим кодом и паролем аккаунта.",
     "deleteAccount.emailLabel": "Адрес электронной почты",
     "deleteAccount.emailPlaceholder": "you@example.com",
     "deleteAccount.sendCodeButton": "Отправить код подтверждения",
@@ -1102,7 +1102,7 @@ export const translations = {
     "deleteAccount.codeLabel": "Код подтверждения",
     "deleteAccount.passwordLabel": "Пароль аккаунта",
     "deleteAccount.warning":
-      "Внимание: это действие необратимо. Все ваши данные (расходы, карты, накопления, чеки и остальное) будут удалены безвозвратно.",
+      "Внимание: это действие необратимо. Все ваши данные (расходы, карты, накопления, чеки и остальное) будут удалены безвозвратно. Данные в наших резервных копиях исчезнут вместе с этими копиями не позднее чем через 60 дней.",
     "deleteAccount.confirmButton": "Удалить аккаунт навсегда",
     "deleteAccount.deleting": "Удаление...",
     "deleteAccount.confirmPrompt":
@@ -1110,13 +1110,13 @@ export const translations = {
     "deleteAccount.backButton": "Изменить адрес почты",
     "deleteAccount.successTitle": "Аккаунт удалён",
     "deleteAccount.successBody":
-      "Ваш аккаунт и все данные удалены безвозвратно. Спасибо, что пользовались Трошкомир.",
+      "Ваш аккаунт и все данные удалены. Данные в наших резервных копиях исчезнут вместе с этими копиями не позднее чем через 60 дней. Спасибо, что пользовались Трошкомир.",
     "deleteAccount.errorGeneric":
       "Что-то пошло не так. Попробуйте ещё раз через минуту.",
     "deleteAccount.errorRateLimited":
       "Слишком много попыток. Подождите минуту и попробуйте снова.",
-    "deleteAccount.errorInvalidCode":
-      "Неверный или истёкший код. Проверьте код или запросите новый.",
+    "deleteAccount.errorInvalidCodeOrPassword":
+      "Неверный код или пароль, либо срок действия кода истёк. Проверьте оба поля или запросите новый код.",
   },
 } as const;
 
